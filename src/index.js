@@ -1,6 +1,6 @@
 const myModule = require('./js/main');
 
-const myMOduleInstance = new myModule();
+const myModuleInstance = new myModule();
 
-myMOduleInstance.hello();
-myMOduleInstance.bye();
+myModuleInstance.hello();
+myModuleInstance.bye();

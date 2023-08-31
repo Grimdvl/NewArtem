@@ -23,6 +23,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "es6-promise": "^4.2.8",
+    "gulp": "^4.0.2",
     "nodelist-foreach-polyfill": "^1.2.0"
   }
 }

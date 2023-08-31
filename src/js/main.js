@@ -3,7 +3,7 @@ function myModule() {
         console.log('hello');
     };
 
-    this.goodbye = function() {
+    this.bye = function() {
         console.log('bye!');
     };
 }
