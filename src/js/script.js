@@ -5,7 +5,7 @@ import skills from './modules/skills';
 window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
 
-    hamburger('.hamburger', '.menu', '.menu__close', 'active');
+    hamburger('.hamburger', '.menu', 'active');
     btnPromo('.promo__link', '.promo__about', 'btn');
     skills('.skills__ratings-counter', '.skills__ratings-line span');
 
