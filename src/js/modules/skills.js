@@ -1,10 +1,10 @@
-function skills() {
-    const counters = document.querySelectorAll('.skills__ratings-counter'),
-          lines = document.querySelectorAll('.skills__ratings-line span');
+function skills(counterSelector, lineSelector) {
+    const counters = document.querySelectorAll(counterSelector),
+          lines = document.querySelectorAll(lineSelector);
 
     counters.forEach( (item, i) => {
         lines[i].style.width = item.innerHTML;
     });
 }
 
-module.exports = skills;
+export default skills;

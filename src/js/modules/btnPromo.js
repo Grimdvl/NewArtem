@@ -1,16 +1,17 @@
-function btnPromo() {
-    const btnLink = document.querySelector('.promo__link'),
-          btnAbout = document.querySelector('.promo__about');
+function btnPromo(linkSelector, aboutSelector, buttonSelector) {
+    
+    const btnLink = document.querySelector(linkSelector),
+          btnAbout = document.querySelector(aboutSelector);
 
     btnAbout.addEventListener('click', () => {
-        btnAbout.classList.add('btn');
-        btnLink.classList.remove('btn');
+        btnAbout.classList.add(buttonSelector);
+        btnLink.classList.remove(buttonSelector);
     });
 
     btnLink.addEventListener('click', () => {
-        btnLink.classList.add('btn');
-        btnAbout.classList.remove('btn');
+        btnLink.classList.add(buttonSelector);
+        btnAbout.classList.remove(buttonSelector);
     });
 }
 
-module.exports = btnPromo;
+export default btnPromo;

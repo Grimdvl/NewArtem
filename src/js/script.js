@@ -1,11 +1,13 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const hamburger = require('./modules/hamburger'),
-          btnPromo = require('./modules/btnPromo'),
-          skills = require('./modules/skills');
+import hamburger from './modules/hamburger';
+import btnPromo from './modules/btnPromo';
+import skills from './modules/skills';
 
-    hamburger();
-    btnPromo();
-    skills();
+window.addEventListener('DOMContentLoaded', () => {
+    // const hamburger = require('./modules/hamburger'),
+
+    hamburger('.hamburger', '.menu', '.menu__close', 'active');
+    btnPromo('.promo__link', '.promo__about', 'btn');
+    skills('.skills__ratings-counter', '.skills__ratings-line span');
 
     // async function translation() {
     //     const translateElements = document.querySelectorAll('.translate');

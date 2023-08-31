@@ -1,15 +1,17 @@
-function hamburger() {
-    const hamburger = document.querySelector('.hamburger'),
-          menu = document.querySelector('.menu'),
-          closeElem = document.querySelector('.menu__close');
+function hamburger(hamburgerSelector, menuSelector, menuCloseSelector, activeClass) {
+    
+    const hamburger = document.querySelector(hamburgerSelector),
+          menu = document.querySelector(menuSelector),
+          menuClose = menu.querySelector(menuCloseSelector);
 
     hamburger.addEventListener('click', () => {
-        menu.classList.add('active');
+        menu.classList.add(activeClass);
     });
 
-    closeElem.addEventListener('click', () => {
-        menu.classList.remove('active');
+    menuClose.addEventListener('click', () => {
+        menu.classList.remove(activeClass);
     });
 }
 
-module.exports = hamburger;
+// module.exports = hamburger;
+export default hamburger;
