@@ -1,11 +1,13 @@
 import hamburger from './modules/hamburger';
 import btnPromo from './modules/btnPromo';
 import skills from './modules/skills';
+import navigation from './modules/navigation';
 
 window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
 
-    hamburger('.hamburger', '.menu', 'active');
+    hamburger('.menu', '.hamburger', 'active');
+    navigation('.menu__link', 'active');
     btnPromo('.promo__link', '.promo__about', 'btn');
     skills('.skills__ratings-counter', '.skills__ratings-line span');
 

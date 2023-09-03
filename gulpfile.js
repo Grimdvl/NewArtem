@@ -7,6 +7,12 @@ const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
 const ghPages = require('gulp-gh-pages');
+const shell = require('gulp-shell');
+
+gulp.task('webpack', shell.task([
+    'webpack'
+]));
+  
 
 gulp.task('server', function() {
     
@@ -32,7 +38,7 @@ gulp.task('styles', function() {
 gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
     gulp.watch("src/*.html").on("change", gulp.parallel('html'));
-    gulp.watch("src/js/**/*.js").on("change", gulp.parallel('scripts'));
+    // gulp.watch("src/js/**/*.js").on("change", gulp.parallel('scripts'));
     gulp.watch("src/**/*.json").on("change", gulp.parallel('json'));
     gulp.watch("src/fonts/**/*").on("all", gulp.parallel('fonts'));
     gulp.watch("src/icons/**/*").on("all", gulp.parallel('icons'));
@@ -45,11 +51,11 @@ gulp.task('html', function () {
         .pipe(gulp.dest("dist/"));
 });
 
-gulp.task('scripts', function () {
-    return gulp.src("src/js/**/*.js")
-        .pipe(gulp.dest("dist/js"))
-        .pipe(browserSync.stream());
-});
+// gulp.task('scripts', function () {
+//     return gulp.src("src/js/**/*.js")
+//         .pipe(gulp.dest("dist/js"))
+//         .pipe(browserSync.stream());
+// });
 
 gulp.task('json', function () {
     return gulp.src("src/**/*.json")
@@ -95,11 +101,12 @@ gulp.task('default', gulp.parallel(
     'watch',
     'server',
     'styles',
-    'scripts',
+    // 'scripts',
     'json',
     'icons',
     'mailer',
     'html',
     'images',
     'fonts',
+    'webpack'
 ));

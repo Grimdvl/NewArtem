@@ -1,10 +1,10 @@
-function hamburger(hamburgerSelector, menuSelector, menuCloseSelector, activeClass) {
+function hamburger(menuSelector, hamburgerSelector, activeClass) {
     
-    const hamburger = document.querySelector(hamburgerSelector),
-          menu = document.querySelector(menuSelector);
+    const menu = document.querySelector(menuSelector),
+          hamburger = document.querySelector(hamburgerSelector);
 
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle(activeClass);
+        menu.classList.toggle(activeClass);
     });
 }
 
