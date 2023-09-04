@@ -35,6 +35,7 @@
     position: fixed;
     inset: 40px 0 40px 20px;
     background: #fff;
+    // background: transparent;
     width: 75px;
     display: flex;
     justify-content: center;
@@ -54,12 +55,94 @@
         position: relative;
         width: 100%;
         height: 76px;
-        border-radius: 12px;
+        border-radius: 40px;
         border: 8px solid transparent;
         transition: 0.5s;
         a {
-            color: $main_color;
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            text-align: center;
             text-decoration: none;
+            z-index: 3;
+            .icon {
+                position: relative;
+                display: block;
+                min-width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: #fff;
+                font-size: 1.75em;
+                line-height: 60px;
+                border: 6px solid transparent;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 12px;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: var(--clr);
+                    filter: blur(8px);
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 10px;
+                    left: -59px;
+                    width: 25px;
+                    height: 25px;
+                    background: var(--clr);
+                    border-width: 6px;
+                    border-style: solid;
+                    border-color: $bg;
+                    // border-color: transparent;
+                    border-radius: 50%;
+                }
+            }
+            .text {
+                position: relative;
+                padding: 0 15px;
+                color: #333;
+                display: flex;
+                align-items: center;
+                height: 60px;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.5s;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: -26px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-bottom-right-radius: 20px;
+            box-shadow: 6px 5px 0 5px $bg;
+            transform: scale(0);
+            transform-origin: bottom right;
+            transition: 0.5s;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -26px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            box-shadow: 6px -3px 0 3px $bg;
+            transform: scale(0);
+            transform-origin: bottom right;
+            transition: 0.5s;
         }
     }
 }
@@ -68,14 +151,39 @@
     &:before {
         transform: translate(0) rotate(45deg);
     }
-}
-.menu.active .hamburger{
     &:after {
         transform: translate(0) rotate(-45deg);
         box-shadow: 0 0 0 #333;
     }
 }
+.menu.active .text{
+    opacity: 1;
+    visibility: visible;
+}
 .menu__link.active {
     transform: translateX(30px);
-    background-color: #333;
+    background: $bg;
+    &:before {
+        right: 22px;
+        transform: scale(1);
+    }
+    &:after {
+        right: 22px;
+        transform: scale(1);
+    }
+    a {
+        .icon {
+            color: #fff;
+            background: var(--clr);
+            &:before {
+                opacity: 0.5;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+        .text {
+            color: var(--clr);
+        }
+    }
 }

@@ -1,21 +1,15 @@
 function navigation(linkSelector, activeClass) {
     const links = document.querySelectorAll(linkSelector);
 
-    function navigationShow() {
-        links.forEach((item) => {
-            item.classList.remove(activeClass);
-        });
-    }
-
-    function navigationHide() {
-        links.forEach((item) => {
-            item.addEventListener('click', function() {
-                item.classList.add(activeClass);
+    links.forEach((link) => {
+        link.addEventListener('click', function() {
+            links.forEach((items) => {
+                items.classList.remove(activeClass);
             });
+
+            link.classList.add(activeClass);
         });
-    }
-
-
+    });
 }
 
-export default navigationMenu;
+export default navigation;
