@@ -6,8 +6,8 @@ import navigation from './modules/navigation';
 window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
 
-    hamburger('.menu', '.hamburger', 'active');
-    navigation('.menu__link', 'active');
+    hamburger('.navigation', '.hamburger', 'active');
+    navigation('.navigation__link', 'active');
     btnPromo('.promo__link', '.promo__about', 'btn');
     skills('.skills__ratings-counter', '.skills__ratings-line span');
 
