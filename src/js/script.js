@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
 
     hamburger('.navigation', '.hamburger', 'active');
-    navigation('.navigation__link', 'active');
+    navigation('.navigation__link', 'active', 'section', '.indicator');
     btnPromo('.promo__link', '.promo__about', 'btn');
     skills('.skills__ratings-counter', '.skills__ratings-line span');
 

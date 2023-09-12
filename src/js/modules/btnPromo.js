@@ -1,17 +1,16 @@
-function btnPromo(linkSelector, aboutSelector, buttonSelector) {
+function btnPromo(linkSelector, aboutSelector, activeClass) {
     
     const btnLink = document.querySelector(linkSelector),
           btnAbout = document.querySelector(aboutSelector);
 
-    btnAbout.addEventListener('click', () => {
-        btnAbout.classList.add(buttonSelector);
-        btnLink.classList.remove(buttonSelector);
-    });
+    function btnActive() {
+        btnAbout.classList.toggle(activeClass);
+        btnLink.classList.toggle(activeClass);
+    }
+        
+    btnAbout.addEventListener('click', btnActive);
 
-    btnLink.addEventListener('click', () => {
-        btnLink.classList.add(buttonSelector);
-        btnAbout.classList.remove(buttonSelector);
-    });
+    btnLink.addEventListener('click', btnActive);
 }
 
 export default btnPromo;

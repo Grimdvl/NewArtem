@@ -154,24 +154,24 @@
     &:before {
         content: '';
         position: absolute;
-        top:-25px;
-        left: -6px;
-        width: 30px;
-        height: 30px;
+        top:-23px;
+        left: -2px;
+        width: 26px;
+        height: 26px;
         background: transparent;
         border-radius: 50%;
-        box-shadow: 15px 18px black;
+        box-shadow: 18px 10px black;
     }
     &:after {
         content: '';
         position: absolute;
-        top: 45px;
+        top: 47px;
         right: 26px;
-        width: 30px;
-        height: 30px;
+        width: 26px;
+        height: 26px;
         background: transparent;
         border-radius: 50%;
-        box-shadow: 15px -18px black;
+        box-shadow: 18px -10px black;
     }
 }
 
