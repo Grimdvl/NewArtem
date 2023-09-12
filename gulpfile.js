@@ -92,8 +92,8 @@ gulp.task('images', function () {
 gulp.task('deploy', function() {
     return gulp.src('./dist/**/*')
         .pipe(ghPages({
-            branch: 'artem',
-            remoteUrl: 'https://github.com/Grimdvl/Artem.git'
+            branch: 'newartem',
+            remoteUrl: 'https://github.com/Grimdvl/newartem.git'
         }));
 });
 
