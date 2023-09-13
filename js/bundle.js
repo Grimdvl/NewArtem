@@ -20,6 +20,16 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction btnPromo(linkSelecto
 
 /***/ }),
 
+/***/ "./src/js/modules/cards.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/cards.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/services */ \"./src/js/services/services.js\");\n\nfunction cards() {\n  class SkillsCards {\n    constructor(src, alt, title, descr, parentSelector) {\n      this.src = src;\n      this.alt = alt;\n      this.title = title;\n      this.descr = descr;\n      for (var _len = arguments.length, classes = new Array(_len > 5 ? _len - 5 : 0), _key = 5; _key < _len; _key++) {\n        classes[_key - 5] = arguments[_key];\n      }\n      this.classes = classes;\n      this.parent = document.querySelector(parentSelector);\n    }\n    render() {\n      const element = document.createElement('div');\n      if (this.classes.length === 0) {\n        this.classes = \"skills__item\";\n        element.classList.add(this.classes);\n      } else {\n        this.classes.forEach(className => element.classList.add(className));\n      }\n      element.innerHTML = `\n                <div class=\"skills__item-icon\">\n                    <img src=${this.src} alt=${this.alt}>\n                </div>\n                <h3 class=\"title title_fz14\">${this.title}</h3>\n                <p>${this.descr}</p>\n            `;\n      // <img src=${this.src} alt=${this.alt}>\n      // <h3 class=\"menu__item-subtitle\">${this.title}</h3>\n      // <div class=\"menu__item-descr\">${this.descr}</div>\n      // <div class=\"menu__item-divider\"></div>\n      // <div class=\"menu__item-price\">\n      //     <div class=\"menu__item-cost\">Цена:</div>\n      //     <div class=\"menu__item-total\"><span>${this.price}</span> грн/день</div>\n      // </div>\n      // \"icons/skills/html5.svg\"\n      // html5\n      // HTML5\n      // Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта\n      this.parent.append(element);\n    }\n  }\n  (0,_services_services__WEBPACK_IMPORTED_MODULE_0__.getResources)('http://localhost:3000/skills').then(data => {\n    data.forEach(_ref => {\n      let {\n        img,\n        altimg,\n        title,\n        descr\n      } = _ref;\n      new SkillsCards(img, altimg, title, descr, '.skills .skills__wrapper').render();\n    });\n  });\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (cards);\n\n//# sourceURL=webpack://my-webpack-project/./src/js/modules/cards.js?");
+
+/***/ }),
+
 /***/ "./src/js/modules/hamburger.js":
 /*!*************************************!*\
   !*** ./src/js/modules/hamburger.js ***!
@@ -56,7 +66,17 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction skills(counterSelect
   \**************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/hamburger */ \"./src/js/modules/hamburger.js\");\n/* harmony import */ var _modules_btnPromo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/btnPromo */ \"./src/js/modules/btnPromo.js\");\n/* harmony import */ var _modules_skills__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/skills */ \"./src/js/modules/skills.js\");\n/* harmony import */ var _modules_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/navigation */ \"./src/js/modules/navigation.js\");\n\n\n\n\nwindow.addEventListener('DOMContentLoaded', () => {\n  // const hamburger = require('./modules/hamburger'),\n\n  (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('.navigation', '.hamburger', 'active');\n  (0,_modules_navigation__WEBPACK_IMPORTED_MODULE_3__[\"default\"])('.navigation__link', 'active', 'section', '.indicator');\n  (0,_modules_btnPromo__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('.promo__link', '.promo__about', 'btn');\n  (0,_modules_skills__WEBPACK_IMPORTED_MODULE_2__[\"default\"])('.skills__ratings-counter', '.skills__ratings-line span');\n\n  // async function translation() {\n  //     const translateElements = document.querySelectorAll('.translate');\n\n  //     translateElements.forEach(item => {\n  //         item.addEventListener('click', async function() {\n  //             const lang = this.getAttribute('id');\n  //             const languageElements = document.querySelectorAll('.language');\n\n  //             try {\n  //                 const response = await fetch('./db.json');\n  //                 const languageData = await response.json();\n\n  //                 languageElements.forEach(function(langElement) {\n  //                     const key = langElement.getAttribute('key');\n  //                     langElement.textContent = languageData[lang][key];\n  //                 });\n  //             } catch (error) {\n  //                 console.error('Error fetching data from db.json:', error);\n  //             }\n  //         });\n  //     });\n  // }\n  // translation();\n\n  // $('form').submit(function(e) {\n  //     e.preventDefault();\n  //     $.ajax({\n  //         type: \"POST\",\n  //         url: \"mailer/smart.php\",\n  //         data: $(this).serialize()\n  //     }).done(function() {\n  //         $(this).find(\"input\").val(\"\");\n  //         $('#consultation, #order').fadeOut();\n  //         // $('.overlay, #thanks').fadeIn('slow');\n\n  //         $('form').trigger('reset');\n  //     });\n  //     return false;\n  // });\n});\n\n//# sourceURL=webpack://my-webpack-project/./src/js/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/hamburger */ \"./src/js/modules/hamburger.js\");\n/* harmony import */ var _modules_btnPromo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/btnPromo */ \"./src/js/modules/btnPromo.js\");\n/* harmony import */ var _modules_skills__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/skills */ \"./src/js/modules/skills.js\");\n/* harmony import */ var _modules_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/navigation */ \"./src/js/modules/navigation.js\");\n/* harmony import */ var _modules_cards__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/cards */ \"./src/js/modules/cards.js\");\n\n\n\n\n\nwindow.addEventListener('DOMContentLoaded', () => {\n  // const hamburger = require('./modules/hamburger'),\n\n  (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('.navigation', '.hamburger', 'active');\n  (0,_modules_navigation__WEBPACK_IMPORTED_MODULE_3__[\"default\"])('.navigation__link', 'active', 'section', '.indicator');\n  (0,_modules_btnPromo__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('.promo__link', '.promo__about', 'btn');\n  (0,_modules_skills__WEBPACK_IMPORTED_MODULE_2__[\"default\"])('.skills__ratings-counter', '.skills__ratings-line span');\n  (0,_modules_cards__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n});\n\n//# sourceURL=webpack://my-webpack-project/./src/js/script.js?");
+
+/***/ }),
+
+/***/ "./src/js/services/services.js":
+/*!*************************************!*\
+  !*** ./src/js/services/services.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getResources: function() { return /* binding */ getResources; }\n/* harmony export */ });\n// const postData = async (url, data) => {\n//     const res = await fetch(url, {\n//         method: 'POST',\n//         headers: {\n//             'Content-type': 'application/json'\n//         },\n//         body: data\n//     });\n\n//     return await res.json();\n// };\n\nasync function getResources(url) {\n  let res = await fetch(url);\n  if (!res.ok) {\n    throw new Error(`Could not fetch ${url}, status: ${res.status}`);\n  }\n  return await res.json();\n}\n\n// export {postData};\n\n\n//# sourceURL=webpack://my-webpack-project/./src/js/services/services.js?");
 
 /***/ })
 
@@ -87,6 +107,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
