@@ -2,7 +2,7 @@ import {getResources} from "../services/services";
 
 function cards() {
 
-    class MenuCard {
+    class SkillsCards {
         constructor(src, alt, title, descr, parentSelector, ...classes) {
             this.src = src;
             this.alt = alt;
@@ -44,10 +44,10 @@ function cards() {
         }
     }
 
-    getResources('http://localhost:3000/menu')
+    getResources('http://localhost:3000/skills')
         .then(data => {
             data.forEach(({img, altimg, title, descr}) => {
-                new MenuCard(img, altimg, title, descr, '.skills .container').render();
+                new SkillsCards(img, altimg, title, descr, '.skills .container').render();
             });
         });
 }
