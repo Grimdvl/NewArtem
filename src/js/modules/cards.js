@@ -47,7 +47,7 @@ function cards() {
     getResources('http://localhost:3000/skills')
         .then(data => {
             data.forEach(({img, altimg, title, descr}) => {
-                new SkillsCards(img, altimg, title, descr, '.skills .container').render();
+                new SkillsCards(img, altimg, title, descr, '.skills .skills__wrapper').render();
             });
         });
 }
