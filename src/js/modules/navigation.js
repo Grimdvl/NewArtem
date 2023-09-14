@@ -20,13 +20,15 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                 const linkParent = link.parentNode;
 
                 removeActiveClass();
-                indicator.style = 'opacity: 1';
+                indicator.classList.remove('hide');
+                indicator.classList.add('show');
                 linkParent.classList.add(activeClass);
             } else if (top <= 400 && link) {
                 const linkParent = link.parentNode;
 
                 linkParent.classList.remove(activeClass);
-                indicator.style = 'opacity: 0';
+                indicator.classList.remove('show');
+                indicator.classList.add('hide');
             }
         });
     }

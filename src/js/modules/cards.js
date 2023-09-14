@@ -28,18 +28,6 @@ function cards() {
                 <h3 class="title title_fz14">${this.title}</h3>
                 <p>${this.descr}</p>
             `;
-            // <img src=${this.src} alt=${this.alt}>
-            // <h3 class="menu__item-subtitle">${this.title}</h3>
-            // <div class="menu__item-descr">${this.descr}</div>
-            // <div class="menu__item-divider"></div>
-            // <div class="menu__item-price">
-            //     <div class="menu__item-cost">Цена:</div>
-            //     <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
-            // </div>
-            // "icons/skills/html5.svg"
-            // html5
-            // HTML5
-            // Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта
             this.parent.append(element);
         }
     }
