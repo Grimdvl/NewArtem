@@ -1,3 +1,6 @@
+require('es6-promise').polyfill();
+import 'nodelist-foreach-polyfill';
+
 import hamburger from './modules/hamburger';
 import btnPromo from './modules/btnPromo';
 import skills from './modules/skills';
