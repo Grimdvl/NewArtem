@@ -6,7 +6,7 @@ import btnPromo from './modules/btnPromo';
 import skills from './modules/skills';
 import navigation from './modules/navigation';
 import cards from './modules/cards';
-// import modal from './modules/modal';
+import modal from './modules/modal';
 
 window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
@@ -16,5 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
     btnPromo('.promo__link', '.promo__about', 'btn');
     skills('.skills__ratings-counter', '.skills__ratings-line span');
     cards();
-    // modal();
+    modal();
 });
