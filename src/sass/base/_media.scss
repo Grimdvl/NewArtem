@@ -117,7 +117,7 @@
         &__form {
             margin-top: 30px;
             display: grid;
-            grid-template: 45px 150px 45px / repeat(2, auto);
+            grid-template: 45px  45px 150px 45px / repeat(2, auto);
             justify-content: space-between;
             row-gap: 25px;
             column-gap: 25px;
@@ -325,16 +325,12 @@
             column-gap: 10px;
             justify-content: center;
         }
-        &__triggers {
-            grid-template-columns: repeat(1,auto);
-            grid-column: unset;
-        }
         &__policy {
             line-height: 12px;
             margin: 20px 0;
         }
         &__textarea {
-            grid-column: unset;
+            grid-column: 1/3;
         }
     }
 }
