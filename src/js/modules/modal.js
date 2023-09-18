@@ -1,8 +1,8 @@
-// import {postData} from '../services/services';
+import {postData} from '../services/services';
 
-function modal() {
-    const modal = document.querySelector('.modal'),
-          forms = document.querySelectorAll('form');
+function modal(modalCloseSelector, modalSelector, formSelector) {
+    const modal = document.querySelector(modalSelector),
+          forms = document.querySelectorAll(formSelector);
 
     const thanksModal = document.createElement('div'),
           content = document.createElement('div'),
@@ -23,15 +23,37 @@ function modal() {
             <div class="modal__title">${message}</div>
         `;
         content.append(statusMessage);
+        document.body.style.overflow = 'hidden';
         modal.classList.add('show');
         modal.append(thanksModal);
         setTimeout(() => {
-            modal.classList.remove('show');
-            thanksModal.remove();
+            modalClose();
         }, 2000);
     }
 
-    function postData(form) {
+    function modalClose() {
+        modal.classList.remove('show');
+        thanksModal.remove();
+        document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.getAttribute(modalCloseSelector) == '' || e.target.closest('.modal__close')) {
+            modalClose();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Escape' && modal.classList.contains('show')) {
+            modalClose();
+        }
+    });
+
+    forms.forEach(item => {
+        bindPostData(item);
+    });
+
+    function bindPostData(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -46,42 +68,27 @@ function modal() {
 
             showThanksModal(message.loading);
 
-            const request = new XMLHttpRequest();
-            request.open('POST', 'server.php');
-
-            request.setRequestHeader('Content-type', 'application/json');
             const formData = new FormData(form);
 
-            const object = {};
-            formData.forEach(function(value, key) {
-                object[key] = value;
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+            postData('http://localhost:3000/requests', json)
+            .then(data => {
+                showThanksModal(message.success);
+                console.log(`Ответ от сервера: ${JSON.stringify(data)}`);
+                statusMessage.remove();
+            })
+            .catch(() => {
+                showThanksModal(message.failure);
+                console.error(`Ошибка при отправке запроса: ${json}`);
+                statusMessage.remove();
+            })
+            .finally(() => {
+                form.reset();
             });
 
-            const json = JSON.stringify(object);
-
-            request.send(json);
-
-            request.addEventListener('load', () => {
-                if (request.status === 200) {
-                    console.log(request.response);
-                    forms.forEach(function(input) {
-                        input.value = '';
-                    });
-                    showThanksModal(message.success);
-                    form.reset();
-                    statusMessage.remove();
-                } else {
-                    showThanksModal(message.failure);
-                    form.reset();
-                    statusMessage.remove();
-                }
-            });
         });
     }
-
-    forms.forEach(item => {
-        postData(item);
-    });
 }
 
 export default modal;

@@ -16,5 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
     btnPromo('.promo__link', '.promo__about', 'btn');
     skills('.skills__ratings-counter', '.skills__ratings-line span');
     cards();
-    modal();
+    modal('[data-modal]', '.modal', 'form');
 });

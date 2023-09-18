@@ -1,14 +1,14 @@
-// const postData = async (url, data) => {
-//     const res = await fetch(url, {
-//         method: 'POST',
-//         headers: {
-//             'Content-type': 'application/json'
-//         },
-//         body: data
-//     });
+const postData = async (url, data) => {
+    const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: data
+    });
 
-//     return await res.json();
-// };
+    return await res.json();
+};
 
 async function getResources (url) {
     let res = await fetch(url);
@@ -20,5 +20,5 @@ async function getResources (url) {
     return await res.json();
 }
 
-// export {postData};
+export {postData};
 export {getResources};
