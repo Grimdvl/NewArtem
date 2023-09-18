@@ -33,7 +33,12 @@
   ],
   "requests": [
     {
-      
+      "name": "Иван",
+      "phone": "123456789",
+      "email": "ivan@example.com",
+      "text": "Привет!",
+      "checkbox": "on",
+      "id": 1
     }
   ]
 }
