@@ -28,7 +28,7 @@ function modal(modalCloseSelector, modalSelector, formSelector) {
         modal.append(thanksModal);
         setTimeout(() => {
             modalClose();
-        }, 2000);
+        }, 20000);
     }
 
     function modalClose() {
