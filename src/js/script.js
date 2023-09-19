@@ -11,7 +11,7 @@ import modal from './modules/modal';
 window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
 
-    hamburger('.navigation', '.hamburger', 'active');
+    hamburger('.navigation', '.hamburger', 'active', '.navigation__overlay');
     navigation('.navigation__link', 'active', 'section', '.indicator');
     btnPromo('.promo__link', '.promo__about', 'btn');
     skills('.skills__ratings-counter', '.skills__ratings-line span');
