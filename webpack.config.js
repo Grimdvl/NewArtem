@@ -3,6 +3,7 @@
 const path = require('path');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const isProduction = process.env.NODE_ENV == 'production';
+const TerserPlugin = require('terser-webpack-plugin');
 
 const config = {
     entry: './src/js/script.js',
@@ -43,6 +44,10 @@ const config = {
                 type: 'asset',
             },
         ],
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()]
     },
 };
 
