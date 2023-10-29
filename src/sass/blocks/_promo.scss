@@ -1,18 +1,8 @@
 .promo {
     position: relative;
     background: url('../img/background.jpg') no-repeat 100%/cover;
-    background-color: rgba(0, 0, 0, 0.8);
     min-height: 100vh;
     background-attachment: fixed;
-    &:after {
-        position: absolute;
-        content: '';
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.3);
-    }
     &__title {
         width: 535px;
         margin-top: 10px;
@@ -44,7 +34,6 @@
     }
     .container {
         background: url('../img/main.png') no-repeat 100%/cover;
-        opacity: 0.75;
         height: 100vh;
     }
 }
