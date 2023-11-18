@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     hamburger('.navigation', '.hamburger', 'active', '.navigation__overlay');
     navigation('.navigation__link', 'active', 'section', '.indicator');
-    promo('.promo__link', '.promo__about', 'btn');
+    promo('.button--link', '.button--about', 'btn');
     skills('.skills__ratings-counter', '.skills__ratings-line span');
     cards();
     modal('[data-modal]', '.modal', 'form');

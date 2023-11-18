@@ -3,6 +3,7 @@
 
 @import 'base/variables';
 @import 'base/mixins';
+@import 'base/animations';
 
 @import 'policy/policy';
 
@@ -14,13 +15,18 @@
     scroll-behavior: smooth;
 }
 
-:root {
-    --index: calc(1vw + 1vh);
+a:hover {
+    text-decoration: none;
 }
 
-.container {
-    width: 1140px;
-    margin: 0 auto;
+html {
+    font-size: 62.5%;
+    // overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
 }
 
 .divider {
@@ -38,13 +44,13 @@
 @import 'blocks/navigation';
 @import 'blocks/promo';
 @import 'blocks/title';
-@import 'blocks/buttons';
 @import 'blocks/about';
 @import 'blocks/resume';
 @import 'blocks/skills';
 @import 'blocks/portfolio';
 @import 'blocks/contacts';
 @import 'base/media';
+@import 'base/dark';
 
 .hide {
     opacity: 0;

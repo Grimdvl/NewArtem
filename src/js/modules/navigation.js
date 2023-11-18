@@ -13,7 +13,7 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
         sections.forEach(section => {
             const link = document.querySelector(`a[href="#${section.id}"]`),
                   top = window.scrollY,
-                  offset = section.offsetTop - 300,
+                  offset = section.offsetTop,
                   height = section.offsetHeight;
 
             if (top >= offset && top < offset + height && link) {
