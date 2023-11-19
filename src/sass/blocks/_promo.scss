@@ -3,18 +3,45 @@
     justify-content: space-around;
     align-items: center;
     padding: 0 9%;
-    &-img {
-        img {
-            width: 35vw;
-            animation: floatPhoto 4s ease-in-out infinite;
+    &__photo {
+        position: relative;
+        &-img {
+            img {
+                width: 30vw;
+                background: white;
+                border-radius: 50%;
+                border: .3rem solid $main-color;
+            }
         }
-    }
+        &-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            width: 110%;
+            height: 110%;
+            border-radius: 50%;
+            border-top: .3em solid transparent;
+            border-bottom: .3rem solid transparent;
+            border-left: .3rem solid $main-color;
+            border-right: .3rem solid $main-color;
+            animation: promoSpinner 8s linear infinite;
+        }
+    }    
     &__content {
         max-width: 60rem;
         &-title {
+            position: relative;
             font-size: 5.6rem;
             font-weight: 700;
             line-height: 1.3;
+            @include before_circle;
+            &::before {
+                top: -10px;
+                left: -20px;
+                width: 1.5em;
+                height: 1.5em;
+            }
         }
         &-subtitle {
             width: 32.8rem;
@@ -43,7 +70,6 @@
                     animation-delay: 2s;
                 }
             }
-            // @include before_circle;
         }
         &-description {
             font-size: 1.6rem;
