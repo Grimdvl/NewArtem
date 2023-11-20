@@ -1,7 +1,28 @@
 .about {
     padding-top: 120px;
     position: relative;
+    video {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: -3;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -2;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
     &__wrapper {
+        padding: 10rem 9% 2rem;
         display: grid;
         grid-template-columns: 400px 670px;
         grid-template-rows: minmax(245px, auto) minmax(255px, auto);

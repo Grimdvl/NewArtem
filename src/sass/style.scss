@@ -27,6 +27,12 @@ html {
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    &.about {
+        padding: 0;
+    }
 }
 
 .divider {
