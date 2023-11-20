@@ -31,10 +31,6 @@
     }
     .skills {
         padding-top: 80px;
-        &__wrapper {
-            grid-template-columns: repeat(auto-fit, 270px);
-            justify-content: space-around;
-        }
         &__ratings {
             grid-template-columns: repeat(auto-fit, 350px);
             grid-auto-rows: minmax(70px, auto);
