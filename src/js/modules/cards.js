@@ -31,8 +31,8 @@ function cards() {
         const backButtons = document.querySelectorAll(buttonsBack);
     
         frontButtons.forEach(btnfr => {
-            btnfr.addEventListener('click', () => {
-                const frontCard = btnfr.closest(cardsFront);
+            btnfr.addEventListener('click', function() {
+                const frontCard = this.closest(cardsFront);
                 const backCard = frontCard.nextElementSibling;
     
                 if (frontCard && backCard) {
@@ -44,8 +44,8 @@ function cards() {
         });
     
         backButtons.forEach(btnbk => {
-            btnbk.addEventListener('click', () => {
-                const backCard = btnbk.closest(cardsBack);
+            btnbk.addEventListener('click', function() {
+                const backCard = this.closest(cardsBack);
                 const frontCard = backCard.previousElementSibling;
     
                 if (backCard && frontCard) {
@@ -56,7 +56,6 @@ function cards() {
             });
         });
     }
-    
 
     class SkillsCards {
         constructor(src, alt, title, descr, button, parentSelector, ...classes) {
