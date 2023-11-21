@@ -25,7 +25,17 @@ function cards() {
             }
         });
     }
-    
+
+    function flippingCard(cards) {
+        const card = document.querySelectorAll('.skills__card-front-button');
+
+        card.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.add('active');
+                console.log('active');
+            });
+        });
+    }
 
     class SkillsCards {
         constructor(src, alt, title, descr, parentSelector, ...classes) {
@@ -59,6 +69,7 @@ function cards() {
             `;
             this.parent.append(element);
 
+            flippingCard(this.classes);
             initializeVanillaTilt(`.${this.classes}`);
             initializeBlureEffect(`.${this.classes}`);
         }
