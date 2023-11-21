@@ -5,9 +5,27 @@ function cards() {
     function initializeVanillaTilt(cards) {
         VanillaTilt.init(document.querySelectorAll(cards), {
             max: 10,
-            speed: 400
+            speed: 400,
+            // glare: true,
+            // "max-glare": 1
         });
     }
+
+    function initializeBlureEffect(cards) {
+        const card = document.querySelectorAll(cards);
+    
+        card.forEach(item => {
+            item.onmousemove = function(e) {
+                const rect = item.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+    
+                item.style.setProperty('--x', x + 'px');
+                item.style.setProperty('--y', y + 'px');
+            }
+        });
+    }
+    
 
     class SkillsCards {
         constructor(src, alt, title, descr, parentSelector, ...classes) {
@@ -23,21 +41,26 @@ function cards() {
             const element = document.createElement('div');
     
             if (this.classes.length === 0) {
-                this.classes = "skills__item";
+                this.classes = "skills__card";
                 element.classList.add(this.classes);
             } else {
                 this.classes.forEach(className => element.classList.add(className));
             }
             element.innerHTML = `
-                <div class="skills__item-icon">
-                    <img src=${this.src} alt=${this.alt}>
+                <div class="skills__card-front">
+                    <div class="skills__card-front-icon">
+                        <img src=${this.src} alt=${this.alt}>
+                    </div>
                 </div>
-                <h3 class="skills__item-title">${this.title}</h3>
-                <p class="skills__item-description">${this.descr}</p>
+                <div class="skills__card-back">
+                    <h3 class="skills__card-back-title">${this.title}</h3>
+                    <p class="skills__card-back-description">${this.descr}</p>
+                </div>
             `;
             this.parent.append(element);
 
             initializeVanillaTilt(`.${this.classes}`);
+            initializeBlureEffect(`.${this.classes}`);
         }
     }
     getResources('http://localhost:3000/skills')
