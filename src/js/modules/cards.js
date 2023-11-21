@@ -26,23 +26,45 @@ function cards() {
         });
     }
 
-    function flippingCard(cards) {
-        const card = document.querySelectorAll('.skills__card-front-button');
-
-        card.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.add('active');
-                console.log('active');
+    function flippingCard(buttonsFront, buttonsBack, cardsFront, cardsBack) {
+        const frontButtons = document.querySelectorAll(buttonsFront);
+        const backButtons = document.querySelectorAll(buttonsBack);
+    
+        frontButtons.forEach(btnfr => {
+            btnfr.addEventListener('click', () => {
+                const frontCard = btnfr.closest(cardsFront);
+                const backCard = frontCard.nextElementSibling;
+    
+                if (frontCard && backCard) {
+                    frontCard.classList.toggle('active');
+                    backCard.classList.toggle('active');
+                    console.log('active');
+                }
+            });
+        });
+    
+        backButtons.forEach(btnbk => {
+            btnbk.addEventListener('click', () => {
+                const backCard = btnbk.closest(cardsBack);
+                const frontCard = backCard.previousElementSibling;
+    
+                if (backCard && frontCard) {
+                    backCard.classList.toggle('active');
+                    frontCard.classList.toggle('active');
+                    console.log('active');
+                }
             });
         });
     }
+    
 
     class SkillsCards {
-        constructor(src, alt, title, descr, parentSelector, ...classes) {
+        constructor(src, alt, title, descr, button, parentSelector, ...classes) {
             this.src = src;
             this.alt = alt;
             this.title = title;
             this.descr = descr;
+            this.button = button;
             this.classes = classes;
             this.parent = document.querySelector(parentSelector);
         }
@@ -61,23 +83,25 @@ function cards() {
                     <div class="skills__card-front-icon">
                         <img src=${this.src} alt=${this.alt}>
                     </div>
+                    <button type="button" class="skills__card-front-button">${this.button}</button>
                 </div>
                 <div class="skills__card-back">
                     <h3 class="skills__card-back-title">${this.title}</h3>
                     <p class="skills__card-back-description">${this.descr}</p>
+                    <button type="button" class="skills__card-back-button">Back</button>
                 </div>
             `;
             this.parent.append(element);
 
-            flippingCard(this.classes);
+            flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
             initializeVanillaTilt(`.${this.classes}`);
             initializeBlureEffect(`.${this.classes}`);
         }
     }
     getResources('http://localhost:3000/skills')
     .then(data => {
-        data.forEach(({img, altimg, title, descr}) => {
-            new SkillsCards(img, altimg, title, descr, '.skills .skills__wrapper').render();
+        data.forEach(({img, altimg, title, descr, button}) => {
+            new SkillsCards(img, altimg, title, descr, button, '.skills .skills__wrapper').render();
         });
     })
     .catch(error => {
@@ -88,6 +112,7 @@ function cards() {
             "html5",
             "HTML5",
             "Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта.",
+            'More',
             ".skills .skills__wrapper"
         ).render();
 
@@ -96,6 +121,7 @@ function cards() {
             "css3",
             "CSS3",
             "Этот язык стилей позволяет мне создавать абсолютно любой внешний вид вашего сайта или приложения. Все ограничивается только вашей фантазией!",
+            'More',
             ".skills .skills__wrapper"
         ).render();
 
@@ -104,6 +130,7 @@ function cards() {
             "javascript",
             "Java Script",
             "Этот язык программирования позволяет оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое.",
+            'More',
             ".skills .skills__wrapper"
         ).render();
 
@@ -112,6 +139,7 @@ function cards() {
             "react",
             "React",
             "Эта библиотека позволяет создавать web-приложения. Мы можем создать максимально интерактивный продукт именно под ваши цели.",
+            'More',
             ".skills .skills__wrapper"
         ).render();
 
@@ -120,6 +148,7 @@ function cards() {
             "wordpress",
             "WordPress",
             "Это мощная платформа для создания интерактивных веб-приложений любого размера.",
+            'More',
             ".skills .skills__wrapper"
         ).render();
     });

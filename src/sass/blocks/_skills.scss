@@ -37,6 +37,15 @@
         position: relative;
         transform-style: preserve-3d;
         transform: perspective(1000px) rotateY(0deg);
+        .active {
+            &.skills__card-front {
+                transform: perspective(1000px) rotateY(180deg);
+            }
+        
+            &.skills__card-back {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
         &-front, &-back {
             display: flex;
             justify-content: space-between;
