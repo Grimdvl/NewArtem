@@ -14,7 +14,7 @@
     &__wrapper {
         width: 100%;
         display: grid;
-        grid-template: repeat(2, minmax(300px, auto)) / repeat(auto-fit, 250px);
+        grid-template: repeat(5, minmax(300px, auto)) / repeat(auto-fit, 250px);
         justify-content: space-around;
         gap: 30px;
         margin-top: 60px;
