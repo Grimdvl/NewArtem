@@ -38,7 +38,6 @@ function cards() {
                 if (frontCard && backCard) {
                     frontCard.classList.toggle('active');
                     backCard.classList.toggle('active');
-                    console.log('active');
                 }
             });
         });
@@ -51,19 +50,17 @@ function cards() {
                 if (backCard && frontCard) {
                     backCard.classList.toggle('active');
                     frontCard.classList.toggle('active');
-                    console.log('active');
                 }
             });
         });
     }
 
     class SkillsCards {
-        constructor(src, alt, title, descr, button, parentSelector, ...classes) {
+        constructor(src, alt, title, descr, parentSelector, ...classes) {
             this.src = src;
             this.alt = alt;
             this.title = title;
             this.descr = descr;
-            this.button = button;
             this.classes = classes;
             this.parent = document.querySelector(parentSelector);
         }
@@ -82,7 +79,7 @@ function cards() {
                     <div class="skills__card-front-icon">
                         <img src=${this.src} alt=${this.alt}>
                     </div>
-                    <button type="button" class="skills__card-front-button">${this.button}</button>
+                    <button type="button" class="skills__card-front-button">Read more</button>
                 </div>
                 <div class="skills__card-back">
                     <h3 class="skills__card-back-title">${this.title}</h3>
@@ -92,15 +89,14 @@ function cards() {
             `;
             this.parent.append(element);
 
-            flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
             initializeVanillaTilt(`.${this.classes}`);
             initializeBlureEffect(`.${this.classes}`);
         }
     }
     getResources('http://localhost:3000/skills')
     .then(data => {
-        data.forEach(({img, altimg, title, descr, button}) => {
-            new SkillsCards(img, altimg, title, descr, button, '.skills .skills__wrapper').render();
+        data.forEach(({img, altimg, title, descr}) => {
+            new SkillsCards(img, altimg, title, descr, '.skills .skills__wrapper').render();
         });
     })
     .catch(error => {
@@ -110,8 +106,7 @@ function cards() {
             "img/icons/skills/html5.svg",
             "html5",
             "HTML5",
-            "Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта.",
-            'More',
+            "Exactly, it creates the framework for your website or application, and the fifth version will allow me to create a more SEO-optimized structure for your product.",
             ".skills .skills__wrapper"
         ).render();
 
@@ -119,8 +114,7 @@ function cards() {
             "img/icons/skills/css3.svg",
             "css3",
             "CSS3",
-            "Этот язык стилей позволяет мне создавать абсолютно любой внешний вид вашего сайта или приложения. Все ограничивается только вашей фантазией!",
-            'More',
+            "This styling language allows me to create any appearance for your website or application. It's only limited by your imagination!",
             ".skills .skills__wrapper"
         ).render();
 
@@ -128,8 +122,7 @@ function cards() {
             "img/icons/skills/js.svg",
             "javascript",
             "Java Script",
-            "Этот язык программирования позволяет оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое.",
-            'More',
+            "This programming language allows me to animate anything: sliders, windows, tooltips, tabs, fetching data from servers, and much more.",
             ".skills .skills__wrapper"
         ).render();
 
@@ -137,8 +130,7 @@ function cards() {
             "img/icons/skills/react.svg",
             "react",
             "React",
-            "Эта библиотека позволяет создавать web-приложения. Мы можем создать максимально интерактивный продукт именно под ваши цели.",
-            'More',
+            "This library enables the creation of web applications. I can create an incredibly interactive product tailored to your goals.",
             ".skills .skills__wrapper"
         ).render();
 
@@ -146,10 +138,11 @@ function cards() {
             "img/icons/skills/wordpress.svg",
             "wordpress",
             "WordPress",
-            "Это мощная платформа для создания интерактивных веб-приложений любого размера.",
-            'More',
+            "It's a powerful platform for building interactive web applications and websites of any size. With its help, you can manage the content of your website yourself.",
             ".skills .skills__wrapper"
         ).render();
+
+        flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
     });
 }
 

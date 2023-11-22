@@ -74,6 +74,7 @@
                 cursor: pointer;
                 width: 100px;
                 height: 30px;
+                font-size: 15px;
             }
             &::before {
                 content: '';
@@ -124,13 +125,14 @@
                 margin-top: 20px;
                 margin-bottom: 0;
                 z-index: 1;
+                font-size: 20px;
             }
             &-description {
                 position: relative;
                 text-align: center;
                 margin-top: 15px;
                 margin-bottom: 0;
-                font-size: 12px;
+                font-size: 13px;
                 line-height: 18px;
                 z-index: 1;
             }
