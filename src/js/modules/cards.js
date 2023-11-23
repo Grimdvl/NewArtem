@@ -51,9 +51,40 @@ function cards() {
                     backCard.classList.toggle('active');
                     frontCard.classList.toggle('active');
                 }
+                loadingSkillsCards();
             });
         });
     }
+
+
+    function loadingSkillsCards() {
+        const rating = document.getElementsByClassName('skills__card-front-icon')[0];
+        const block = document.getElementsByClassName('block');
+
+        for (let i = 1; i < 100; i++) {
+            rating.innerHTML += '<div class="block"></div>';
+            block[i].style.transform = `rotate(${3.6 * i}deg)`;
+            block[i].style.animationDelay = `${i/60}s`
+        }
+        const counter = document.querySelector('.counter');
+
+        counter.innerHTML = 0;
+
+        const target = +counter.getAttribute('data-target');
+
+        const numberCounter = () => {
+            const value = +counter.innerText;
+
+            if (value < target) {
+                counter.innerText = Math.ceil(value + 1);
+                setTimeout(() => {
+                    numberCounter();
+                }, 15);
+            }
+        }
+        numberCounter();
+    }
+    loadingSkillsCards();
 
     class SkillsCards {
         constructor(src, alt, title, descr, parentSelector, ...classes) {
