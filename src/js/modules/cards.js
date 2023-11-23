@@ -98,6 +98,7 @@ function cards() {
         data.forEach(({img, altimg, title, descr}) => {
             new SkillsCards(img, altimg, title, descr, '.skills .skills__wrapper').render();
         });
+        flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
     })
     .catch(error => {
         console.error('Ошибка при получении данных:', error);
