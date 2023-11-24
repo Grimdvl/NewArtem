@@ -51,47 +51,57 @@ function cards() {
                     backCard.classList.toggle('active');
                     frontCard.classList.toggle('active');
                 }
-                loadingSkillsCards();
+                // loadingSkillsCards('.skills__card-front-icon', '.counter');
             });
         });
     }
 
 
-    function loadingSkillsCards() {
-        const rating = document.getElementsByClassName('skills__card-front-icon')[0];
-        const block = document.getElementsByClassName('block');
-
-        for (let i = 1; i < 100; i++) {
-            rating.innerHTML += '<div class="block"></div>';
-            block[i].style.transform = `rotate(${3.6 * i}deg)`;
-            block[i].style.animationDelay = `${i/60}s`
-        }
-        const counter = document.querySelector('.counter');
-
-        counter.innerHTML = 0;
-
-        const target = +counter.getAttribute('data-target');
-
-        const numberCounter = () => {
-            const value = +counter.innerText;
-
+    function loadingSkillsCards(rate, count) {
+        const ratings = document.querySelectorAll(rate);
+        const counters = document.querySelectorAll(count);
+    
+        ratings.forEach((rating, index) => {
+            const counter = counters[index];
+            for (let i = 1; i <= 100; i++) {
+                const block = document.createElement('div');
+                block.classList.add('block');
+                if (i <= +counter.dataset.target) {
+                    block.classList.add('active');
+                }
+                rating.appendChild(block);
+    
+                block.style.transform = `rotate(${3.6 * i}deg)`;
+                block.style.animationDelay = `${i / 60}s`;
+            }
+        });
+    
+        function numberCounter(counter, target) {
+            const value = +counter.innerText.replace(/\D/g, '');
+    
             if (value < target) {
-                counter.innerText = Math.ceil(value + 1);
+                counter.innerHTML = `${Math.ceil(value + 1)}<sup>%</sup>`;
                 setTimeout(() => {
-                    numberCounter();
+                    numberCounter(counter, target);
                 }, 15);
             }
         }
-        numberCounter();
+    
+        counters.forEach((counter) => {
+            counter.innerHTML = `0<sup>%</sup>`;
+            const target = +counter.dataset.target;
+    
+            numberCounter(counter, target);
+        });
     }
-    loadingSkillsCards();
 
     class SkillsCards {
-        constructor(src, alt, title, descr, parentSelector, ...classes) {
+        constructor(src, alt, title, descr, target, parentSelector, ...classes) {
             this.src = src;
             this.alt = alt;
             this.title = title;
             this.descr = descr;
+            this.target = target;
             this.classes = classes;
             this.parent = document.querySelector(parentSelector);
         }
@@ -108,7 +118,10 @@ function cards() {
             element.innerHTML = `
                 <div class="skills__card-front">
                     <div class="skills__card-front-icon">
-                        <img src=${this.src} alt=${this.alt}>
+                        <h3>
+                            <img src=${this.src} alt=${this.alt}>
+                            <div class="counter" data-target=${this.target}></div>
+                        </h3>
                     </div>
                     <button type="button" class="skills__card-front-button">Read more</button>
                 </div>
@@ -128,6 +141,7 @@ function cards() {
     .then(data => {
         data.forEach(({img, altimg, title, descr}) => {
             new SkillsCards(img, altimg, title, descr, '.skills .skills__wrapper').render();
+            loadingSkillsCards('.skills__card-front-icon', '.counter');
         });
         flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
     })
@@ -139,6 +153,7 @@ function cards() {
             "html5",
             "HTML5",
             "Exactly, it creates the framework for your website or application, and the fifth version will allow me to create a more SEO-optimized structure for your product.",
+            "90",
             ".skills .skills__wrapper"
         ).render();
 
@@ -147,6 +162,7 @@ function cards() {
             "css3",
             "CSS3",
             "This styling language allows me to create any appearance for your website or application. It's only limited by your imagination!",
+            "90",
             ".skills .skills__wrapper"
         ).render();
 
@@ -155,6 +171,7 @@ function cards() {
             "javascript",
             "Java Script",
             "This programming language allows me to animate anything: sliders, windows, tooltips, tabs, fetching data from servers, and much more.",
+            "70",
             ".skills .skills__wrapper"
         ).render();
 
@@ -163,6 +180,7 @@ function cards() {
             "react",
             "React",
             "This library enables the creation of web applications. I can create an incredibly interactive product tailored to your goals.",
+            "10",
             ".skills .skills__wrapper"
         ).render();
 
@@ -171,10 +189,12 @@ function cards() {
             "wordpress",
             "WordPress",
             "It's a powerful platform for building interactive web applications and websites of any size. With its help, you can manage the content of your website yourself.",
+            "10",
             ".skills .skills__wrapper"
         ).render();
 
         flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
+        loadingSkillsCards('.skills__card-front-icon', '.counter');
     });
 }
 

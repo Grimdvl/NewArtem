@@ -111,45 +111,43 @@
                 align-items: center;
                 justify-content: center;
                 z-index: 1;
+                font-weight: 500;
+                line-height: 1.5em;
+                font-size: 1.2em;
                 .block {
                     position: absolute;
-                    width: 2px;
-                    height: 15px;
+                    width: 1px;
+                    height: 10px;
                     background: black;
                     top: 0;
                     left: 50%;
-                    transform-origin: 50% 100px;
+                    transform-origin: 50% 60px;
                     opacity: 0;
                     animation: loadingCircle 0.1s linear forwards;
                 }
-                .block:nth-child(-n+51) {
+                .block.active {
                     background: $main-color;
                     box-shadow: 0 0 10px $main-color,0 0 20px $main-color;
                 }
                 h3 {
                     position: absolute;
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
                     flex-direction: column;
-                    gap: 10px;
+                    gap: 50px;
                     left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    font-size: 1.2em;
+                    top: 45%;
+                    transform: translate(-50%, -55%);
                     text-align: center;
-                    font-weight: 500;
-                    line-height: 1.5em;
-                    span {
-                        font-size: 2.5em;
-                        font-weight: 700;
-                    }
-                    sup {
-                        font-size: 1.5em;
-                        font-weight: 300;
+                    font-size: 2.5em;
+                    font-weight: 700;
+                    .counter {
+                        left: 10px;
+                        margin-left: 15px;
                     }
                     img {
-                        height: 70px;
+                        height: 60px;
                     }
                 }
 
