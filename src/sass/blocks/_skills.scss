@@ -2,19 +2,22 @@
     padding-top: 120px;
     // background: yellow;
     position: relative;
-    // video {
-    //     position: fixed;
-    //     height: 100%;
-    //     width: 100%;
-    //     top: 0;
-    //     left: 0;
-    //     object-fit: cover;
-    //     z-index: -3;
-    // }
+    video {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: -3;
+    }
     &__wrapper {
         width: 100%;
         display: grid;
-        grid-template: repeat(2, minmax(300px, auto)) / repeat(auto-fit, 250px);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-auto-rows: minmax(300px, auto);
+        // grid-template: repeat(2, minmax(270px, auto)) / repeat(4, 270px);
+        // grid-template: repeat(2, minmax(300px, auto)) / repeat(auto-fit, 250px);
         justify-content: space-around;
         gap: 30px;
         margin-top: 60px;
@@ -65,16 +68,36 @@
             border-top: 1px solid rgba(0, 0, 0, 0.3);
             border-left: 1px solid rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(5px);
-            padding: 30px 30px 25px 30px;
+            padding: 20px 30px;
             overflow: hidden;
             &-button {
                 position: relative;
                 z-index: 1;
-                border-radius: 10px;
+                display: inline-block;
+                border-radius: 4rem;
                 cursor: pointer;
-                width: 100px;
-                height: 30px;
-                font-size: 15px;
+                width: 120px;
+                height: 40px;
+                font-size: 1.6rem;
+                background: transparent;
+                box-shadow: none;
+                border: 2px solid black;
+                color: black;
+                // border: 2px solid $main-color;
+                // color: $main-color;
+                letter-spacing: .1rem;
+                font-weight: 600;
+                transition: .5s ease;
+                outline: none;
+                &:hover {
+                    border: 2px solid $main-color;
+                    color: white;
+                    background: $main-color;
+                    box-shadow: 0 0 1rem $main-color;
+                }
+                &:focus {
+                    outline: none;
+                }
             }
             &::before {
                 content: '';
@@ -117,11 +140,11 @@
                 .block {
                     position: absolute;
                     width: 1px;
-                    height: 10px;
+                    height: 15px;
                     background: black;
                     top: 0;
                     left: 50%;
-                    transform-origin: 50% 60px;
+                    transform-origin: 50% 70px;
                     opacity: 0;
                     animation: loadingCircle 0.1s linear forwards;
                 }
@@ -137,8 +160,8 @@
                     flex-direction: column;
                     gap: 50px;
                     left: 50%;
-                    top: 45%;
-                    transform: translate(-50%, -55%);
+                    top: 47%;
+                    transform: translate(-50%, -53%);
                     text-align: center;
                     font-size: 2.5em;
                     font-weight: 700;
@@ -147,7 +170,7 @@
                         margin-left: 15px;
                     }
                     img {
-                        height: 60px;
+                        height: 70px;
                     }
                 }
 

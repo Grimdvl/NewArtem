@@ -41,21 +41,21 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50px;
-            animation: floatPhoto 4s ease-in-out infinite;
+            // animation: floatPhoto 4s ease-in-out infinite;
         }
-        &-circle {
-            top: -1.5%;
-            left: -2.5%;
-            position: absolute;
-            width: 105%;
-            height: 103%;
-            background: $main-color;
-            border-radius: 55px;
-            animation: floatPhoto 4s ease-in-out infinite;
-        }
-        &-circle:nth-child(1) {
-            filter: blur(10px);
-        }
+        // &-circle {
+        //     top: -1.5%;
+        //     left: -2.5%;
+        //     position: absolute;
+        //     width: 105%;
+        //     height: 103%;
+        //     background: $main-color;
+        //     border-radius: 55px;
+        //     animation: floatPhoto 4s ease-in-out infinite;
+        // }
+        // &-circle:nth-child(1) {
+        //     filter: blur(10px);
+        // }
     }
     &__descr {
         padding-top: 6px;

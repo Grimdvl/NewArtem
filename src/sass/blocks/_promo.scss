@@ -12,23 +12,37 @@
                 width: 30vw;
                 background: white;
                 border-radius: 50%;
-                border: .3rem solid $main-color;
+                // border: .3rem solid $main-color;
+                animation: floatPhoto 4s ease-in-out infinite;
             }
         }
         &-circle {
+            top: -2.5%;
+            left: -2.5%;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(0);
-            width: 110%;
-            height: 110%;
+            width: 105%;
+            height: 105%;
+            background: $main-color;
             border-radius: 50%;
-            border-top: .3rem solid transparent;
-            border-bottom: .3rem solid transparent;
-            border-left: .3rem solid $main-color;
-            border-right: .3rem solid $main-color;
-            animation: promoSpinner 8s linear infinite;
+            animation: floatPhoto 4s ease-in-out infinite;
         }
+        &-circle:nth-child(1) {
+            filter: blur(10px);
+        }
+        // &-circle {
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translate(-50%, -50%) rotate(0);
+        //     width: 110%;
+        //     height: 110%;
+        //     border-radius: 50%;
+        //     border-top: .3rem solid transparent;
+        //     border-bottom: .3rem solid transparent;
+        //     border-left: .3rem solid $main-color;
+        //     border-right: .3rem solid $main-color;
+        //     animation: promoSpinner 8s linear infinite;
+        // }
     }    
     &__content {
         max-width: 60rem;

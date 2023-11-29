@@ -143,6 +143,7 @@ function cards() {
             new SkillsCards(img, altimg, title, descr, '.skills .skills__wrapper').render();
             loadingSkillsCards('.skills__card-front-icon', '.counter');
         });
+        loadingSkillsCards('.skills__card-front-icon', '.counter');
         flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
     })
     .catch(error => {
