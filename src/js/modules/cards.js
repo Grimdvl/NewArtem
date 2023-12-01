@@ -139,12 +139,11 @@ function cards() {
     }
     getResources('http://localhost:3000/skills')
     .then(data => {
-        data.forEach(({img, altimg, title, descr}) => {
-            new SkillsCards(img, altimg, title, descr, '.skills .skills__wrapper').render();
-            loadingSkillsCards('.skills__card-front-icon', '.counter');
+        data.forEach(({img, altimg, title, descr, target}) => {
+            new SkillsCards(img, altimg, title, descr, target, '.skills .skills__wrapper').render();
         });
-        loadingSkillsCards('.skills__card-front-icon', '.counter');
         flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
+        loadingSkillsCards('.skills__card-front-icon', '.counter');
     })
     .catch(error => {
         console.error('Ошибка при получении данных:', error);
