@@ -43,14 +43,44 @@
     }
 }
 
-@keyframes promoSpinner {
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinnerSecond {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
 @keyframes loadingCircle {
     to {
         opacity: 1;
+    }
+}
+
+@keyframes resume {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: calc(100% + 14px);
+    }
+}
+
+@keyframes resumeSecond {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 45px;
     }
 }
