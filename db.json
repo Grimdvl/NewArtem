@@ -4,31 +4,36 @@
       "img": "img/icons/skills/html5.svg",
       "altimg": "html5",
       "title": "HTML5",
-      "descr": "Exactly, it creates the framework for your website or application, and the fifth version will allow me to create a more SEO-optimized structure for your product."
+      "descr": "Exactly, it creates the framework for your website or application, and the fifth version will allow me to create a more SEO-optimized structure for your product.",
+      "target": 90
     },
     {
       "img": "img/icons/skills/css3.svg",
       "altimg": "css3",
       "title": "CSS3",
-      "descr": "This styling language allows me to create any appearance for your website or application. It's only limited by your imagination!"
+      "descr": "This styling language allows me to create any appearance for your website or application. It's only limited by your imagination!",
+      "target": 90
     },
     {
       "img": "img/icons/skills/js.svg",
       "altimg": "javascript",
       "title": "Java Script",
-      "descr": "This programming language allows me to animate anything: sliders, windows, tooltips, tabs, fetching data from servers, and much more."
+      "descr": "This programming language allows me to animate anything: sliders, windows, tooltips, tabs, fetching data from servers, and much more.",
+      "target": 70
     },
     {
       "img": "img/icons/skills/react.svg",
       "altimg": "react",
       "title": "React",
-      "descr": "This library enables the creation of web applications. I can create an incredibly interactive product tailored to your goals."
+      "descr": "This library enables the creation of web applications. I can create an incredibly interactive product tailored to your goals.",
+      "target": 10
     },
     {
       "img": "img/icons/skills/wordpress.svg",
       "altimg": "wordpress",
       "title": "WordPress",
-      "descr": "It's a powerful platform for building interactive web applications and websites of any size. With its help, you can manage the content of your website yourself."
+      "descr": "It's a powerful platform for building interactive web applications and websites of any size. With its help, you can manage the content of your website yourself.",
+      "target": 10
     }
   ],
   "requests": [
