@@ -106,12 +106,23 @@
                     top: -12px;
                     left: 0;
                     background-color: black;
-                    animation: resume 2s linear forwards;
+                    animation: resumeAfter 2s linear forwards;
+                }
+                &:before {
+                    content: '';
+                    height: 1px;
+                    position: absolute;
+                    background-color: black;
+                    top: 68px;
+                    animation: resumeBefore 1s .9s linear forwards;
                 }
             }
             li:nth-child(2) {
                 &:after {
                     animation-delay: 1.8s;
+                }
+                &::before {
+                    animation-delay: 2.8s;
                 }
             }
         }
@@ -122,39 +133,24 @@
                 &:after {
                     animation-delay: 4s;
                 }
+                &::before {
+                    animation-delay: 5s;
+                }
             }
             li:nth-child(2) {
                 &:after {
                     animation-delay: 5.8s;
+                }
+                &::before {
+                    animation-delay: 6.8s;
                 }
             }
         }
     }
     &__item {
         position: relative;
-        &:before {
-            content: '';
-            height: 1px;
-            position: absolute;
-            background-color: black;
-            top: 68px;
-            animation: resumeSecond 1s .9s linear forwards;
-        }
-        &.second {
-            &::before {
-                animation-delay: 2.8s;
-            }
-        }
-        &.third {
-            &::before {
-                animation-delay: 5s;
-            }
-        }
-        &.fourth {
-            &::before {
-                animation-delay: 6.8s;
-            }
-        }
+        opacity: 0;
+        animation: resumeOpacity 1s 1.9s linear forwards;
         &-head {
             position: relative;
             padding: 45px 0 0 100px;
@@ -185,4 +181,7 @@
             margin-top: 5px;
         }
     }
+    // li > &.resume__item:nth-child(1) {
+    //     animation-delay: 4.7s;
+    // }
 }

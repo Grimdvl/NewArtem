@@ -67,7 +67,7 @@
     }
 }
 
-@keyframes resume {
+@keyframes resumeAfter {
     0% {
         height: 0;
     }
@@ -76,11 +76,20 @@
     }
 }
 
-@keyframes resumeSecond {
+@keyframes resumeBefore {
     0% {
         width: 0;
     }
     100% {
         width: 45px;
+    }
+}
+
+@keyframes resumeOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
