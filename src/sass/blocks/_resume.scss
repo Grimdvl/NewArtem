@@ -28,7 +28,7 @@
     &__wrapper {
         padding: 10rem 9% 2rem;
         display: grid;
-        grid-template-columns: 400px 670px;
+        grid-template-columns: 470px 670px;
         grid-template-rows: minmax(245px, auto) minmax(255px, auto);
         grid-auto-rows: minmax(245px, auto);
         column-gap: 70px;
@@ -106,7 +106,7 @@
                     top: -12px;
                     left: 0;
                     background-color: black;
-                    animation: resumeAfter 2s linear forwards;
+                    animation: resumeAfter 1s linear forwards;
                 }
                 &:before {
                     content: '';
@@ -114,15 +114,52 @@
                     position: absolute;
                     background-color: black;
                     top: 68px;
-                    animation: resumeBefore 1s .9s linear forwards;
+                    animation: resumeBefore .5s .5s linear forwards;
+                }
+                .resume__item {
+                    position: relative;
+                    opacity: 0;
+                    animation: resumeOpacity .5s 1s linear forwards;
+                    &-head {
+                        position: relative;
+                        padding: 45px 0 0 100px;
+                        h4 {
+                            margin-bottom: 0;
+                        }
+                    }
+                    &-body {
+                        padding-left: 43px;
+                        margin-top: 12px;
+                        font-size: 12px;
+                        line-height: 18px;     
+                    }
+                    &-icon {
+                        position: absolute;
+                        top: 50px;
+                        left: 45px;
+                        @include before_circle;
+                        img {
+                            position: absolute;
+                            left: 17px;
+                            top: 14px;
+                        }
+                    }
+                    &-location {
+                        font-size: 12px;
+                        line-height: 18px;
+                        margin-top: 5px;
+                    }
                 }
             }
             li:nth-child(2) {
                 &:after {
-                    animation-delay: 1.8s;
+                    animation-delay: .9s;
                 }
                 &::before {
-                    animation-delay: 2.8s;
+                    animation-delay: 1.4s;
+                }
+                .resume__item {
+                    animation-delay: 1.9s;
                 }
             }
         }
@@ -131,57 +168,26 @@
         ul {
             li {
                 &:after {
-                    animation-delay: 4s;
+                    animation-delay: 1.9s;
                 }
                 &::before {
-                    animation-delay: 5s;
+                    animation-delay: 2.4s;
+                }
+                .resume__item {
+                    animation-delay: 2.9s;
                 }
             }
             li:nth-child(2) {
                 &:after {
-                    animation-delay: 5.8s;
+                    animation-delay: 2.8s;
                 }
                 &::before {
-                    animation-delay: 6.8s;
+                    animation-delay: 3.3s;
+                }
+                .resume__item {
+                    animation-delay: 3.8s;
                 }
             }
         }
     }
-    &__item {
-        position: relative;
-        opacity: 0;
-        animation: resumeOpacity 1s 1.9s linear forwards;
-        &-head {
-            position: relative;
-            padding: 45px 0 0 100px;
-            h4 {
-                margin-bottom: 0;
-            }
-        }
-        &-body {
-            padding-left: 43px;
-            margin-top: 12px;
-            font-size: 12px;
-            line-height: 18px;     
-        }
-        &-icon {
-            position: absolute;
-            top: 50px;
-            left: 45px;
-            @include before_circle;
-            img {
-                position: absolute;
-                left: 17px;
-                top: 14px;
-            }
-        }
-        &-location {
-            font-size: 12px;
-            line-height: 18px;
-            margin-top: 5px;
-        }
-    }
-    // li > &.resume__item:nth-child(1) {
-    //     animation-delay: 4.7s;
-    // }
 }
