@@ -3,11 +3,23 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
           indicator = document.querySelector(indicatorSelector),
           sections = document.querySelectorAll(sectionsSelector);
 
-    const resume = document.querySelector('.resume__column');
+    const sectionsMap = {
+        'resume': document.querySelector('.resume'),
+        'skills': document.querySelector('.skills'),
+        'portfolio': document.querySelector('.portfolio')
+    };
 
     function removeActiveClass() {
         links.forEach((item) => {
             item.classList.remove(activeClass);
+        });
+    }
+
+    function removeAnimatedClass() {
+        Object.values(sectionsMap).forEach(section => {
+            if (section && section.classList) {
+                section.classList.remove('animated');
+            }
         });
     }
 
@@ -19,22 +31,19 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                   height = section.offsetHeight;
 
             if (top >= offset && top < offset + height && link) {
-                const linkParent = link.parentNode;
-
                 removeActiveClass();
+                removeAnimatedClass();
                 indicator.classList.remove('hide');
                 indicator.classList.add('show');
-                link.classList.add('animated');
-                resume.classList.add('animated');
-                linkParent.classList.add(activeClass);
-                
+                if (sectionsMap[section.id] && sectionsMap[section.id].classList) {
+                    sectionsMap[section.id].classList.add('animated');
+                }
+                link.parentNode.classList.add(activeClass);
             } else if (top <= 400 && link) {
-                const linkParent = link.parentNode;
-
-                linkParent.classList.remove(activeClass);
+                removeActiveClass();
+                removeAnimatedClass();
                 indicator.classList.remove('show');
                 indicator.classList.add('hide');
-                // resume.classList.remove('animated');
             }
         });
     }
