@@ -1,4 +1,6 @@
 .portfolio {
+    display: flex;
+    justify-content: center;
     padding-top: 120px;
     &__wrapper {
         margin-top: 60px;

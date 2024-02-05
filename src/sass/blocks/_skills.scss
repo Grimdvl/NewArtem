@@ -200,6 +200,7 @@
         // }
     }
     &__ratings {
+        justify-content: center;
         margin-top: 120px;
         display: grid;
         grid-template: repeat(2, minmax(70px, auto)) / repeat(3, 350px);
