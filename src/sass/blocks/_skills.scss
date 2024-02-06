@@ -236,3 +236,26 @@
         }
     }
 }
+.skills.animated {
+    &__card {
+        &-front {
+            &-icon {
+                .block {
+                    position: absolute;
+                    width: 1px;
+                    height: 15px;
+                    background: black;
+                    top: 0;
+                    left: 50%;
+                    transform-origin: 50% 70px;
+                    opacity: 0;
+                    animation: loadingCircle 0.1s linear forwards;
+                }
+                .block.active {
+                    background: $main-color;
+                    box-shadow: 0 0 10px $main-color,0 0 20px $main-color;
+                }
+            }
+        }
+    }
+}
