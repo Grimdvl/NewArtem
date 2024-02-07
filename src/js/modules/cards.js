@@ -1,6 +1,51 @@
 import {getResources} from "../services/services";
 import VanillaTilt from './vanilla-tilt';
 
+function loadingSkillsCards(rate, count) {
+    const ratings = document.querySelectorAll(rate);
+    const counters = document.querySelectorAll(count);
+
+    ratings.forEach((rating, index) => {
+        const counter = counters[index];
+        for (let i = 1; i <= 100; i++) {
+            const block = document.createElement('div');
+            block.classList.add('block');
+            if (i <= +counter.dataset.target) {
+                block.classList.add('active');
+            }
+            rating.appendChild(block);
+
+            block.style.transform = `rotate(${3.6 * i}deg)`;
+            block.style.animationDelay = `${i / 60}s`;
+        }
+    });
+
+    function numberCounter(counter, target) {
+        const value = +counter.innerText.replace(/\D/g, '');
+
+        if (value < target) {
+            counter.innerHTML = `${Math.ceil(value + 1)}<sup>%</sup>`;
+            setTimeout(() => {
+                numberCounter(counter, target);
+            }, 15);
+        }
+    }
+
+    counters.forEach((counter) => {
+        counter.innerHTML = `0<sup>%</sup>`;
+        const target = +counter.dataset.target;
+
+        numberCounter(counter, target);
+    });
+    
+    return function removeLoadingSkillsCards() {
+        const blocks = document.querySelectorAll(`${rate} .block`);
+        blocks.forEach((block) => {
+            block.remove();
+        });
+    };
+}
+
 function cards() {
     function initializeVanillaTilt(cards) {
         VanillaTilt.init(document.querySelectorAll(cards), {
@@ -56,45 +101,6 @@ function cards() {
         });
     }
 
-
-    function loadingSkillsCards(rate, count) {
-        const ratings = document.querySelectorAll(rate);
-        const counters = document.querySelectorAll(count);
-    
-        ratings.forEach((rating, index) => {
-            const counter = counters[index];
-            for (let i = 1; i <= 100; i++) {
-                const block = document.createElement('div');
-                block.classList.add('block');
-                if (i <= +counter.dataset.target) {
-                    block.classList.add('active');
-                }
-                rating.appendChild(block);
-    
-                block.style.transform = `rotate(${3.6 * i}deg)`;
-                block.style.animationDelay = `${i / 60}s`;
-            }
-        });
-    
-        function numberCounter(counter, target) {
-            const value = +counter.innerText.replace(/\D/g, '');
-    
-            if (value < target) {
-                counter.innerHTML = `${Math.ceil(value + 1)}<sup>%</sup>`;
-                setTimeout(() => {
-                    numberCounter(counter, target);
-                }, 15);
-            }
-        }
-    
-        counters.forEach((counter) => {
-            counter.innerHTML = `0<sup>%</sup>`;
-            const target = +counter.dataset.target;
-    
-            numberCounter(counter, target);
-        });
-    }
-
     class SkillsCards {
         constructor(src, alt, title, descr, target, parentSelector, ...classes) {
             this.src = src;
@@ -143,7 +149,7 @@ function cards() {
             new SkillsCards(img, altimg, title, descr, target, '.skills .skills__wrapper').render();
         });
         flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
-        loadingSkillsCards('.skills__card-front-icon', '.counter');
+        // loadingSkillsCards('.skills__card-front-icon', '.counter');
     })
     .catch(error => {
         console.error('Ошибка при получении данных:', error);
@@ -194,8 +200,10 @@ function cards() {
         ).render();
 
         flippingCard('.skills__card-front-button', '.skills__card-back-button', '.skills__card-front', '.skills__card-back');
-        loadingSkillsCards('.skills__card-front-icon', '.counter');
+        // loadingSkillsCards('.skills__card-front-icon', '.counter');
     });
 }
 
-export default cards;
+export {loadingSkillsCards};
+export {cards};
+// export default cards;

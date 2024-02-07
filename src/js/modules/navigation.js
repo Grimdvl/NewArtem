@@ -1,3 +1,5 @@
+import {loadingSkillsCards} from './cards';
+
 function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelector) {
     const links = document.querySelectorAll(linksSelector),
           indicator = document.querySelector(indicatorSelector),
@@ -6,8 +8,11 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
     const sectionsMap = {
         'resume': document.querySelector('.resume'),
         'skills': document.querySelector('.skills'),
-        'portfolio': document.querySelector('.portfolio')
+        'portfolio': document.querySelector('.portfolio'),
+        'contacts': document.querySelector('.contacts'),
     };
+
+    let isSkillsCardsLoaded = false;
 
     function removeActiveClass() {
         links.forEach((item) => {
@@ -16,11 +21,13 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
     }
 
     function removeAnimatedClass() {
+        const removeLoadingSkillsCards = loadingSkillsCards('.skills__card-front-icon', '.counter');
         Object.values(sectionsMap).forEach(section => {
             if (section && section.classList) {
                 section.classList.remove('animated');
             }
         });
+        removeLoadingSkillsCards();
     }
 
     function scrollNavigation() {
@@ -37,6 +44,14 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                 indicator.classList.add('show');
                 if (sectionsMap[section.id] && sectionsMap[section.id].classList) {
                     sectionsMap[section.id].classList.add('animated');
+                    if (sectionsMap[section.id].classList.contains('skills') && sectionsMap[section.id].classList.contains('animated') && !isSkillsCardsLoaded) {
+                        isSkillsCardsLoaded = true;
+                        loadingSkillsCards('.skills__card-front-icon', '.counter');
+                    }
+                    if (sectionsMap[section.id].classList.contains('skills') && !sectionsMap[section.id].classList.contains('animated')) {
+                        // removeAnimatedClass();
+                        isSkillsCardsLoaded = false;
+                    }
                 }
                 link.parentNode.classList.add(activeClass);
             } else if (top <= 400 && link) {
