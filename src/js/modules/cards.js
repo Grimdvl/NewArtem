@@ -38,12 +38,12 @@ function loadingSkillsCards(rate, count) {
         numberCounter(counter, target);
     });
     
-    return function removeLoadingSkillsCards() {
-        const blocks = document.querySelectorAll(`${rate} .block`);
-        blocks.forEach((block) => {
-            block.remove();
-        });
-    };
+    // return function removeLoadingSkillsCards() {
+    //     const blocks = document.querySelectorAll(`${rate} .block`);
+    //     blocks.forEach((block) => {
+    //         block.remove();
+    //     });
+    // };
 }
 
 function cards() {

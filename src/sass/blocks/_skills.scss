@@ -147,6 +147,7 @@
                 .block.active {
                     background: $main-color;
                     box-shadow: 0 0 10px $main-color,0 0 20px $main-color;
+                    // filter: blur(1px);
                 }
                 h3 {
                     position: absolute;
@@ -203,7 +204,7 @@
         justify-content: center;
         margin-top: 120px;
         display: grid;
-        grid-template: repeat(2, minmax(70px, auto)) / repeat(3, 350px);
+        grid-template: repeat(2, minmax(70px, auto)) / repeat(auto-fit, 350px);
         column-gap: 45px;
         row-gap: 35px;
         &-item {
@@ -232,6 +233,8 @@
                 height: 100%;
                 background-color: $main-color;
                 border-radius: 4px;
+                filter: blur(2px);
+                // box-shadow: 0 0 5px #ffa501, 0 0 5px #ffa501;
             }
         }
     }

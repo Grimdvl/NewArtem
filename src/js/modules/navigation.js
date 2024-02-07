@@ -21,13 +21,11 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
     }
 
     function removeAnimatedClass() {
-        const removeLoadingSkillsCards = loadingSkillsCards('.skills__card-front-icon', '.counter');
         Object.values(sectionsMap).forEach(section => {
             if (section && section.classList) {
                 section.classList.remove('animated');
             }
         });
-        removeLoadingSkillsCards();
     }
 
     function scrollNavigation() {
@@ -42,15 +40,18 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                 removeAnimatedClass();
                 indicator.classList.remove('hide');
                 indicator.classList.add('show');
-                if (sectionsMap[section.id] && sectionsMap[section.id].classList) {
+                if (!sectionsMap[section.id].classList.contains('animated')) {
                     sectionsMap[section.id].classList.add('animated');
-                    if (sectionsMap[section.id].classList.contains('skills') && sectionsMap[section.id].classList.contains('animated') && !isSkillsCardsLoaded) {
+                    if (sectionsMap.skills.classList.contains('animated') && !isSkillsCardsLoaded) {
                         isSkillsCardsLoaded = true;
                         loadingSkillsCards('.skills__card-front-icon', '.counter');
                     }
-                    if (sectionsMap[section.id].classList.contains('skills') && !sectionsMap[section.id].classList.contains('animated')) {
-                        // removeAnimatedClass();
+                    if (!sectionsMap.skills.classList.contains('animated') && isSkillsCardsLoaded) {
                         isSkillsCardsLoaded = false;
+                        const blocks = document.querySelectorAll('.skills__card-front-icon .block');
+                        blocks.forEach((block) => {
+                            block.remove();
+                        });
                     }
                 }
                 link.parentNode.classList.add(activeClass);
