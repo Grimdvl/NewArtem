@@ -49,8 +49,12 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                     if (!sectionsMap.skills.classList.contains('animated') && isSkillsCardsLoaded) {
                         isSkillsCardsLoaded = false;
                         const blocks = document.querySelectorAll('.skills__card-front-icon .block');
+                        const counters = document.querySelectorAll('.counter');
                         blocks.forEach((block) => {
                             block.remove();
+                        });
+                        counters.forEach((counter) => {
+                            counter.textContent = '';
                         });
                     }
                 }
