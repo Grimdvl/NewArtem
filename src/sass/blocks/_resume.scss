@@ -45,6 +45,9 @@
         align-items: center;
         overflow: hidden;
         z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        left: -350px;
         &::before {
             content: '';
             position: absolute;
@@ -155,6 +158,12 @@
         }
     }
     .animated & {
+        &__photo {
+            opacity: 1;
+            visibility: visible;
+            left: 0;
+            transition: 1s;
+        }
         &__column {
             &-title { 
                 animation: resumeTitle .5s linear forwards;

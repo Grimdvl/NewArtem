@@ -1,4 +1,5 @@
 import {loadingSkillsCards} from './cards';
+import skills from './skills';
 
 function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelector) {
     const links = document.querySelectorAll(linksSelector),
@@ -45,11 +46,17 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                     if (sectionsMap.skills.classList.contains('animated') && !isSkillsCardsLoaded) {
                         isSkillsCardsLoaded = true;
                         loadingSkillsCards('.skills__card-front-icon', '.counter');
+                        skills('.skills__ratings-counter', '.skills__ratings-line span');
                     }
                     if (!sectionsMap.skills.classList.contains('animated') && isSkillsCardsLoaded) {
                         isSkillsCardsLoaded = false;
                         const blocks = document.querySelectorAll('.skills__card-front-icon .block');
                         const counters = document.querySelectorAll('.counter');
+                        const width = document.querySelectorAll('.skills__ratings-line span');
+
+                        width.forEach((item) => {
+                            item.style.width = 0;
+                        });
                         blocks.forEach((block) => {
                             block.remove();
                         });
