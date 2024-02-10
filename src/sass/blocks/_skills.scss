@@ -239,13 +239,4 @@
             }
         }
     }
-    .animated & {
-        &__ratings {
-            &-line {
-                span {
-                    transition: width 2s;
-                }
-            }
-        }
-    }
 }
