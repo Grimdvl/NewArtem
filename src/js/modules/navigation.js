@@ -53,7 +53,11 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                         const blocks = document.querySelectorAll('.skills__card-front-icon .block');
                         const counters = document.querySelectorAll('.counter');
                         const width = document.querySelectorAll('.skills__ratings-line span');
+                        const countersSecond = document.querySelectorAll('.skills__ratings-counter');
 
+                        countersSecond.forEach((counterSecond) => {
+                            counterSecond.textContent = '';
+                        });
                         width.forEach((item) => {
                             item.style.width = 0;
                         });
