@@ -59,10 +59,10 @@
         }
         img {
             position: relative;
-            width: 97%;
-            height: 98%;
+            width: 98%;
+            height: 98.7%;
             object-fit: cover;
-            inset: 4;
+            inset: 0 .5px;
             border-radius: 16px;
         }
     }
