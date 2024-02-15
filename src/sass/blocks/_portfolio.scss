@@ -23,6 +23,7 @@
             transition: transform 1.25s $transition, filter 3s $transition, width 1.25s $transition;
             will-change: transform, filter;
             filter: grayscale(100%) brightness(.7);
+            overflow: hidden;
             .img {
                 position: absolute;
                 width: 100%;
@@ -45,6 +46,7 @@
                 flex-direction: column;
                 padding: 0 2rem;
                 transform: translateY(100%);
+                transition: .5s ease;
                 &-title {
                     font-size: 2rem;
                     opacity: 0;
@@ -52,12 +54,26 @@
                     transition: .5s all;
                 }
                 &-text {
-                    font-size: 1rem;
+                    font-size: 1.5rem;
                     margin: .3rem 0 1rem;
                     opacity: 0;
                     visibility: hidden;
                     transition: .5s all;
                 }
+                &-git, &-link {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 5rem;
+                    height: 5rem;
+                    // background: black;
+                    border-radius: 50%;
+                    // color: white;
+                }
+                // &-link {
+
+                // }
             }
             &:active, &:focus {
                 width: 28vw;
@@ -66,9 +82,9 @@
                 z-index: 2;
                 margin: 0 .45vw;
                 &:hover {
-                    transform: translateY(0);
                     .descr {
                         background: linear-gradient(rgba(0, 0, 0, .1), $main-color);
+                        transform: translateY(0);
                         &-title {
                             opacity: 1;
                             visibility: visible;
