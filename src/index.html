@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio</title>
+    <title>Artem Sokur | Portfolio</title>
     <meta name="title" content="Мое портфолио">
     <meta name="description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
 
@@ -37,6 +37,7 @@
     <meta name="msapplication-TileImage" content="img/icons/favicon//ms-icon-144x144.png"> 
     <meta name="theme-color" content="#ffffff">
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -47,7 +48,7 @@
             <li class="navigation__link">
                 <a href="#resume" class="navigation__link-item">
                     <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <span class="text">Про Меня</span>
+                    <span class="text">About me</span>
                 </a>
             <!-- </li>
             <li class="navigation__link">
@@ -59,19 +60,19 @@
             <li class="navigation__link">
                 <a href="#skills" class="navigation__link-item">
                     <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
-                    <span class="text">Мои навыки</span>
+                    <span class="text">My skills</span>
                 </a>
             </li>
             <li class="navigation__link">
                 <a href="#portfolio" class="navigation__link-item">
                     <span class="icon"><ion-icon name="briefcase-outline"></ion-icon></span>
-                    <span class="text">Мои работы</span>
+                    <span class="text">Portfolio</span>
                 </a>
             </li>
             <li class="navigation__link">
                 <a href="#contacts" class="navigation__link-item">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <span class="text">Контакты</span>
+                    <span class="text">Contacts</span>
                 </a>
             </li>
             <div class="indicator hide"></div>
@@ -100,10 +101,10 @@
     </section>
 
     <section class="resume" id="resume">
-        <video preload="auto" loop muted autoplay>
-            <!-- <source type="video/webm" src="video/neon.webm"> -->
-            <!-- <source type="video/mp4" src="video/neon.mp4"> -->
-        </video>
+        <!-- <video preload="auto" loop muted autoplay>
+            <source type="video/webm" src="video/neon.webm">
+            <source type="video/mp4" src="video/neon.mp4">
+        </video> -->
 
         <h2 class="title title-fz16 title__section-title">Experience</h2>
         <div class="title title-fz36 resume__subtitle">Here's how I'll be helpful for you</div>
@@ -296,9 +297,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__items-item" tabindex="1" style="background-image: url(img/works/ipad.jpg);">
+                    <!-- <div class="portfolio__items-item" tabindex="1" style="background-image: url(img/works/ipad.jpg);">
                     
-                    </div>
+                    </div> -->
                     <div class="portfolio__items-item" tabindex="1">
                         <img class="img" src="img/works/wordpress.jpg" alt="WordPress-project">
                         <div class="descr">
@@ -366,46 +367,49 @@
                     <img src="img/main_photo(2).jpg" alt="photo">
                 </div>
                 <div class="contacts__descr">
-                    <h2 class="title title-fz16 contacts__title">Контакты</h2>
-                    <div class="title title-fz36 contacts__subtitle">Свяжитесь со мной</div>
+                    <h2 class="title title-fz16 contacts__title">Contacts</h2>
+                    <div class="title title-fz36 contacts__subtitle">Contact me</div>
                     <div class="divider"></div>
 
-                    <div class="title title-fz14 contacts__text">Любым удобным для вас способом:</div>
+                    <div class="contacts__contact">Text me on <span class="multiple-text"></span></div>
                     <div class="contacts__social">
                         <a href="https://www.facebook.com/profile.php?id=100079481086820" target="_blank" class="contacts__link">
-                            <img src="img/icons/social/facebook_straight.svg" alt="facebook">
+                            <i class='bx bxl-facebook'></i>
                         </a>
                         <a href="https://t.me/Grim_679" target="_blank" class="contacts__link">
-                            <img src="img/icons/social/telegram.svg" alt="telegram">
+                            <i class='bx bxl-telegram'></i>
                         </a>
                         <a href="https://www.instagram.com/artemsokur69" target="_blank" class="contacts__link">
-                            <img src="img/icons/social/instagram_straight.svg" alt="instagram">
+                            <i class='bx bxl-instagram-alt'></i>
                         </a>
+                        <!-- <a href="#" target="_blank" class="contacts__link">
+                            <box-icon name='whatsapp' type='logo' color='#FFA501' ></box-icon>
+                        </a> -->
                     </div>
-                    <div class="title title-fz14 contacts__text">Или оставьте ваши данные и я сам вам напишу:</div>
+                    <div class="contacts__text">Or leave your contact information, and I will get in touch with you myself:</div>
 
                     <form action="#" class="contacts__form">
                         <div class="contacts__input">
                             <input required name="name" id="name" type="text">
-                            <label for="name">Ваше имя</label>
+                            <label for="name">Your name</label>
                         </div>
                         <div class="contacts__input">
                             <input required name="phone" id="phone" type="phone">
-                            <label for="phone">Ваш номер</label>
+                            <label for="phone">Your number</label>
                         </div>
                         <div class="contacts__input">
                             <input required name="email" id="email" type="email">
-                            <label for="email">Ваша почта</label>
+                            <label for="email">Your email</label>
                         </div>
                         <div class="contacts__textarea">
                             <textarea required name="text" id="text"></textarea>
-                            <label for="text">Ваше сообщение</label>
+                            <label for="text">Your message</label>
                         </div>
                         <div class="contacts__triggers">
-                            <button class="contacts__btn btn">Отправить сообщение</button>
+                            <button class="contacts__btn btn">Send message</button>
                             <div class="contacts__policy">
                                 <input name="checkbox" id="checkbox" type="checkbox">
-                                <span>Я согласен(а) с <a href="/policy/policy.html" target="_blank">политикой конфиденциальности</a></span>
+                                <span>I agree with theс <a href="/policy/policy.html" target="_blank">privacy policy</a></span>
                             </div>
                         </div>
                     </form>
@@ -426,7 +430,7 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="js/bundle.js"></script>
