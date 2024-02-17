@@ -93,3 +93,9 @@
         opacity: 1;
     }
 }
+
+@keyframes contactsSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
