@@ -1,20 +1,14 @@
 .promo {
-    position: relative;
-    z-index: 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0 9%;
     &__photo {
         position: relative;
         &-img {
-            img {
-                width: 30vw;
+            width: 30vw;
                 background: white;
                 border-radius: 50%;
-                // border: .3rem solid $main-color;
                 animation: floatPhoto 4s ease-in-out infinite;
-            }
         }
         &-circle {
             top: -2.5%;
@@ -46,16 +40,16 @@
             }
         }
         &-subtitle {
-            width: 32.8rem;
+            // width: 32.8rem;
             position: relative;
-            h2 {
+            // h2 {
                 font-size: 3.2rem;
                 font-weight: 700;
                 color: transparent;
                 -webkit-text-stroke: .7px $main-color;
                 background-image: linear-gradient($main-color, $main-color);
                 background-repeat: no-repeat;
-                -webkit-background-clip: text;
+                background-clip: text;
                 background-position: -33rem 0;
                 animation: promoSubtitle 6s linear infinite;
                 animation-delay: 2s;
@@ -71,7 +65,7 @@
                     animation: promoSubtitleCursor 6s linear infinite;
                     animation-delay: 2s;
                 }
-            }
+            // }
         }
         &-description {
             font-size: 1.6rem;
@@ -88,7 +82,7 @@
             background: transparent;
             color: $main-color;
             border: .2rem solid $main-color;
-            border-radius: 2rem;
+            border-radius: 3rem;
             font-size: 1.8rem;
             font-weight: 600;
             letter-spacing: .1rem;

@@ -72,7 +72,7 @@
                 position: relative;
                 z-index: 1;
                 display: inline-block;
-                border-radius: 4rem;
+                border-radius: 3rem;
                 cursor: pointer;
                 width: 120px;
                 height: 40px;
@@ -84,7 +84,6 @@
                 letter-spacing: .1rem;
                 font-weight: 600;
                 transition: .5s ease;
-                outline: none;
                 &:hover {
                     border: 2px solid $main-color;
                     color: white;

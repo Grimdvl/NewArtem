@@ -103,7 +103,6 @@
             background-color: #FFF;
             border: 1px solid #221F1F;
             border-radius: 6px;
-            outline: none;
             margin-left: 10px;
             position: relative;
             &::before {
@@ -153,11 +152,10 @@
             height: 100%;
             padding: 0 20px;
             font-size: 12px;
-            border-radius: 2rem;
+            border-radius: 3rem;
             border: solid 1px;
             transition: .5s all;
             &:focus {
-                outline: none;
                 border: solid 2px $main-color;
                 box-shadow: 0 0 1rem $main-color;
                 ~ label {
@@ -179,11 +177,10 @@
             resize: none;
             padding: 20px;
             font-size: 12px;
-            border-radius: 2rem;
+            border-radius: 3rem;
             border: solid 1px;
             transition: .5s all;
             &:focus {
-                outline: none;
                 border: solid 2px $main-color;
                 box-shadow: 0 0 1rem $main-color;
                 ~ label {
@@ -197,7 +194,6 @@
         border-radius: 2rem;
         background: $main-color;
         box-shadow: 0 0 1rem $main-color;
-        border: none;
         font-weight: bold;
         font-size: 1.4rem;
         line-height: 2.1rem;

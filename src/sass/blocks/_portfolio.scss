@@ -1,6 +1,7 @@
 .portfolio {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     &__wrapper {
         display: flex;
         align-items: center;
@@ -13,7 +14,7 @@
         perspective: calc($index * 35);
         &-item {
             position: relative;
-            border-radius: 2rem;
+            border-radius: 3rem;
             background-color: $main-color;
             width: calc($index * 3);
             height: calc($index * 12);
@@ -31,10 +32,10 @@
                 object-fit: cover;
                 top: 0;
                 left: 0;
-                border-radius: 2rem;
+                border-radius: 3rem;
             }
             .descr {
-                border-radius: 2rem;
+                border-radius: 3rem;
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -70,7 +71,6 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        outline: none;
                         text-decoration: none;
                         width: 4rem;
                         height: 4rem;
