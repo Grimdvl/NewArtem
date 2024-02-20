@@ -1,28 +1,28 @@
 .resume {
-    &__title {
+    &-title {
         position: relative;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
         text-align: center;
-        @include before_circle;
-        &::before {
-            top: -.6rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-    &__subtitle {
         font-weight: 700;
         font-size: 3.6rem;
         line-height: 6rem;
+        @include before_circle;
+        &::before {
+            top: 0em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+    &-subtitle {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
         text-align: center;
     }
     &__wrapper {
-        padding: 10rem 9% 2rem;
+        padding: 5rem 9% 2rem;
         display: grid;
-        grid-template-columns: 47rem 67rem;
-        grid-template-rows: minmax(24.5rem, auto) minmax(25.5rem, auto);
-        grid-auto-rows: minmax(24.5rem, auto);
+        grid-template-columns: 50rem 60rem;  
         column-gap: 7rem;
         justify-content: center;
     }

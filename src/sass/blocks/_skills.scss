@@ -3,41 +3,46 @@
     &__wrapper {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-auto-rows: minmax(300px, auto);
-        // grid-template: repeat(2, minmax(270px, auto)) / repeat(4, 270px);
-        // grid-template: repeat(2, minmax(300px, auto)) / repeat(auto-fit, 250px);
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-auto-rows: minmax(30rem, auto);
         justify-content: space-around;
-        gap: 30px;
-        margin-top: 60px;
-        padding: 0 10px;
+        gap: 3rem;
+        margin-top: 6rem;
+        padding: 0 1rem;
     }
-    &__subtitle {
-        text-align: center;
-    }
-    &__title {
+    &-title {
         position: relative;
         text-align: center;
+        font-weight: 700;
+        font-size: 3.6rem;
+        line-height: 6rem;
         @include before_circle;
-        &:before {
-            top: -6px;
+        &::before {
+            top: 0em;
             left: 50%;
             transform: translateX(-50%);
+            width: 1.5em;
+            height: 1.5em;
         }
+    }
+    &-subtitle {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        text-align: center;
     }
     &__card {
         position: relative;
         transform-style: preserve-3d;
-        transform: perspective(1000px) rotateY(0deg);
+        transform: perspective(100rem) rotateY(0deg);
         will-change: transform;
         .active {
             &.skills__card-front {
-                transform: perspective(1000px) rotateY(180deg);
+                transform: perspective(100rem) rotateY(180deg);
                 will-change: transform;
             }
         
             &.skills__card-back {
-                transform: perspective(1000px) rotateY(360deg);
+                transform: perspective(100rem) rotateY(360deg);
                 will-change: transform;
             }
         }
@@ -54,13 +59,13 @@
             backface-visibility: hidden;
             position: absolute;
             transition: 2s;
-            border-radius: 20px;
-            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 2rem;
+            box-shadow: 2rem 2rem 2rem rgba(0, 0, 0, 0.3);
             background: rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(0, 0, 0, 0.3);
-            border-left: 1px solid rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px);
-            padding: 20px 30px;
+            border-top: .1rem solid rgba(0, 0, 0, 0.3);
+            border-left: .1rem solid rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(.5rem);
+            padding: 2rem 3rem;
             overflow: hidden;
             &-button {
                 position: relative;
@@ -68,19 +73,19 @@
                 display: inline-block;
                 border-radius: 3rem;
                 cursor: pointer;
-                width: 120px;
-                height: 40px;
+                width: 12rem;
+                height: 4rem;
                 font-size: 1.4rem;
                 background: transparent;
                 box-shadow: none;
-                border: 2px solid black;
+                border: .2rem solid black;
                 color: black;
                 letter-spacing: .1rem;
                 font-weight: 600;
                 transition: .5s ease;
                 &:hover {
-                    border: 2px solid $main-color;
-                    color: white;
+                    border: .2rem solid $main-color;
+                    color: #FFF;
                     background: $main-color;
                     box-shadow: 0 0 1rem $main-color;
                 }
@@ -92,8 +97,8 @@
                 content: '';
                 position: absolute;
                 background: radial-gradient($main-color, transparent, transparent);
-                height: 500px;
-                width: 500px;
+                height: 50rem;
+                width: 50rem;
                 top: var(--y);
                 left: var(--x);
                 transform: translate(-50%, -50%);
@@ -109,8 +114,8 @@
             &::after {
                 content: '';
                 position: absolute;
-                inset: 2px;
-                border-radius: 18px;
+                inset: .2rem;
+                border-radius: 1.8rem;
                 background: rgba(255, 255, 255, 0.75);
             }
         }
@@ -129,19 +134,19 @@
                 font-size: 1.2em;
                 .block {
                     position: absolute;
-                    width: 1px;
-                    height: 15px;
+                    width: .1rem;
+                    height: 1.5rem;
                     background: black;
                     top: 0;
                     left: 50%;
-                    transform-origin: 50% 70px;
+                    transform-origin: 50% 7rem;
                     opacity: 0;
                     animation: loadingCircle 0.1s linear forwards;
                     will-change: opacity;
                 }
                 .block.active {
                     background-color: $main-color;
-                    box-shadow: 0 0 10px $main-color,0 0 20px $main-color;
+                    box-shadow: 0 0 1rem $main-color,0 0 2rem $main-color;
                     will-change: background-color, box-shadow;
                 }
                 h3 {
@@ -150,7 +155,7 @@
                     justify-content: space-between;
                     align-items: center;
                     flex-direction: column;
-                    gap: 50px;
+                    gap: 5rem;
                     left: 50%;
                     top: 47%;
                     transform: translate(-50%, -53%);
@@ -158,11 +163,11 @@
                     font-size: 2.5em;
                     font-weight: 700;
                     .counter {
-                        left: 10px;
-                        margin-left: 15px;
+                        left: 1rem;
+                        margin-left: 1.5rem;
                     }
                     img {
-                        height: 70px;
+                        height: 7rem;
                     }
                 }
 
@@ -172,22 +177,22 @@
         //     transform: perspective(1000px) rotateY(180deg);
         // }
         &-back {
-            transform: perspective(1000px) rotateY(180deg);
+            transform: perspective(100rem) rotateY(180deg);
             &-title {
                 position: relative;
                 text-align: center;
-                margin-top: 20px;
+                margin-top: 2rem;
                 margin-bottom: 0;
                 z-index: 1;
-                font-size: 20px;
+                font-size: 2rem;
             }
             &-description {
                 position: relative;
                 text-align: center;
-                margin-top: 15px;
+                margin-top: 1.5rem;
                 margin-bottom: 0;
-                font-size: 13px;
-                line-height: 18px;
+                font-size: 1.3rem;
+                line-height: 1.8rem;
                 z-index: 1;
             }
         }
@@ -197,39 +202,41 @@
     }
     &__ratings {
         justify-content: center;
-        margin-top: 120px;
+        margin-top: 12rem;
         display: grid;
-        grid-template: repeat(2, minmax(70px, auto)) / repeat(auto-fit, 350px);
-        column-gap: 45px;
-        row-gap: 35px;
+        grid-template: repeat(2, minmax(7rem, auto))/repeat(auto-fit, 35rem);
+        column-gap: 4.5rem;
+        row-gap: 3.5rem;
         &-item {
             display: grid;
-            grid-template: minmax(21px, auto) 14px / 200px 35px;
+            grid-template: minmax(2.1rem, auto) 1.4rem/20rem 3.5rem;
             justify-content: space-between;
             align-content: space-between;
         }
         &-title {
+            font-size: 1.4rem;
+            line-height: 2.1rem;
             position: relative;
-            padding: 2px 0 0 13px;
+            padding: .2rem 0 0 1.3rem;
             @include before_circle;
         }
         &-counter {
-            font-size: 14px;
-            line-height: 21px;
+            font-size: 1.4rem;
+            line-height: 2.1rem;
         }
         &-line {
-            width: 350px;
-            height: 14px;
+            width: 35rem;
+            height: 1.4rem;
             background-color: #E8E4DE;
-            border-radius: 4px;
+            border-radius: .4rem;
             grid-column: 1 / 3;
             transition: .5s;
             span {
                 display: block;
                 height: 100%;
                 background-color: $main-color;
-                border-radius: 4px;
-                filter: blur(2px);
+                border-radius: .4rem;
+                filter: blur(.2rem);
                 width: 0;
             }
         }
