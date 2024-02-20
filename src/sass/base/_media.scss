@@ -62,7 +62,7 @@
 
 @media (max-width: 991px) {
     section {
-        padding: 10rem 2% 2rem;
+        padding: 5rem 5% 2rem;
     }
     .title {
         &_fz36 {
@@ -339,5 +339,11 @@
         &__title {
             font-size: 20px;
         }
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 50%;
     }
 }

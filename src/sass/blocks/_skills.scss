@@ -1,14 +1,5 @@
 .skills {
     position: relative;
-    video {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        object-fit: cover;
-        z-index: -3;
-    }
     &__wrapper {
         width: 100%;
         display: grid;
@@ -38,13 +29,16 @@
         position: relative;
         transform-style: preserve-3d;
         transform: perspective(1000px) rotateY(0deg);
+        will-change: transform;
         .active {
             &.skills__card-front {
                 transform: perspective(1000px) rotateY(180deg);
+                will-change: transform;
             }
         
             &.skills__card-back {
                 transform: perspective(1000px) rotateY(360deg);
+                will-change: transform;
             }
         }
         &-front, &-back {
@@ -104,7 +98,8 @@
                 left: var(--x);
                 transform: translate(-50%, -50%);
                 opacity: 0;
-                transition: 0.5s, top 0s, left 0s;
+                transition: .5s, top 0s, left 0s;
+                will-change: transform, background;
             }
             &:hover {
                 &::before {
@@ -142,11 +137,12 @@
                     transform-origin: 50% 70px;
                     opacity: 0;
                     animation: loadingCircle 0.1s linear forwards;
+                    will-change: opacity;
                 }
                 .block.active {
-                    background: $main-color;
+                    background-color: $main-color;
                     box-shadow: 0 0 10px $main-color,0 0 20px $main-color;
-                    // filter: blur(1px);
+                    will-change: background-color, box-shadow;
                 }
                 h3 {
                     position: absolute;
