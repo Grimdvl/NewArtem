@@ -70,7 +70,7 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                         });
                     }
                     if (!sectionsMap.portfolio.classList.contains('animated')) {
-                        portfolioTrigger('.portfolio__items-item', 'active');
+                        portfolioTrigger('.portfolio__items-item', 'active', '.portfolio__items');
                     }
                 }
                 link.parentNode.classList.add(activeClass);

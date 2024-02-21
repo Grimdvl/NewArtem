@@ -16,5 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
     navigation('.navigation__link', 'active', 'section', '.indicator');
     cards();
     modal('[data-modal]', '.modal', 'form');
-    portfolioTrigger('.portfolio__items-item', 'active');
+    portfolioTrigger('.portfolio__items-item', 'active', '.portfolio__items');
 });

@@ -1,9 +1,11 @@
-const portfolioTrigger = (selectorElem, activeClass) => {
+const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
     const elements = document.querySelectorAll(selectorElem);
+    const parent = document.querySelector(selectorParent);
 
     const removeActiveClass = () => {
         elements.forEach((item) => {
             item.classList.remove(activeClass);
+            parent.classList.remove(activeClass);
         });
     }
 
@@ -12,6 +14,7 @@ const portfolioTrigger = (selectorElem, activeClass) => {
             elem.addEventListener('click', (event) => {
                 removeActiveClass();
                 event.target.parentNode.classList.add(activeClass);
+                parent.classList.add(activeClass);
             });
         });
     }
