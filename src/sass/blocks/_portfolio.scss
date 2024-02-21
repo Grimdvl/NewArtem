@@ -32,48 +32,48 @@
         display: flex;
         gap: .4rem;
         perspective: calc($index * 35);
-        &.active {
-            &-item {
-                &.active {
-                    width: 28vw;
-                    transform: unset;
-                    z-index: 2;
-                    margin: 0 .45vw;
-                    & + * {
-                        transform: unset;
-                        & + * {
-                            transform: unset;
-                            & + * {
-                                transform: unset;
-                                & + * {
-                                    transform: unset;
-                                }
-                            }
-                        }
-                    }
-                    &:hover {
-                        .descr {
-                            background: linear-gradient(rgba(0, 0, 0, .1), $main-color);
-                            transform: translateY(0);
-                            opacity: 1;
-                            visibility: visible;
-                        }
-                    }
-                }
-                &:has(+ .active) {
-                    transform: unset;
-                }
-                &:has(+ * + .active) {
-                    transform: unset;
-                }
-                &:has(+ * + * + .active) {
-                    transform: unset;
-                }
-                &:has(+ * + * + * + .active) {
-                    transform: unset;
-                }
-            }
-        }
+        // &.active {
+        //     &-item {
+        //         &.active {
+        //             width: 28vw;
+        //             transform: unset;
+        //             z-index: 2;
+        //             margin: 0 .45vw;
+        //             & + * {
+        //                 transform: unset;
+        //                 & + * {
+        //                     transform: unset;
+        //                     & + * {
+        //                         transform: unset;
+        //                         & + * {
+        //                             transform: unset;
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //             &:hover {
+        //                 .descr {
+        //                     background: linear-gradient(rgba(0, 0, 0, .1), $main-color);
+        //                     transform: translateY(0);
+        //                     opacity: 1;
+        //                     visibility: visible;
+        //                 }
+        //             }
+        //         }
+        //         &:has(+ .active) {
+        //             transform: unset;
+        //         }
+        //         &:has(+ * + .active) {
+        //             transform: unset;
+        //         }
+        //         &:has(+ * + * + .active) {
+        //             transform: unset;
+        //         }
+        //         &:has(+ * + * + * + .active) {
+        //             transform: unset;
+        //         }
+        //     }
+        // }
         &-item {
             position: relative;
             border-radius: 3rem;
