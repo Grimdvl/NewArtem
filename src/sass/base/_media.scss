@@ -20,6 +20,41 @@
     section {
         padding: 5rem 5% 2rem;
     }
+    .portfolio {
+        &__items {
+            &-item {
+                .descr {
+                    &-title {
+                        font-size: 1.5rem;
+                        margin-bottom: 0;
+                    }
+                    &-text {
+                        font-size: 1rem;
+                        margin: .3rem 0 .5rem;
+                    }
+                    &__links {
+                        gap: 1rem;
+                        padding-bottom: 1rem;
+                        a {
+                            width: 3rem;
+                            height: 3rem;
+                            i {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    .descr {
+                        background: linear-gradient(rgba(0, 0, 0, .1), $main-color);
+                        transform: translateY(0);
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
     .contacts {
         &__wrapper {
             padding: 0;
@@ -74,7 +109,7 @@
     }
     .skills {
         &__ratings {
-            grid-auto-rows: minmax(7rem,auto);
+            grid-auto-rows: minmax(7rem, auto);
         }
     }
     .portfolio {
@@ -85,10 +120,14 @@
                 width: calc($index * 12);
                 height: calc($index * 3);
                 .descr {
+                    padding: 0 .5rem ;
                     transform: translateY(0);
-                }
-                &.active {
-                    height: 28vw;
+                    &-title {
+                        font-size: 1.3rem;
+                    }
+                    &-text {
+                        font-size: .8rem;
+                    }
                 }
                 &::after, &::before {
                     content: '';
@@ -103,24 +142,18 @@
                     bottom: calc($index * -1);
                 }
                 &.active {
+                    height: 28vw;
+                    width: 100%;
                     transform: translateZ(calc($index * 10));
-                    filter: inherit;
+                    margin: .45vh 0;
                     & + * {
                         transform: translateZ(calc($index * 8.5)) rotateX(-35deg);
-                        filter: inherit;
-                        z-index: -1;
                         & + * {
                             transform: translateZ(calc($index * 5.6)) rotateX(-40deg);
-                            filter: inherit;
-                            z-index: -2;
                             & + * {
                                 transform: translateZ(calc($index * 2.4)) rotateX(-30deg);
-                                z-index: -3;
-                                filter: inherit;
                                 & + * {
                                     transform: translateZ(calc($index * .6)) rotateX(-14deg);
-                                    z-index: -4;
-                                    filter: inherit;
                                 }
                             }
                         }
@@ -128,19 +161,15 @@
                 }
                 &:has(+ .active) {
                     transform: translateZ(calc($index * 8.5)) rotateX(35deg);
-                    filter: inherit;
                 }
                 &:has(+ * + .active) {
                     transform: translateZ(calc($index * 5.6)) rotateX(40deg);
-                    filter: inherit;
                 }
                 &:has(+ * + * + .active) {
                     transform: translateZ(calc($index * 2.4)) rotateX(30deg);
-                    filter: inherit;
                 }
                 &:has(+ * + * + * + .active) {
                     transform: translateZ(calc($index * .6)) rotateX(14deg);
-                    filter: inherit;
                 }
             }
         }
