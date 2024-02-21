@@ -6,6 +6,7 @@ import hamburger from './modules/hamburger';
 import navigation from './modules/navigation';
 import {cards} from './modules/cards';
 import modal from './modules/modal';
+import portfolioTrigger from './modules/portfolio';
 
 window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
@@ -15,4 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
     navigation('.navigation__link', 'active', 'section', '.indicator');
     cards();
     modal('[data-modal]', '.modal', 'form');
+    portfolioTrigger('.portfolio__items-item', 'active');
 });

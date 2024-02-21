@@ -1,5 +1,6 @@
 import {loadingSkillsCards} from './cards';
 import skills from './skills';
+import portfolioTrigger from './portfolio';
 
 function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelector) {
     const links = document.querySelectorAll(linksSelector),
@@ -67,6 +68,9 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                         counters.forEach((counter) => {
                             counter.textContent = '';
                         });
+                    }
+                    if (!sectionsMap.portfolio.classList.contains('animated')) {
+                        portfolioTrigger('.portfolio__items-item', 'active');
                     }
                 }
                 link.parentNode.classList.add(activeClass);
