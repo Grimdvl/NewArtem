@@ -33,13 +33,13 @@
                         margin: .3rem 0 .5rem;
                     }
                     &__links {
-                        gap: 1rem;
-                        padding-bottom: 1rem;
+                        // gap: 1rem;
+                        // padding-bottom: 1rem;
                         a {
                             width: 3rem;
                             height: 3rem;
-                            i {
-                                font-size: 2rem;
+                            box-icon {
+                                transform: scale(.7);
                             }
                         }
                     }
@@ -131,35 +131,63 @@
                 &::after {
                     bottom: calc($index * -1);
                 }
+                &:hover {
+                    transform: translateZ(0);
+                    & + * {
+                        transform: translateZ(0) rotateY(0);
+                        & + * {
+                            transform: translateZ(0) rotateY(0);
+                            & + * {
+                                transform: translateZ(0) rotateY(0);
+                                & + * {
+                                    transform: translateZ(0) rotateY(0);
+                                }
+                            }
+                        }
+                    }
+                }
+                &:has(+ :hover) {
+                    transform: translateZ(0) rotateY(0);
+                }
+                &:has(+ * + :hover) {
+                    transform: translateZ(0) rotateY(0);
+                }
+                &:has(+ * + * + :hover) {
+                    transform: translateZ(0) rotateY(0);
+                }
+                &:has(+ * + * + * + :hover) {
+                    transform: translateZ(0) rotateY(0);
+                }
+
                 &.active {
                     height: 28vw;
                     width: 100%;
                     transform: translateZ(calc($index * 10));
                     margin: .45vh 0;
                     & + * {
-                        transform: translateZ(calc($index * 8.5)) rotateX(-35deg);
+                        transform: translateZ(calc($index * 8.5)) rotateX(-35deg) rotateY(0);
                         & + * {
-                            transform: translateZ(calc($index * 5.6)) rotateX(-40deg);
+                            transform: translateZ(calc($index * 5.6)) rotateX(-40deg) rotateY(0);
                             & + * {
-                                transform: translateZ(calc($index * 2.4)) rotateX(-30deg);
+                                transform: translateZ(calc($index * 2.4)) rotateX(-30deg) rotateY(0);
                                 & + * {
-                                    transform: translateZ(calc($index * .6)) rotateX(-14deg);
+                                    transform: translateZ(calc($index * .6)) rotateX(-14deg) rotateY(0);
                                 }
                             }
                         }
                     }
                 }
                 &:has(+ .active) {
-                    transform: translateZ(calc($index * 8.5)) rotateX(35deg);
+                    transform: translateZ(calc($index * 8.5)) rotateX(35deg) rotateY(0);
                 }
                 &:has(+ * + .active) {
-                    transform: translateZ(calc($index * 5.6)) rotateX(40deg);
+                    transform: translateZ(calc($index * 5.6)) rotateX(40deg) rotateY(0);
                 }
                 &:has(+ * + * + .active) {
-                    transform: translateZ(calc($index * 2.4)) rotateX(30deg);
+                    transform: translateZ(calc($index * 2.4)) rotateX(30deg) rotateY(0);
                 }
                 &:has(+ * + * + * + .active) {
-                    transform: translateZ(calc($index * .6)) rotateX(14deg);
+                    transform: translateZ(calc($index * .6)) rotateX(14deg) rotateY(0);
                 }
             }
         }
