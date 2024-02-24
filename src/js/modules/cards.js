@@ -73,9 +73,9 @@ function cards() {
                 const frontCard = this.closest(cardsFront);
                 const backCard = frontCard.nextElementSibling;
     
-                if (frontCard && backCard) {
-                    frontCard.classList.toggle('active');
-                    backCard.classList.toggle('active');
+                if (frontCard) {
+                    frontCard.classList.remove('active');
+                    backCard.classList.add('active');
                 }
             });
         });
@@ -85,11 +85,10 @@ function cards() {
                 const backCard = this.closest(cardsBack);
                 const frontCard = backCard.previousElementSibling;
     
-                if (backCard && frontCard) {
-                    backCard.classList.toggle('active');
-                    frontCard.classList.toggle('active');
+                if (backCard) {
+                    frontCard.classList.add('active');
+                    backCard.classList.remove('active');
                 }
-                // loadingSkillsCards('.skills__card-front-icon', '.counter');
             });
         });
     }
@@ -115,7 +114,7 @@ function cards() {
                 this.classes.forEach(className => element.classList.add(className));
             }
             element.innerHTML = `
-                <div class="skills__card-front">
+                <div class="skills__card-front active">
                     <div class="skills__card-front-icon">
                         <h3>
                             <img src=${this.src} alt=${this.alt}>

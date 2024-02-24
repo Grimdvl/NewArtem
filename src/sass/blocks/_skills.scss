@@ -33,19 +33,22 @@
     &__card {
         position: relative;
         transform-style: preserve-3d;
-        transform: perspective(100rem) rotateY(0deg);
         will-change: transform;
-        .active {
-            &.skills__card-front {
-                transform: perspective(100rem) rotateY(180deg);
-                will-change: transform;
-            }
-        
-            &.skills__card-back {
-                transform: perspective(100rem) rotateY(360deg);
-                will-change: transform;
+        &-front {
+            transform: rotateY(180deg);
+            will-change: transform;
+            &.active {
+                transform: rotateY(1deg);
             }
         }
+        &-back {
+            transform: rotateY(180deg);
+            will-change: transform;
+            &.active {
+                transform: rotateY(1deg);
+            }
+        }
+
         &-front, &-back {
             display: flex;
             justify-content: space-between;
@@ -177,7 +180,7 @@
         //     transform: perspective(1000px) rotateY(180deg);
         // }
         &-back {
-            transform: perspective(100rem) rotateY(180deg);
+            transform: rotateY(180deg);
             &-title {
                 position: relative;
                 text-align: center;
