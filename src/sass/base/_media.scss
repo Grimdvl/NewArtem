@@ -94,7 +94,7 @@
     }
     .portfolio {
         &__wrapper {
-            height: 100vh;
+            height: 85vh;
             // &.active {
             //     height: 120vh;
             // }
@@ -124,7 +124,7 @@
                 &.active {
                     height: 28vw;
                     width: 100%;
-                    transition: .5s;
+                    transition: .5s all;
                     transform: translateZ(calc($index * 10));
                     margin: .45vh 0;
                     & + * {
