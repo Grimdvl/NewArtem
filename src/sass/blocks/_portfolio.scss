@@ -168,47 +168,6 @@
                     }
                 }
             }
-            
-            // &:hover {
-            //     transform: translateZ(calc($index * 10));
-            //     filter: inherit;
-            //     & + * {
-            //         transform: translateZ(calc($index * 8.5)) rotateY(35deg);
-            //         filter: inherit;
-            //         z-index: -1;
-            //         & + * {
-            //             transform: translateZ(calc($index * 5.6)) rotateY(40deg);
-            //             filter: inherit;
-            //             z-index: -2;
-            //             & + * {
-            //                 transform: translateZ(calc($index * 2.4)) rotateY(30deg);
-            //                 z-index: -3;
-            //                 filter: inherit;
-            //                 & + * {
-            //                     transform: translateZ(calc($index * .6)) rotateY(14deg);
-            //                     z-index: -4;
-            //                     filter: inherit;
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
-            // &:has(+ :hover) {
-            //     transform: translateZ(calc($index * 8.5)) rotateY(-35deg);
-            //     filter: inherit;
-            // }
-            // &:has(+ * + :hover) {
-            //     transform: translateZ(calc($index * 5.6)) rotateY(-40deg);
-            //     filter: inherit;
-            // }
-            // &:has(+ * + * + :hover) {
-            //     transform: translateZ(calc($index * 2.4)) rotateY(-30deg);
-            //     filter: inherit;
-            // }
-            // &:has(+ * + * + * + :hover) {
-            //     transform: translateZ(calc($index * .6)) rotateY(-14deg);
-            //     filter: inherit;
-            // }
 
             &.active {
                 width: 28vw;
