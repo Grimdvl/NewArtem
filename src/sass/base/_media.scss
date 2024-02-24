@@ -93,8 +93,9 @@
         }
     }
     .portfolio {
+        height: 100%;
         &__wrapper {
-            height: 85vh;
+            height: 100vh;
         }
         &__items {
             margin-top: 4rem;
@@ -164,17 +165,9 @@
         }
     }
     .portfolio {
-        height: 100%;
         &__wrapper {
-            height: 75vh;
+            height: 80vh;
         }
-        // &__items {
-        //     &-item {
-        //         &.active {
-        //             height: 45vw;
-        //         }
-        //     }
-        // }
     }
     .contacts {
         &__input {
@@ -212,6 +205,33 @@
         }
         &__title {
             font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .portfolio {
+        &__wrapper {
+            height: 70vh;
+        }
+        &__items {
+            &-item {
+                &.active {
+                    height: 40vw;
+                }
+                .descr {
+                    &-title {
+                        font-size: 1.3rem;
+                    }
+                    &-text {
+                        font-size: .8rem;
+                    }
+                    &__links {
+                        margin-bottom: 0.5rem;
+                        gap: 0.5rem;
+                    }
+                }
+            }
         }
     }
 }
