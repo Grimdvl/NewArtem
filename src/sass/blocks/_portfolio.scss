@@ -32,48 +32,52 @@
         display: flex;
         gap: .4rem;
         perspective: calc($index * 35);
-        // &.active {
-        //     &-item {
-        //         &.active {
-        //             width: 28vw;
-        //             transform: unset;
-        //             z-index: 2;
-        //             margin: 0 .45vw;
-        //             & + * {
-        //                 transform: unset;
-        //                 & + * {
-        //                     transform: unset;
-        //                     & + * {
-        //                         transform: unset;
-        //                         & + * {
-        //                             transform: unset;
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //             &:hover {
-        //                 .descr {
-        //                     background: linear-gradient(rgba(0, 0, 0, .1), $main-color);
-        //                     transform: translateY(0);
-        //                     opacity: 1;
-        //                     visibility: visible;
-        //                 }
-        //             }
-        //         }
-        //         &:has(+ .active) {
-        //             transform: unset;
-        //         }
-        //         &:has(+ * + .active) {
-        //             transform: unset;
-        //         }
-        //         &:has(+ * + * + .active) {
-        //             transform: unset;
-        //         }
-        //         &:has(+ * + * + * + .active) {
-        //             transform: unset;
-        //         }
-        //     }
-        // }
+        @media (min-width: 769px) {
+            &:not(.active) {
+                .portfolio__items-item {
+                    &:hover {
+                        transform: translateZ(calc($index * 10));
+                        filter: inherit;
+                        & + * {
+                            transform: translateZ(calc($index * 8.5)) rotateY(35deg);
+                            filter: inherit;
+                            z-index: -1;
+                            & + * {
+                                transform: translateZ(calc($index * 5.6)) rotateY(40deg);
+                                filter: inherit;
+                                z-index: -2;
+                                & + * {
+                                    transform: translateZ(calc($index * 2.4)) rotateY(30deg);
+                                    z-index: -3;
+                                    filter: inherit;
+                                    & + * {
+                                        transform: translateZ(calc($index * .6)) rotateY(14deg);
+                                        z-index: -4;
+                                        filter: inherit;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:has(+ :hover) {
+                        transform: translateZ(calc($index * 8.5)) rotateY(-35deg);
+                        filter: inherit;
+                    }
+                    &:has(+ * + :hover) {
+                        transform: translateZ(calc($index * 5.6)) rotateY(-40deg);
+                        filter: inherit;
+                    }
+                    &:has(+ * + * + :hover) {
+                        transform: translateZ(calc($index * 2.4)) rotateY(-30deg);
+                        filter: inherit;
+                    }
+                    &:has(+ * + * + * + :hover) {
+                        transform: translateZ(calc($index * .6)) rotateY(-14deg);
+                        filter: inherit;
+                    }
+                }
+            }
+        }
         &-item {
             position: relative;
             border-radius: 3rem;
@@ -164,46 +168,47 @@
                     }
                 }
             }
-            &:hover {
-                transform: translateZ(calc($index * 10));
-                filter: inherit;
-                & + * {
-                    transform: translateZ(calc($index * 8.5)) rotateY(35deg);
-                    filter: inherit;
-                    z-index: -1;
-                    & + * {
-                        transform: translateZ(calc($index * 5.6)) rotateY(40deg);
-                        filter: inherit;
-                        z-index: -2;
-                        & + * {
-                            transform: translateZ(calc($index * 2.4)) rotateY(30deg);
-                            z-index: -3;
-                            filter: inherit;
-                            & + * {
-                                transform: translateZ(calc($index * .6)) rotateY(14deg);
-                                z-index: -4;
-                                filter: inherit;
-                            }
-                        }
-                    }
-                }
-            }
-            &:has(+ :hover) {
-                transform: translateZ(calc($index * 8.5)) rotateY(-35deg);
-                filter: inherit;
-            }
-            &:has(+ * + :hover) {
-                transform: translateZ(calc($index * 5.6)) rotateY(-40deg);
-                filter: inherit;
-            }
-            &:has(+ * + * + :hover) {
-                transform: translateZ(calc($index * 2.4)) rotateY(-30deg);
-                filter: inherit;
-            }
-            &:has(+ * + * + * + :hover) {
-                transform: translateZ(calc($index * .6)) rotateY(-14deg);
-                filter: inherit;
-            }
+            
+            // &:hover {
+            //     transform: translateZ(calc($index * 10));
+            //     filter: inherit;
+            //     & + * {
+            //         transform: translateZ(calc($index * 8.5)) rotateY(35deg);
+            //         filter: inherit;
+            //         z-index: -1;
+            //         & + * {
+            //             transform: translateZ(calc($index * 5.6)) rotateY(40deg);
+            //             filter: inherit;
+            //             z-index: -2;
+            //             & + * {
+            //                 transform: translateZ(calc($index * 2.4)) rotateY(30deg);
+            //                 z-index: -3;
+            //                 filter: inherit;
+            //                 & + * {
+            //                     transform: translateZ(calc($index * .6)) rotateY(14deg);
+            //                     z-index: -4;
+            //                     filter: inherit;
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+            // &:has(+ :hover) {
+            //     transform: translateZ(calc($index * 8.5)) rotateY(-35deg);
+            //     filter: inherit;
+            // }
+            // &:has(+ * + :hover) {
+            //     transform: translateZ(calc($index * 5.6)) rotateY(-40deg);
+            //     filter: inherit;
+            // }
+            // &:has(+ * + * + :hover) {
+            //     transform: translateZ(calc($index * 2.4)) rotateY(-30deg);
+            //     filter: inherit;
+            // }
+            // &:has(+ * + * + * + :hover) {
+            //     transform: translateZ(calc($index * .6)) rotateY(-14deg);
+            //     filter: inherit;
+            // }
 
             &.active {
                 width: 28vw;

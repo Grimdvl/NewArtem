@@ -112,12 +112,12 @@
                 .descr {
                     padding: 0 .5rem ;
                     transform: translateY(0);
-                    &-title {
-                        font-size: 1.3rem;
-                    }
-                    &-text {
-                        font-size: .8rem;
-                    }
+                    // &-title {
+                    //     font-size: 1.3rem;
+                    // }
+                    // &-text {
+                    //     font-size: .8rem;
+                    // }
                 }
                 &::after, &::before {
                     content: '';
@@ -131,34 +131,6 @@
                 &::after {
                     bottom: calc($index * -1);
                 }
-                &:hover {
-                    transform: translateZ(0);
-                    & + * {
-                        transform: translateZ(0) rotateY(0);
-                        & + * {
-                            transform: translateZ(0) rotateY(0);
-                            & + * {
-                                transform: translateZ(0) rotateY(0);
-                                & + * {
-                                    transform: translateZ(0) rotateY(0);
-                                }
-                            }
-                        }
-                    }
-                }
-                &:has(+ :hover) {
-                    transform: translateZ(0) rotateY(0);
-                }
-                &:has(+ * + :hover) {
-                    transform: translateZ(0) rotateY(0);
-                }
-                &:has(+ * + * + :hover) {
-                    transform: translateZ(0) rotateY(0);
-                }
-                &:has(+ * + * + * + :hover) {
-                    transform: translateZ(0) rotateY(0);
-                }
-
                 &.active {
                     height: 28vw;
                     width: 100%;
