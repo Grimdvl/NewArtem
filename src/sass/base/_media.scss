@@ -95,9 +95,6 @@
     .portfolio {
         &__wrapper {
             height: 85vh;
-            // &.active {
-            //     height: 120vh;
-            // }
         }
         &__items {
             margin-top: 4rem;
@@ -166,10 +163,19 @@
             grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         }
     }
+    .portfolio {
+        &__wrapper {
+            height: 70vh;
+        }
+        &__items {
+            &-item {
+                &.active {
+                    height: 45vw;
+                }
+            }
+        }
+    }
     .contacts {
-        // &__descr {
-
-        // }
         &__input {
             grid-column: 1/3;
         }
