@@ -164,16 +164,17 @@
         }
     }
     .portfolio {
+        height: 100%;
         &__wrapper {
-            height: 70vh;
+            height: 75vh;
         }
-        &__items {
-            &-item {
-                &.active {
-                    height: 45vw;
-                }
-            }
-        }
+        // &__items {
+        //     &-item {
+        //         &.active {
+        //             height: 45vw;
+        //         }
+        //     }
+        // }
     }
     .contacts {
         &__input {
