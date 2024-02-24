@@ -168,6 +168,23 @@
         &__wrapper {
             height: 80vh;
         }
+        &__items {
+            &-item {
+                .descr {
+                    &-title {
+                        font-size: 1.4rem;
+                    }
+                    &-text {
+                        font-size: .9rem;
+                    }
+                    &__links {
+                        margin-bottom: 0.5rem;
+                        gap: 0.5rem;
+                        background-color: red;
+                    }
+                }
+            }
+        }
     }
     .contacts {
         &__input {
@@ -209,7 +226,7 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .portfolio {
         &__wrapper {
             height: 70vh;
@@ -225,10 +242,6 @@
                     }
                     &-text {
                         font-size: .8rem;
-                    }
-                    &__links {
-                        margin-bottom: 0.5rem;
-                        gap: 0.5rem;
                     }
                 }
             }
