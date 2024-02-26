@@ -23,22 +23,22 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                 
                 if (mediaQuery) {
                     if (index === 0) {
-                        parent.parentNode.style.marginTop = '15vh';
+                        parent.parentNode.style.marginTop = '20vh';
                         parent.parentNode.style.marginBottom = '0';
                     } else if (index === 1) {
-                        parent.parentNode.style.marginTop = '10vh';
+                        parent.parentNode.style.marginTop = '15vh';
                         parent.parentNode.style.marginBottom = '0';
                     } else if (index === 2) {
-                        parent.parentNode.style.marginTop = '5vh';
+                        parent.parentNode.style.marginTop = '10vh';
                         parent.parentNode.style.marginBottom = '0';
                     } else if (index === elements.length - 1) {
-                        parent.parentNode.style.marginBottom = '15vh';
+                        parent.parentNode.style.marginBottom = '20vh';
                         parent.parentNode.style.marginTop = '0';
                     } else if (index === elements.length - 2) {
-                        parent.parentNode.style.marginBottom = '10vh';
+                        parent.parentNode.style.marginBottom = '15vh';
                         parent.parentNode.style.marginTop = '0';
                     } else if (index === elements.length - 3) {
-                        parent.parentNode.style.marginBottom = '5vh';
+                        parent.parentNode.style.marginBottom = '10vh';
                         parent.parentNode.style.marginTop = '0';
                     } else {
                         parent.parentNode.style.marginTop = '0';
