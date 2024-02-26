@@ -35,17 +35,17 @@
         transform-style: preserve-3d;
         will-change: transform;
         &-front {
-            transform: rotateY(180deg);
+            transform: perspective(80rem) rotateY(180deg);
             will-change: transform;
             &.active {
-                transform: rotateY(1deg);
+                transform: perspective(80rem) rotateY(0);
             }
         }
         &-back {
-            transform: rotateY(180deg);
+            transform: perspective(80rem) rotateY(180deg);
             will-change: transform;
             &.active {
-                transform: rotateY(1deg);
+                transform: rotateY(360deg);
             }
         }
 
