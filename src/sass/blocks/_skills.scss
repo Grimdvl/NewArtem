@@ -38,14 +38,14 @@
             transform: rotateY(180deg);
             will-change: transform;
             &.active {
-                transform: perspective(80rem) rotateY(0);
+                transform: rotateY(0);
             }
         }
         &-back {
             transform: rotateY(180deg);
             will-change: transform;
             &.active {
-                transform: perspective(80rem) rotateY(360deg);
+                transform: rotateY(360deg);
             }
         }
     
