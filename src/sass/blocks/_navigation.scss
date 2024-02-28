@@ -142,28 +142,28 @@
     border-radius: 50%;
     z-index: 1;
     transition: 0.5s;
-    &:before {
-        content: '';
-        position: absolute;
-        top:-23px;
-        left: -2px;
-        width: 26px;
-        height: 26px;
-        background: transparent;
-        border-radius: 50%;
-        box-shadow: 18px 10px $main-color;
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        top: 47px;
-        right: 26px;
-        width: 26px;
-        height: 26px;
-        background: transparent;
-        border-radius: 50%;
-        box-shadow: 18px -10px $main-color;
-    }
+    // &:before {
+    //     content: '';
+    //     position: absolute;
+    //     top:-23px;
+    //     left: -2px;
+    //     width: 26px;
+    //     height: 26px;
+    //     background: transparent;
+    //     border-radius: 50%;
+    //     box-shadow: 18px 10px $main-color;
+    // }
+    // &:after {
+    //     content: '';
+    //     position: absolute;
+    //     top: 47px;
+    //     right: 26px;
+    //     width: 26px;
+    //     height: 26px;
+    //     background: transparent;
+    //     border-radius: 50%;
+    //     box-shadow: 18px -10px $main-color;
+    // }
 }
 
 .navigation.active .hamburger{
