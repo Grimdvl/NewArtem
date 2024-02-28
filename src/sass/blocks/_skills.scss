@@ -35,19 +35,20 @@
         transform-style: preserve-3d;
         will-change: transform;
         &-front {
-            transform: perspective(80rem) rotateY(180deg);
+            transform: rotateY(180deg);
             will-change: transform;
             &.active {
                 transform: perspective(80rem) rotateY(0);
             }
         }
         &-back {
-            transform: perspective(80rem) rotateY(180deg);
+            transform: rotateY(180deg);
             will-change: transform;
             &.active {
-                transform: rotateY(360deg);
+                transform: perspective(80rem) rotateY(360deg);
             }
         }
+    
 
         &-front, &-back {
             display: flex;
