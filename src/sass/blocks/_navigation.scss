@@ -1,73 +1,67 @@
-.hamburger {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    padding: 0 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    cursor: pointer;
-    &:before {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 2px;
-        background: white;
-        transform: translateY(-8px);
-        transition: 0.5s;
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 2px;
-        background: white;
-        transform: translateY(8px);
-        box-shadow: 0 -8px 0 white;
-        transition: 0.5s;
-    }
-}
+// .hamburger {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 50px;
+//     height: 50px;
+//     padding: 0 10px;
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     cursor: pointer;
+//     &:before {
+//         content: '';
+//         position: absolute;
+//         width: 30px;
+//         height: 2px;
+//         background: white;
+//         transform: translateY(-8px);
+//         transition: 0.5s;
+//     }
+//     &:after {
+//         content: '';
+//         position: absolute;
+//         width: 30px;
+//         height: 2px;
+//         background: white;
+//         transform: translateY(8px);
+//         box-shadow: 0 -8px 0 white;
+//         transition: 0.5s;
+//     }
+// }
 
 .navigation {
     position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3%;
     background: $main-color;
-    width: 50px;
-    height: 350px;
+    height: 7rem;
+    width: 40rem;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
     z-index: 4;
-    border-radius: 20px;
-    &.active {
-        width: 200px;
-    }
+    border-radius: 3rem;
     &__list {
         display: flex;
-        flex-direction: column;
-        width: 100%;
+        justify-content: space-around;
+        height: 100%;
         position: absolute;
-        top: 50px;
-        border-top: 1px solid rgba(255, 255, 255, 0.25);
     }
     &__link {
         list-style: none;
         position: relative;
         width: 100%;
-        height: 70px;
-        border-radius: 40px;
-        border: 8px solid transparent;
+        border-radius: 4rem;
+        border: .8rem solid transparent;
         transition: 0.5s;
         z-index: 2;
         a {
             position: relative;
             display: flex;
-            justify-content: flex-start;
+            flex-direction: column;
             align-items: center;
             width: 100%;
             text-align: center;
@@ -76,111 +70,115 @@
             .icon {
                 position: relative;
                 display: block;
-                min-width: 36px;
-                height: 36px;
+                min-width: 5rem;
+                height: 5rem;
                 border-radius: 50%;
                 background: $main-color;
                 color: white;
-                font-size: 2.75em;
-                line-height: 50px;
+                font-size: 3em;
+                line-height: 5rem;
                 border: 0 solid transparent;
                 &:before {
                     content: '';
                     position: absolute;
-                    top: 10px;
+                    top: 1rem;
                     left: 0;
                     width: 100%;
                     height: 100%;
                     background: white;
                     border-radius: 50%;
-                    filter: blur(5px);
+                    filter: blur(.5rem);
                     opacity: 0;
                     transition: 0.5s;
                 }
             }
             .text {
-                position: relative;
-                font-size: 1.5em;
-                padding: 0 15px;
-                color: white;
+                background: white;
+                font-size: 1.2em;
+                padding: .2rem .7rem;
+                color: black;
+                border-radius: 2rem;
+                font-weight: 400;
                 display: flex;
                 align-items: center;
-                height: 60px;
                 opacity: 0;
                 visibility: hidden;
+                transform: translateY(1rem);
                 transition: 0.5s;
+                white-space: nowrap;
             }
         }
     }
 }
 
-.navigation__overlay {
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.5s all;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 3;
-    &.active {
-        transition: 0.5s all;
-        visibility: visible;
-        opacity: .75;
-    }
-}
+// .navigation__overlay {
+//     visibility: hidden;
+//     opacity: 0;
+//     transition: 0.5s all;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: white;
+//     z-index: 3;
+//     &.active {
+//         transition: 0.5s all;
+//         visibility: visible;
+//         opacity: .75;
+//     }
+// }
 
 .indicator {
     position: absolute;
-    top: 13px;
-    left: -24px;
-    width: 50px;
-    height: 50px;
+    left: 1rem;
+    top: -50%;
+    width: 7rem;
+    height: 7rem;
     background: $main-color;
     border-radius: 50%;
     z-index: 1;
     transition: 0.5s;
-    // &:before {
-    //     content: '';
-    //     position: absolute;
-    //     top:-23px;
-    //     left: -2px;
-    //     width: 26px;
-    //     height: 26px;
-    //     background: transparent;
-    //     border-radius: 50%;
-    //     box-shadow: 18px 10px $main-color;
-    // }
-    // &:after {
-    //     content: '';
-    //     position: absolute;
-    //     top: 47px;
-    //     right: 26px;
-    //     width: 26px;
-    //     height: 26px;
-    //     background: transparent;
-    //     border-radius: 50%;
-    //     box-shadow: 18px -10px $main-color;
-    // }
-}
-
-.navigation.active .hamburger{
     &:before {
-        transform: translate(0) rotate(45deg);
+        content: '';
+        position: absolute;
+        top: .5rem;
+        left: -2.8rem;
+        width: 3rem;
+        height: 3rem;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: 1.5rem 1.8rem $main-color;
     }
     &:after {
-        transform: translate(0) rotate(-45deg);
-        box-shadow: 0 0 0 black;
+        content: '';
+        position: absolute;
+        top: .5rem;
+        right: -2.8rem;
+        width: 3rem;
+        height: 3rem;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: -1.5rem 1.8rem $main-color;
     }
 }
-.navigation.active .text{
-    opacity: 1;
-    visibility: visible;
-}
+
+// .navigation.active .hamburger{
+//     &:before {
+//         transform: translate(0) rotate(45deg);
+//     }
+//     &:after {
+//         transform: translate(0) rotate(-45deg);
+//         box-shadow: 0 0 0 black;
+//     }
+// }
+// .navigation.active .text{
+//     transform: translateY(-.4rem);
+//     opacity: 1;
+//     visibility: visible;
+// }
 .navigation__link.active {
-    transform: translateX(-25px);
+    transform: translateY(-3rem);
     a {
         .icon {
             transition: 0.5s all;
@@ -194,24 +192,24 @@
             }
         }
         .text {
-            transition: 0.5s all;
-            color: black;
+            opacity: 1;
+            visibility: visible;
         }
     }
 
     &:nth-child(1) ~ .indicator {
-        transform: translateY(calc(70px * 0));
+        transform: translateX(calc(7rem * 0));
     }
     &:nth-child(2) ~ .indicator {
-        transform: translateY(calc(70px * 1));
+        transform: translateX(calc(8.4rem * 1));
     }
     &:nth-child(3) ~ .indicator {
-        transform: translateY(calc(70px * 2));
+        transform: translateX(calc(8.2rem * 2));
     }
     &:nth-child(4) ~ .indicator {
-        transform: translateY(calc(70px * 3));
+        transform: translateX(calc(8.2rem * 3));
     }
     &:nth-child(5) ~ .indicator {
-        transform: translateY(calc(70px * 4));
+        transform: translateX(calc(8.2rem * 4));
     }
 }
