@@ -15,7 +15,7 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
     const addActiveClass = () => {
         elements.forEach((elem, index) => {
             elem.addEventListener('click', (event) => {
-                const mediaQuery = window.matchMedia('(max-width: 768px)');
+                const mediaQuery = window.innerWidth <= 768;
 
                 removeActiveClass();
                 event.target.parentNode.classList.add(activeClass);

@@ -16,4 +16,4 @@ function hamburger(navigationSelector, hamburgerSelector, activeClass, overlaySe
 }
 
 // module.exports = hamburger;
-export default hamburger;
+// export default hamburger;
