@@ -203,7 +203,7 @@
         }
     }
     &__btn {
-        border-radius: 2rem;
+        border-radius: 3rem;
         background: $main-color;
         box-shadow: 0 0 1rem $main-color;
         font-weight: bold;
@@ -211,6 +211,7 @@
         line-height: 2.1rem;
         color: #FFF;
         transition: .5s box-shadow;
+        cursor: pointer;
         &:hover {
             box-shadow: none;
         }

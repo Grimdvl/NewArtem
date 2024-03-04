@@ -216,8 +216,8 @@
 
 .navigation {
     position: fixed;
-    top: -15%;
-    right: -5%;
+    top: -5rem;
+    right: -5rem;
     width: 27rem;
     height: 27rem;
     display: flex;
@@ -230,11 +230,12 @@
                 transform: rotate(-130deg);
                 color: $main-color;
                 background: white;
+                box-shadow: none;
             }
         }
         .navigation {
             &-link {
-                transform: rotate(calc(-130deg / 4 * var(--i))) translateX(0);
+                transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
             }
         }
     }
@@ -253,6 +254,11 @@
         z-index: 4;
         font-size: 3em;
         transition: 1s all;
+        box-shadow: 0 0 1rem $main-color;
+        transition: .5s box-shadow;
+        &:hover {
+            box-shadow: none;
+        }
     }
     &-link {
         position: absolute;
@@ -272,7 +278,7 @@
             border: .2rem solid $main-color;
             border-radius: 50%;
             font-size: 2em;
-            transform: rotate(calc(-130deg / -4 * var(--i)));
+            transform: rotate(calc(-110deg / -4 * var(--i)));
         }
     }
 }

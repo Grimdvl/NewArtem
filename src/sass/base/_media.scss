@@ -58,6 +58,15 @@
 }
 
 @media (max-width: 768px) {
+    .navigation {
+        top: -8rem;
+        right: -8rem;
+        &-menu {
+            &:hover {
+                box-shadow: 0 0 1rem $main-color;
+            }
+        }
+    }
     .promo {
         flex-direction: column;
         &__content {
