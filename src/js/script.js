@@ -14,8 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     multipleText();
     // hamburger('.navigation', '.hamburger', 'active', '.navigation__overlay');
-    navigationMenu('active', '.navigation-menu', '.navigation');
-    navigation('.navigation-link', 'active', 'section', '.indicator');
+    navigationMenu('active', '.menu-bar', '.menu');
+    navigation('.navigation__link', 'active', 'section', '.indicator');
     cards();
     modal('[data-modal]', '.modal', 'form');
     portfolioTrigger('.portfolio__items-item', 'active', '.portfolio__items');

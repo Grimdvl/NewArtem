@@ -4,7 +4,7 @@ import portfolioTrigger from './portfolio';
 
 function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelector) {
     const links = document.querySelectorAll(linksSelector),
-        //   indicator = document.querySelector(indicatorSelector),
+          indicator = document.querySelector(indicatorSelector),
           sections = document.querySelectorAll(sectionsSelector);
 
     const sectionsMap = {
@@ -40,8 +40,8 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
             if (top >= offset && top < offset + height && link) {
                 removeActiveClass();
                 removeAnimatedClass();
-                // indicator.classList.remove('hide');
-                // indicator.classList.add('show');
+                indicator.classList.remove('hide');
+                indicator.classList.add('show');
                 if (!sectionsMap[section.id].classList.contains('animated')) {
                     sectionsMap[section.id].classList.add('animated');
                     if (sectionsMap.skills.classList.contains('animated') && !isSkillsCardsLoaded) {
@@ -77,8 +77,8 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
             } else if (top <= 400 && link) {
                 removeActiveClass();
                 removeAnimatedClass();
-                // indicator.classList.remove('show');
-                // indicator.classList.add('hide');
+                indicator.classList.remove('show');
+                indicator.classList.add('hide');
             }
         });
     }
