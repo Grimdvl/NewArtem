@@ -26,10 +26,10 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                         parent.parentNode.style.marginTop = '20vh';
                         parent.parentNode.style.marginBottom = '0';
                     } else if (index >= 0 && index <= Math.floor(elements.length / 2)) {
-                        parent.parentNode.style.marginTop = '12vh';
+                        parent.parentNode.style.marginTop = '11vh';
                         parent.parentNode.style.marginBottom = '0';
                     } else if (index >= elements.length - 1 && index >= Math.floor(elements.length / 2)) {
-                        parent.parentNode.style.marginTop = '12h';
+                        parent.parentNode.style.marginTop = '15h';
                         parent.parentNode.style.marginBottom = '15vh';
                     } else {
                         parent.parentNode.style.marginTop = '0';
