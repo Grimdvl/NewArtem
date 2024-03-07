@@ -23,13 +23,13 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                 
                 if (mediaQuery) {
                     if (index === 0 ) {
-                        parent.parentNode.style.marginTop = '15vh';
+                        parent.parentNode.style.marginTop = '20vh';
                         parent.parentNode.style.marginBottom = '0';
                     } else if (index >= 0 && index <= Math.floor(elements.length / 2)) {
-                        parent.parentNode.style.marginTop = '10vh';
+                        parent.parentNode.style.marginTop = '15vh';
                         parent.parentNode.style.marginBottom = '0';
                     } else if (index >= elements.length - 1) {
-                        parent.parentNode.style.marginTop = '5vh';
+                        parent.parentNode.style.marginTop = '10vh';
                         parent.parentNode.style.marginBottom = '15vh';
                     } else {
                         parent.parentNode.style.marginTop = '0';
