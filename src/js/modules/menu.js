@@ -1,4 +1,4 @@
-const navigationMenu = (activeClass, menuSelector, navigationSelector) => {
+const navigationMenu = (activeClass, menuSelector, navigationSelector, ) => {
     const menu = document.querySelector(menuSelector),
           nav = document.querySelector(navigationSelector);
 

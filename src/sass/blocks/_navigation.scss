@@ -147,29 +147,6 @@
     justify-content: center;
     align-items: center;
     z-index: 3;
-    &.active {
-        .menu {
-            &-bar {
-                transform: rotate(-130deg);
-                color: $main-color;
-                background: white;
-                box-shadow: none;
-            }
-        }
-        .menu {
-            &-list {
-                transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
-                .mode {
-                    font-size: 3rem;
-                    box-shadow: 0 0 1rem $main-color;
-                    transition: 0.5s box-shadow;
-                    &:hover {
-                        box-shadow: none;
-                    }
-                }
-            }
-        }
-    }
     &-bar {
         position: absolute;
         width: 5.5rem;
@@ -211,13 +188,14 @@
             color: $main-color;
             border: .2rem solid $main-color;
             border-radius: 50%;
-            font-size: 2em;
+            font-size: 3em;
             transform: rotate(calc(-110deg / -4 * var(--i)));
             position: relative;
             display: inline-flex;
             z-index: 1;
             overflow: hidden;
             transition: .5s color;
+            
             &.language {
                 font-size: 2rem;
                 &:hover {
@@ -251,10 +229,33 @@
                     }
                 }
             }
-            &.mode {
+        }
+        // &.mode {
+        //     box-shadow: none;
+        // }
+    }
+    &.active {
+        .menu {
+            &-bar {
+                transform: rotate(-130deg);
+                color: $main-color;
+                background: white;
                 box-shadow: none;
             }
         }
-        
+        .menu {
+            &-list {
+                transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
+            }
+            .mode {
+                // button {
+                    box-shadow: 0 0 1rem $main-color;
+                    transition: 0.5s box-shadow;
+                    &:hover {
+                        box-shadow: none;
+                    }
+                // }
+            }
+        }
     }
 }
