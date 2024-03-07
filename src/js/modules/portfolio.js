@@ -22,11 +22,11 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                 parent.classList.add(activeClass);
                 
                 if (mediaQuery) {
-                    if (index >= 0 ) {
-                        parent.parentNode.style.marginTop = '20vh';
+                    if (index === 0 ) {
+                        parent.parentNode.style.marginTop = '15vh';
                         parent.parentNode.style.marginBottom = '0';
-                    } else if (index <= Math.floor(elements.length / 2)) {
-                        parent.parentNode.style.marginTop = '10vh';
+                    } else if (index >= 0 && index <= Math.floor(elements.length / 2)) {
+                        parent.parentNode.style.marginTop = '5vh';
                         parent.parentNode.style.marginBottom = '0';
                     } else if (index >= elements.length - 1) {
                         parent.parentNode.style.marginTop = '0';
