@@ -13,6 +13,14 @@
     section {
         padding: 5rem 5% 2rem;
     }
+    .menu {
+        &-bar {
+            // background: black;
+            &:hover {
+                box-shadow: 0 0 1rem $main-color;
+            }
+        }
+    }
     .portfolio {
         &__items {
             &-item {
@@ -170,7 +178,7 @@
     }
     .portfolio {
         &__wrapper {
-            height: 80vh;
+            height: 85vh;
         }
         &__items {
             &-item {
