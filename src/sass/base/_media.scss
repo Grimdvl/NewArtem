@@ -250,9 +250,9 @@
 
 @media (max-width: 450px) {
     .portfolio {
-        &__wrapper {
-            height: 70vh;
-        }
+        // &__wrapper {
+        //     height: 70vh;
+        // }
         &__items {
             &-item {
                 &.active {
