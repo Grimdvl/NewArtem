@@ -177,9 +177,9 @@
         }
     }
     .portfolio {
-        // &__wrapper {
-        //     height: 85vh;
-        // }
+        &__wrapper {
+            height: 80vh;
+        }
         &__items {
             &-item {
                 .descr {
