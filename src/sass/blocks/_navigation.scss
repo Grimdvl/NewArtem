@@ -160,6 +160,7 @@
             &-list {
                 transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
                 .mode {
+                    font-size: 3rem;
                     box-shadow: 0 0 1rem $main-color;
                     transition: 0.5s box-shadow;
                     &:hover {
@@ -251,7 +252,6 @@
                 }
             }
             &.mode {
-                font-size: 3rem;
                 box-shadow: none;
             }
         }
