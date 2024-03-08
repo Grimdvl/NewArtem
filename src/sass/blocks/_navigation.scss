@@ -230,31 +230,31 @@
                 }
             }
         }
-        // &.mode {
-        //     box-shadow: none;
-        // }
+        .mode {
+            button {
+                box-shadow: 0 0 1rem $main-color;
+            }
+        }
     }
     &.active {
-        .menu {
-            &-bar {
-                transform: rotate(-130deg);
-                color: $main-color;
-                background: white;
-                box-shadow: none;
-            }
+        &-bar {
+            transform: rotate(-130deg);
+            color: $main-color;
+            background: white;
+            box-shadow: none;
         }
         .menu {
             &-list {
                 transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
             }
-            .mode {
-                // button {
-                    box-shadow: 0 0 1rem $main-color;
-                    transition: 0.5s box-shadow;
-                    &:hover {
-                        box-shadow: none;
-                    }
-                // }
+        }
+        .mode {
+            button {
+                box-shadow: 0 0 1rem $main-color;
+                transition: 0.5s box-shadow;
+                &:hover {
+                    box-shadow: none;
+                }
             }
         }
     }
