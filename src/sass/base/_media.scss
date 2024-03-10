@@ -21,9 +21,11 @@
         }
         &.active {
             .menu {
-                .mode {
-                    &:hover {
-                        box-shadow: 0 0 1rem $main-color;
+                &-list {
+                    .mode {
+                        &:hover {
+                            box-shadow: 0 0 1rem $main-color;
+                        }
                     }
                 }
             }

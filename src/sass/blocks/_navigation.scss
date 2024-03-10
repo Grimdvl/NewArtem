@@ -177,6 +177,38 @@
         transition-delay: calc(0.2s * var(--i));
         transform-origin: 14rem;
         transform: rotate(0deg) translateX(11rem);
+        .mode {
+            position: relative;
+            box-shadow: none;
+            &--light {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 1s ease;
+                transition-delay: .8s;
+            }
+            &--dark {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 1s ease;
+                transform: scale(0);
+            }
+            &.active {
+                .mode {
+                    &--light {
+                        transition-delay: 0s;
+                        transform: scale(0) rotate(360deg);
+                    }
+                    &--dark {
+                        transition-delay: .8s;
+                        transform: scale(1) rotate(360deg);
+                    }
+                }
+            }
+        }
         button {
             display: flex;
             justify-content: center;
@@ -195,7 +227,6 @@
             z-index: 1;
             overflow: hidden;
             transition: .5s color;
-            
             &.language {
                 font-size: 2rem;
                 &:hover {
@@ -230,11 +261,6 @@
                 }
             }
         }
-        .mode {
-            button {
-                box-shadow: 0 0 1rem $main-color;
-            }
-        }
     }
     &.active {
         &-bar {
@@ -246,16 +272,18 @@
         .menu {
             &-list {
                 transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
-            }
-        }
-        .mode {
-            button {
-                box-shadow: 0 0 1rem $main-color;
-                transition: 0.5s box-shadow;
-                &:hover {
-                    box-shadow: none;
+                .mode {
+                    box-shadow: 0 0 1rem $main-color;
+                    transition: 0.5s box-shadow;
+                    &:hover {
+                        box-shadow: none;
+                    }
                 }
             }
         }
     }
 }
+
+// .dark {
+//     position: absolute;
+// }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="color">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,10 +42,13 @@
 </head>
 <body>
 
-    <ul class="menu">
+    <ul class="menu active">
         <div class="menu-bar"><ion-icon name="add-outline"></ion-icon></div>
-        <li style="--i:0" class="menu-list mode">
-            <button class="light"><ion-icon name="sunny-outline"></ion-icon></button>
+        <li style="--i:0" class="menu-list">
+            <button class="mode">
+                <ion-icon class="mode--light" name="sunny-outline"></ion-icon>
+                <ion-icon class="mode--dark" name="moon-outline"></ion-icon>
+            </button>
         </li>
         <li style="--i:1" class="menu-list">
             <button class="language active">EN</button>
@@ -57,6 +60,7 @@
             <button class="language">RU</button>
         </li>
     </ul>
+    <!-- <div class="dark"></div> -->
 
     <div class="navigation">
         <ul class="navigation__list">

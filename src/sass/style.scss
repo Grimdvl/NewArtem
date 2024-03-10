@@ -20,7 +20,31 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+
+    &.color {
+        // position: fixed;
+        // width: 100%;
+        // height: 100%;
+        background: black;
+        clip-path: circle(1% at 89.7% 1.7%);
+        transition: 1.5s ease-out;
+        &.active {
+            // background: black;
+            clip-path: circle(150% at 90% 1.5%);
+            // clip-path: circle(1% at 89.7% 1.7%);
+        }
+    }
 }
+
+// body {
+//     background: white;
+//     clip-path: circle(0% at 50% 50%);
+//     transition: 1.5s ease-out;
+//     &.active {
+//         background: black;
+//         clip-path: circle(150% at 50% 50%);
+//     }
+// }
 
 section {
     min-height: 100vh;
@@ -56,4 +80,4 @@ section {
 @import 'blocks/contacts';
 
 @import 'base/media';
-@import 'base/dark';
+// @import 'base/dark';
