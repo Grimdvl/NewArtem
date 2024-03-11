@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     multipleText();
     // hamburger('.navigation', '.hamburger', 'active', '.navigation__overlay');
-    navigationMenu('active', '.menu-bar', '.menu', '.mode');
+    navigationMenu('active', '.menu-bar', '.menu', '.mode', '.color');
     navigation('.navigation__link', 'active', 'section', '.indicator');
     cards();
     modal('[data-modal]', '.modal', 'form');

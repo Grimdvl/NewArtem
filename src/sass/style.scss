@@ -20,6 +20,18 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    color: black;
+    transition: 1s color;
+    &.active {
+        color: white;
+        .promo {
+            &__photo {
+                &-img {
+                    background: $bg-color;
+                }
+            }
+        }
+    }
 }
 
 .color {
@@ -27,14 +39,10 @@ html {
     width: 100%;
     height: 100%;
     background: $bg-color;
-    // z-index: 1;
     clip-path: circle(0% at 89.7% 8.7%);
-    transition: 1.5s ease-out;
+    transition: 1s ease-out;
     &.active {
-        // background: blue;
-        // z-index: 1;
         clip-path: circle(150% at 89.7% 8.7%);
-        // clip-path: circle(1% at 89.7% 1.7%);
     }
 }
 
@@ -43,7 +51,6 @@ section {
     padding: 10rem 9% 2rem;
     position: relative;
     z-index: 1;
-    // background-color: white;
 }
 
 .divider {

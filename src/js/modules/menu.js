@@ -1,8 +1,8 @@
-const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelector) => {
+const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelector, colorSelector) => {
     const menu = document.querySelector(menuSelector),
           nav = document.querySelector(navigationSelector),
           mode = document.querySelector(modeSelector),
-          color = document.querySelector('.color');
+          color = document.querySelector(colorSelector);
 
     menu.addEventListener('click', () => {
         nav.classList.toggle(activeClass);
@@ -11,6 +11,7 @@ const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelec
 
     mode.addEventListener('click', () => {
         mode.classList.toggle(activeClass);
+        document.documentElement.classList.toggle(activeClass);
         color.classList.toggle(activeClass);
     });
 }
