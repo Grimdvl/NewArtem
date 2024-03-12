@@ -10,7 +10,7 @@
             border-radius: 50%;
             animation: floatPhoto 4s ease-in-out infinite;
             will-change: transform;
-            transition: .5s background ease-out;
+            transition: .5s .5s background ease-out;
         }
         &-circle {
             top: -2.5%;

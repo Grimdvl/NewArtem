@@ -1,6 +1,247 @@
-// :root {
-//     --bg-color: #081b29;
-//     --second-bg-color: #112e42;
-//     --text-color: #ededed;
-//     --main-color: #00abf0;
-// }
+html {
+    &.active {
+        color: white;
+
+        .divider {
+            background-color: $second-color;
+        }
+
+        .menu {
+            &-bar {
+                border: .2rem solid $second-color;
+                color: $bg-color;
+                background: $second-color;
+                box-shadow: 0 0 1rem $second-color;
+                &:hover {
+                    box-shadow: none;
+                }
+            }
+            &-list {
+                button {
+                    color: $second-color;
+                    border: .2rem solid $second-color;
+                    &.language {
+                        &:hover {
+                            color: $bg-color;
+                        }
+                        &::before {
+                            background-color: $second-color;
+                        }
+                        &.active {
+                            color: $bg-color;
+                            &:hover {
+                                color: $second-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &.active {
+                &-bar {
+                    color: $second-color;
+                }
+                .menu {
+                    &-list {
+                        .mode {
+                            box-shadow: 0 0 1rem $second-color;
+                            &:hover {
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .navigation {
+            background: $second-color;
+            &__link {
+                a {
+                    .icon {
+                        background: $second-color;
+                        color: $bg-color;
+                        &:before {
+                            background: $bg-color;
+                        }
+                    }
+                }
+            }
+            &__list {
+                .indicator {
+                    background: $second-color;
+                    &:before {
+                        box-shadow: 2.6rem 1.8rem $second-color;
+                    }
+                    &:after {
+                        box-shadow: -1.5rem 1.8rem $second-color;
+                    }
+                }
+            }
+        }
+        .navigation__link.active {
+            a {
+                .icon {
+                    color: white;
+                    background: $bg-color;
+                }
+            }
+            &:nth-child(1) ~ .indicator {
+                transform: translateX(calc(7rem * 0));
+                &:before {
+                    box-shadow: 2.6rem 1.8rem $second-color;
+                }
+            }
+            &:nth-child(2) ~ .indicator {
+                transform: translateX(calc(7rem * 1));
+                &:before {
+                    box-shadow: 1.5rem 1.8rem $second-color;
+                }
+            }
+            &:nth-child(3) ~ .indicator {
+                transform: translateX(calc(7rem * 2));
+                &:before {
+                    box-shadow: 1.5rem 1.8rem $second-color;
+                }
+            }
+            &:nth-child(4) ~ .indicator {
+                transform: translateX(calc(7rem * 3));
+                &:after {
+                    box-shadow: -2.6rem 1.8rem $second-color;
+                }
+            }
+        }
+
+        .promo {
+            &__photo {
+                &-img {
+                    background: $bg-color;
+                }
+                &-circle {
+                    background: $second-color;
+                }
+            }
+            &__content {
+                &-title {
+                    &:before {
+                        background: $second-color;
+                    }
+                }
+                &-subtitle {
+                    position: relative;
+                    font-size: 3.2rem;
+                    font-weight: 700;
+                    color: transparent;
+                    -webkit-text-stroke: .1rem $second-color;
+                    background-image: linear-gradient($second-color, $second-color);
+                    &::before {
+                        border-right: .2rem solid $second-color;
+                    }
+                }
+                &--button {
+                    color: $bg-color;
+                    border: .2rem solid $second-color;
+                    background: $second-color;
+                    box-shadow: 0 0 1rem $second-color;
+                    &:hover {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        .resume {
+            &__photo {
+                &::before {
+                    background: $second-color;
+                }
+            }
+            &-title {
+                &:before {
+                    background: $second-color;
+                }
+            }
+            &__column {
+                &-title {
+                    &::before {
+                        background: $second-color;
+                    }
+                }
+                ul {
+                    li {
+                        &:before {
+                            background: white;
+                        }
+                        &:after {
+                            background: white;
+                        }
+                    }
+                }
+            }
+            .resume__item {
+                &-icon {
+                    &:before {
+                        background: $second-color;
+                        img {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .skills {
+            &-title {
+                &::before {
+                    background: $second-color;
+                }
+            }
+            &__card {
+                &-front, &-back {
+                    box-shadow: 2rem 2rem 2rem rgba(255, 255, 255, 0.3);
+                    background: rgba(0, 0, 0, 0.1);
+                    border-top: .1rem solid rgba(255, 255, 255, 0.3);
+                    border-left: .1rem solid rgba(255, 255, 255, 0.3);
+                    &-button {
+                        border: .2rem solid white;
+                        color: white;
+                        &:hover {
+                            border: .2rem solid $second-color;
+                            color: #FFF;
+                            background: $second-color;
+                            box-shadow: 0 0 1rem $second-color;
+                        }
+                    }
+                    &::before {
+                        background: radial-gradient($second-color, transparent, transparent);
+                    }
+                    &::after {
+                        background: rgba(0, 0, 0, 0.75);
+                    }
+                }
+                &-front {
+                    &-icon {
+                        .block {
+                            background: white;
+                        }
+                        .block.active {
+                            background-color: $second-color;
+                            box-shadow: 0 0 1rem $second-color,0 0 2rem $second-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.color {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $bg-color;
+    clip-path: circle(0% at 89.7% 8.7%);
+    transition: 1s ease-out;
+    &.active {
+        clip-path: circle(150% at 89.7% 8.7%);
+    }
+}
