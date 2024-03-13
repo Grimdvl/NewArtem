@@ -1,6 +1,7 @@
 .portfolio {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     flex-direction: column;
     &-title {
         position: relative;
@@ -24,9 +25,8 @@
     }
     &__wrapper {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        height: 60vh;
     }
     &__items {
         display: flex;
