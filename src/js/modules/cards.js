@@ -117,7 +117,7 @@ function cards() {
                 <div class="skills__card-front active">
                     <div class="skills__card-front-icon">
                         <h3>
-                            <img src=${this.src} alt=${this.alt}>
+                            <ion-icon name="${this.src}" alt="${this.alt}"></ion-icon>
                             <div class="counter" data-target=${this.target}></div>
                         </h3>
                     </div>
@@ -134,6 +134,7 @@ function cards() {
             initializeVanillaTilt(`.${this.classes}`);
             initializeBlureEffect(`.${this.classes}`);
         }
+        // <img src=${this.src} alt=${this.alt}></img>
     }
     getResources('http://localhost:3000/skills')
     .then(data => {
@@ -147,7 +148,7 @@ function cards() {
         console.error('Ошибка при получении данных:', error);
 
         new SkillsCards(
-            "img/icons/skills/html5.svg",
+            "logo-html5",
             "html5",
             "HTML5",
             "Exactly, it creates the framework for your website or application, and the fifth version will allow me to create a more SEO-optimized structure for your product.",
@@ -156,7 +157,7 @@ function cards() {
         ).render();
 
         new SkillsCards(
-            "img/icons/skills/css3.svg",
+            "logo-css3",
             "css3",
             "CSS3",
             "This styling language allows me to create any appearance for your website or application. It's only limited by your imagination!",
@@ -165,7 +166,7 @@ function cards() {
         ).render();
 
         new SkillsCards(
-            "img/icons/skills/js.svg",
+            "logo-javascript",
             "javascript",
             "Java Script",
             "This programming language allows me to animate anything: sliders, windows, tooltips, tabs, fetching data from servers, and much more.",
@@ -174,7 +175,7 @@ function cards() {
         ).render();
 
         new SkillsCards(
-            "img/icons/skills/react.svg",
+            "logo-react",
             "react",
             "React",
             "This library enables the creation of web applications. I can create an incredibly interactive product tailored to your goals.",
@@ -183,7 +184,7 @@ function cards() {
         ).render();
 
         new SkillsCards(
-            "img/icons/skills/wordpress.svg",
+            "logo-wordpress",
             "wordpress",
             "WordPress",
             "It's a powerful platform for building interactive web applications and websites of any size. With its help, you can manage the content of your website yourself.",

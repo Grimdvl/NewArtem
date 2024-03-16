@@ -215,7 +215,7 @@ html {
                         background: radial-gradient($second-color, transparent, transparent);
                     }
                     &::after {
-                        background: rgba(0, 0, 0, 0.75);
+                        background: rgba(24, 34, 44, 0.75);
                     }
                 }
                 &-front {
@@ -227,6 +227,129 @@ html {
                             background-color: $second-color;
                             box-shadow: 0 0 1rem $second-color,0 0 2rem $second-color;
                         }
+                        h3 {
+                            ion-icon {
+                                color: $second-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &__ratings {
+                &-title {
+                    &::before {
+                        background: $second-color;
+                    }
+                }
+                &-line {
+                    background-color: #E8E4DE;
+                    span {
+                        background-color: $second-color;
+                    }
+                }
+            }
+        }
+        .portfolio {
+            &-title {
+                &::before {
+                    background: $second-color;
+                }
+            }
+            &__items {
+                &-item {
+                    .descr {
+                        background: linear-gradient(rgba(46, 166, 255, 0.1), $second-color);
+                    }
+                }
+            }
+        }
+        .contacts {
+            &__descr {
+                &-title {
+                    &::before {
+                        background: $second-color;
+                    }
+                }
+            }
+            &__contact {
+                span {
+                    color: $second-color;
+                }
+            }
+            &__social {
+                a {
+                    border: solid 0.2rem $second-color;
+                    i {
+                        color: $second-color;
+                    }
+                    &:hover {
+                        background: $second-color;
+                        box-shadow: 0 0 1rem $second-color;
+                        i {
+                            color: $bg-color;
+                        }
+                    }
+                }
+                
+            }
+            &__input {
+                label {
+                    background-color: $bg-color;
+                }
+                input {
+                    background: $bg-color;
+                    color: white;
+                    &:focus {
+                        border: solid .2rem $second-color;
+                        box-shadow: 0 0 1rem $second-color;
+                        ~ label {
+                            color: $second-color;
+                        }
+                    }
+                }
+            }
+            &__textarea {
+                label {
+                    background-color: $bg-color;
+                }
+                textarea {
+                    background: $bg-color;
+                    color: white;
+                    &:focus {
+                        border: solid .2rem $second-color;
+                        box-shadow: 0 0 1rem $second-color;
+                        ~ label {
+                            color: $second-color;
+                        }
+                    }
+                }
+            }
+            &__btn {
+                color: $bg-color;
+                background: $second-color;
+                box-shadow: 0 0 1rem $second-color;
+                &:hover {
+                    box-shadow: none;
+                }
+            }
+            &__policy {
+                span {
+                    a {
+                        color: $second-color;
+                    }
+                }
+                input[type="checkbox"] {
+                    appearance: none;
+                    cursor: pointer;
+                    height: 2rem;
+                    width: 2rem;
+                    background-color: #221F1F;
+                    border: .1rem solid #FFF;
+                    &::before {
+                        background-color: $second-color;
+                    }
+                    &::after {
+                        background-color: $second-color;
                     }
                 }
             }
