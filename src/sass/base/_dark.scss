@@ -181,9 +181,9 @@ html {
                 &-icon {
                     &:before {
                         background: $second-color;
-                        img {
-                            color: white;
-                        }
+                    }
+                    img {
+                        filter: invert(100%);
                     }
                 }
             }

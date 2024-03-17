@@ -175,7 +175,7 @@
                 transform: translateZ(calc($index * 10));
                 filter: inherit;
                 z-index: 2;
-                margin: 0 .45vw;
+                // margin: 0.45vh;
                 & + * {
                     transform: translateZ(calc($index * 8.5)) rotateY(35deg);
                     filter: inherit;

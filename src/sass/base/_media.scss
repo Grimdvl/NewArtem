@@ -112,12 +112,9 @@
         }
     }
     .portfolio {
-        height: 100%;
-        &__wrapper {
-            height: 100vh;
-        }
         &__items {
             flex-direction: column;
+            height: 100vh;
             &-item {
                 width: calc($index * 16);
                 height: calc($index * 4);
