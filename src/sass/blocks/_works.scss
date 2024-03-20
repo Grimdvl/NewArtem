@@ -7,6 +7,8 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
+    color: white;
+    background-attachment: fixed;
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -33,51 +35,150 @@
             text-align: center;
         }
     }
+    &__slider {
+        position: absolute;
+        bottom: 5rem;
+        left: 50%;
+        width: max-content;
+        z-index: 2;
+        display: flex;
+        gap: 2rem;
+        &-item {
+            height: 22rem;
+            width: 15rem;
+            flex-shrink: 0;
+            position: relative;
+            .img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 3rem;
+            }
+            .descr {
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+                &-title {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
     &__items {
+        &.next {
+            :nth-child(1) {
+                .descr {
+                    z-index: 1;
+                }
+                .img {
+                    z-index: 1;
+                    width: 15rem;
+                    height: 22rem;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 5rem;
+                    border-radius: 3rem;
+                    animation: showImage .5s linear 1 forwards;
+                }
+            }
+            + .works {
+                &__slider {
+                    transform: translateX(15rem);
+                    animation: transformSlider .5s linear 1 forwards;
+                    &-item {
+                        &:nth-last-child(1) {
+                            width: 0;
+                            overflow: hidden;
+                            animation: showSlider .5s linear 1 forwards;
+                        }
+                    }
+                }
+            }
+        }
+        &.prev {
+            :nth-child(2) {
+                .descr {
+                    z-index: 2;
+                    animation: contentOut 1.5s linear 1 forwards;
+                }
+                .img {
+                    z-index: 2;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    animation: outImage .5s linear 1 forwards;
+                }
+            }
+            + .works {
+                &__slider {
+                    &-item {
+                        &:nth-child(1) {
+                            width: 0;
+                            overflow: hidden;
+                            opacity: 0;
+                            animation: showSlider .5s linear 1 forwards;
+                        }
+                    }
+                }
+            }
+        }
         &-item {
             position: absolute;
             inset: 0 0 0 0;
             .img {
+                position: absolute;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
             .descr {
                 position: absolute;
-                top: 20%;
+                top: 30%;
                 width: 114rem;
                 max-width: 80%;
                 left: 50%;
                 transform: translateX(-50%);
                 padding-right: 30%;
                 box-sizing: border-box;
-                color: white;
                 text-shadow: 0 .5rem 1rem #0004;
+                &-text, &-title, &__links {
+                    transform: translateY(5rem);
+                    filter: blur(2rem);
+                    opacity: 0;
+                    animation: showContent .5s 1s linear 1 forwards;
+                }
+                &-text {
+                    font-size: 2em;
+                    animation-delay: 1.4s;
+                }
                 &-title {
                     font-weight: bold;
                     font-size: 5em;
                     line-height: 1.3em;
+                    animation-delay: 1.2s;
                 }
                 &__links {
                     display: flex;
-                    justify-content: center;
                     align-items: center;
-                    margin-bottom: 1rem;
+                    margin-top: 1rem;
                     gap: 1rem;
+                    animation-delay: 1.6s;
                     a {
                         position: relative;
-                        width: 4rem;
-                        height: 4rem;
+                        width: 6rem;
+                        height: 6rem;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         text-decoration: none;
                         background-color: black;
-                        border: .2rem solid black;
+                        border: .3rem solid black;
                         border-radius: 100%;
                         transition: .5s;
                         overflow: hidden;
                         z-index: 1;
+                        font-size: 5rem;
                         &::before {
                             content: "";
                             position: absolute;
@@ -99,39 +200,12 @@
                             }
                         }
                         box-icon {
+                            width: 4rem;
+                            height: 4rem;
                             transition: .5s ease;
                             z-index: 3;
                         }
                     }
-                }
-            }
-        }
-    }
-    &__slider {
-        position: absolute;
-        bottom: 5rem;
-        left: 50%;
-        width: max-content;
-        z-index: 2;
-        display: flex;
-        gap: 2rem;
-        &-item {
-            height: 15rem;
-            width: 22rem;
-            flex-shrink: 0;
-            position: relative;
-            .img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            .descr {
-                position: absolute;
-                bottom: 1rem;
-                left: 1rem;
-                right: 1rem;
-                &-title {
-                    font-weight: bold;
                 }
             }
         }
@@ -145,6 +219,7 @@
         display: flex;
         gap: 1rem;
         align-items: center;
+        z-index: 2;
         button {
             width: 4rem;
             height: 4rem;
