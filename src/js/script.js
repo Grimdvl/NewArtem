@@ -8,10 +8,12 @@ import {cards} from './modules/cards';
 import modal from './modules/modal';
 import portfolioTrigger from './modules/portfolio';
 import navigationMenu from './modules/menu';
+import works from './modules/works';
 
 window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
 
+    works();
     multipleText();
     // hamburger('.navigation', '.hamburger', 'active', '.navigation__overlay');
     navigationMenu('active', '.menu-bar', '.menu', '.mode', '.color');

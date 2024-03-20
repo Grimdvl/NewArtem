@@ -1,0 +1,165 @@
+.works {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 3;
+        &-title {
+            position: relative;
+            text-align: center;
+            font-weight: 700;
+            font-size: 3.6rem;
+            line-height: 6rem;
+            @include before_circle;
+            &::before {
+                top: 0em;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 1.5em;
+                height: 1.5em;
+            }
+        }
+        &-subtitle {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            text-align: center;
+        }
+    }
+    &__items {
+        &-item {
+            position: absolute;
+            inset: 0 0 0 0;
+            .img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .descr {
+                position: absolute;
+                top: 20%;
+                width: 114rem;
+                max-width: 80%;
+                left: 50%;
+                transform: translateX(-50%);
+                padding-right: 30%;
+                box-sizing: border-box;
+                color: white;
+                text-shadow: 0 .5rem 1rem #0004;
+                &-title {
+                    font-weight: bold;
+                    font-size: 5em;
+                    line-height: 1.3em;
+                }
+                &__links {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    gap: 1rem;
+                    a {
+                        position: relative;
+                        width: 4rem;
+                        height: 4rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-decoration: none;
+                        background-color: black;
+                        border: .2rem solid black;
+                        border-radius: 100%;
+                        transition: .5s;
+                        overflow: hidden;
+                        z-index: 1;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background-color: #FFF;
+                            z-index: 0;
+                            scale: 1 0;
+                            transform-origin: bottom;
+                            transition: scale .5s ease;
+                        }
+                        &:hover {
+                            &::before {
+                                scale: 1 1;
+                            }
+                            box-icon {
+                                filter: invert(100%);
+                                transform: rotateY(360deg);
+                            }
+                        }
+                        box-icon {
+                            transition: .5s ease;
+                            z-index: 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__slider {
+        position: absolute;
+        bottom: 5rem;
+        left: 50%;
+        width: max-content;
+        z-index: 2;
+        display: flex;
+        gap: 2rem;
+        &-item {
+            height: 15rem;
+            width: 22rem;
+            flex-shrink: 0;
+            position: relative;
+            .img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .descr {
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+                &-title {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    &__arrows {
+        position: absolute;
+        top: 80%;
+        right: 52%;
+        width: 30rem;
+        max-width: 30%;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        button {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background-color: #eee4;
+            border: none;
+            font-weight: bold;
+            color: white;
+            font-size: large;
+            transition: .5s;
+            cursor: pointer;
+            &:hover {
+                background-color: #eee;
+                color: #555;
+            }
+        }
+    }
+}

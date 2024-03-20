@@ -184,9 +184,9 @@
         }
     }
     .portfolio {
-        &__wrapper {
-            height: 80vh;
-        }
+        // &__wrapper {
+            // height: 80vh;
+        // }
         &__items {
             &-item {
                 .descr {
@@ -247,9 +247,9 @@
 
 @media (max-width: 450px) {
     .portfolio {
-        &__wrapper {
-            height: 70vh;
-        }
+        // &__wrapper {
+        //     height: 70vh;
+        // }
         &__items {
             &-item {
                 &.active {
