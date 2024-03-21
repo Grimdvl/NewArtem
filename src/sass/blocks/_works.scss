@@ -86,21 +86,22 @@
                 &__slider {
                     transform: translateX(15rem);
                     animation: transformSlider .5s linear 1 forwards;
-                    &-item {
-                        &:nth-last-child(1) {
-                            width: 0;
-                            overflow: hidden;
-                            animation: showSlider .5s linear 1 forwards;
-                        }
+                    :nth-last-child(1) {
+                        width: 0;
+                        overflow: hidden;
+                        animation: showSlider .5s linear 1 forwards;
                     }
                 }
             }
         }
         &.prev {
             :nth-child(2) {
+                z-index: 2;
                 .descr {
                     z-index: 2;
-                    animation: contentOut 1.5s linear 1 forwards;
+                    &-text, &-title, &__links {
+                        animation: contentOut 1.5s linear 1 forwards;
+                    }
                 }
                 .img {
                     z-index: 2;
@@ -112,13 +113,11 @@
             }
             + .works {
                 &__slider {
-                    &-item {
-                        &:nth-child(1) {
-                            width: 0;
-                            overflow: hidden;
-                            opacity: 0;
-                            animation: showSlider .5s linear 1 forwards;
-                        }
+                    :nth-child(1) {
+                        width: 0;
+                        overflow: hidden;
+                        opacity: 0;
+                        animation: showSlider .5s linear 1 forwards;
                     }
                 }
             }
