@@ -10,7 +10,7 @@ const works = () => {
 
     thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
     let timeRunning = 2000;
-    let timeAutoNext = 10000;
+    let timeAutoNext = 7000;
 
     nextDom.onclick = function(){
         showSlider('next');    
@@ -42,10 +42,10 @@ const works = () => {
             carouselDom.classList.remove('prev');
         }, timeRunning);
 
-        // clearTimeout(runNextAuto);
-        // runNextAuto = setTimeout(() => {
-        //     nextDom.click();
-        // }, timeAutoNext)
+        clearTimeout(runNextAuto);
+        runNextAuto = setTimeout(() => {
+            nextDom.click();
+        }, timeAutoNext)
     }
 }
 
