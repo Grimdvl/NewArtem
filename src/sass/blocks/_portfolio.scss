@@ -91,6 +91,7 @@
             will-change: transform, filter;
             filter: grayscale(100%) brightness(.7);
             overflow: hidden;
+            transition: opacity .5s visibility .5s;
             .img {
                 position: absolute;
                 width: 100%;
@@ -233,4 +234,37 @@
             }
         }
     }
+    &__slide {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        width: 20rem;
+        button {
+            background-color: $main-color;
+            height: 5rem;
+            width: 5rem;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 1rem $main-color;
+            transition: box-shadow .5s;
+            &:hover {
+                box-shadow: none;
+            }
+            i {
+                font-size: 5rem;
+                color: white;
+            }
+        }
+    }
+}
+
+.slideLeft {
+    transition: transform .5s ease;
+    transform: translateX(-3rem);
+}
+
+.slideRight {
+    transition: transform .5s ease;
+    transform: translateX(3rem);
 }

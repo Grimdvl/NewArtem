@@ -13,7 +13,7 @@ import works from './modules/works';
 window.addEventListener('DOMContentLoaded', () => {
     // const hamburger = require('./modules/hamburger'),
 
-    works();
+    // works();
     multipleText();
     // hamburger('.navigation', '.hamburger', 'active', '.navigation__overlay');
     navigationMenu('active', '.menu-bar', '.menu', '.mode', '.color');

@@ -1,6 +1,49 @@
 const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
     const elements = document.querySelectorAll(selectorElem);
     const parent = document.querySelector(selectorParent);
+    const portfolioItems = document.querySelectorAll('.portfolio__items-item');
+    const portfolioItemsParent = document.querySelector('.portfolio__items');
+    const next = document.querySelector('.portfolio__slide-next');
+    const prev = document.querySelector('.portfolio__slide-prev');
+    let currentIndex = 0;
+
+    const slider = () => {
+        const showItems = () => {
+            for (let i = 0; i < portfolioItems.length; i++) {
+                if (i >= currentIndex && i < currentIndex + 10) {
+                    portfolioItems[i].style.opacity = '1';
+                    portfolioItems[i].style.visibility = 'visible';
+                    portfolioItems[i].style.display = 'block';
+                } else {
+                    portfolioItems[i].style.opacity = '0';
+                    portfolioItems[i].style.visibility = 'hidden';
+                    portfolioItems[i].style.display = 'none';
+                }
+            }
+        };
+        showItems();
+
+        function nextSlide() {
+            if (currentIndex < portfolioItems.length - 10) {
+                currentIndex++;
+                portfolioItemsParent.classList.remove('slideRight');
+                portfolioItemsParent.classList.add('slideLeft');
+                showItems();
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                portfolioItemsParent.classList.remove('slideLeft');
+                portfolioItemsParent.classList.add('slideRight');
+                showItems();
+            }
+        }
+
+        next.addEventListener('click', nextSlide);
+        prev.addEventListener('click', prevSlide);
+    };
 
     const removeActiveClass = () => {
         elements.forEach((item) => {
@@ -49,6 +92,7 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
         }
     });
 
+    slider();
     removeActiveClass();
     addActiveClass();
 }
