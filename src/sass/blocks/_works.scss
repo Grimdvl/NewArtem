@@ -1,12 +1,9 @@
-.carousel{
+.carousel {
     height: 100vh;
     margin-top: 5rem;
     width: 100vw;
     overflow: hidden;
     position: relative;
-}
-
-.carousel {
     display: flex;
     justify-content: center;
     align-items: start;
@@ -42,18 +39,42 @@
     }
 }
 
-.carousel__list-item{
+.carousel__list-item {
     width: 100%;
     height: 100%;
     position: absolute;
     inset: 0 0 0 0;
 }
-.carousel__list-item img {
+.carousel__list-item .img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-image: url('img/works/Uber.jpg');
     background-attachment: fixed;
+    background-size: cover;
+}
+.carousel__list-item .uber {
+    background-image: url('/img/works/uber.jpg');
+}
+.carousel__list-item .pulse {
+    background-image: url('/img/works/pulse.jpg');
+}
+.carousel__list-item .food {
+    background-image: url('/img/works/food.jpg');
+}
+.carousel__list-item .wordpress {
+    background-image: url('/img/works/wordpress.jpg');
+}
+.carousel__list-item .balcony {
+    background-image: url('/img/works/balcony.jpg');
+}
+.carousel__list-item .art {
+    background-image: url('/img/works/art.jpg');
+}
+.carousel__list-item .loan {
+    background-image: url('/img/works/loan.jpg');
+}
+.carousel__list-item .pokemons {
+    background-image: url('/img/works/pokemon.jpg');
 }
 .carousel__list-item .content{
     position: absolute;
@@ -224,7 +245,8 @@
     animation-delay: 1.6s!important;
 }
 
-.carousel.next .carousel__list-item:nth-child(1) img{
+// img
+.carousel.next .carousel__list-item:nth-child(1) .img {
     width: 150px;
     height: 220px;
     position: absolute;
@@ -233,7 +255,7 @@
     border-radius: 30px;
     animation: showImage .5s linear 1 forwards;
 }
-@keyframes showImage{
+@keyframes showImage {
     to{
         bottom: 0;
         left: 0;
@@ -243,11 +265,12 @@
     }
 }
 
-.carousel.next .carousel__thumbnail-item:nth-last-child(1){
+.carousel.next .carousel__thumbnail-item:nth-last-child(1) {
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
-.carousel.prev .carousel__list-item img{
+// img
+.carousel.prev .carousel__list-item .img {
     z-index: 100;
 }
 @keyframes showThumbnail{
@@ -285,11 +308,11 @@
     to{width: 0}
 }
 
-.carousel.prev .carousel__list-item:nth-child(2){
+.carousel.prev .carousel__list-item:nth-child(2) {
     z-index: 2;
 }
-
-.carousel.prev .carousel__list-item:nth-child(2) img{
+// img
+.carousel.prev .carousel__list-item:nth-child(2) .img{
     animation: outFrame 0.5s linear 1 forwards;
     position: absolute;
     bottom: 0;
@@ -305,7 +328,7 @@
     }
 }
 
-.carousel.prev .carousel__thumbnail-item:nth-child(1){
+.carousel.prev .carousel__thumbnail-item:nth-child(1) {
     overflow: hidden;
     opacity: 0;
     animation: showThumbnail .5s linear 1 forwards;
