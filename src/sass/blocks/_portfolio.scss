@@ -3,6 +3,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    position: relative;
     &-title {
         position: relative;
         text-align: center;
@@ -88,8 +89,8 @@
             background-size: cover;
             background-position: center;
             cursor: pointer;
-            transition: transform 1.25s $transition, filter 3s $transition, width 1.25s $transition, opacity .5s ease .5s, visibility .5s ease .5s;
-            will-change: transform, filter;
+            transition: transform 1.25s $transition, filter 3s $transition, width 1.25s $transition, opacity .5s ease , visibility .5s ease ;
+            will-change: transform, filter, width, opacity, visibility;
             filter: grayscale(100%) brightness(.7);
             overflow: hidden;
             .img {
@@ -172,11 +173,11 @@
             }
 
             &.active {
-                width: 28vw;
+                width: 20vw;
                 transform: translateZ(calc($index * 10));
                 filter: inherit;
                 z-index: 2;
-                // margin: 0.45vh;
+                margin: .45vh;
                 & + * {
                     transform: translateZ(calc($index * 8.5)) rotateY(35deg);
                     filter: inherit;
@@ -257,14 +258,4 @@
             }
         }
     }
-}
-
-.slideLeft {
-    transition: transform .5s ease;
-    transform: translateX(-3rem);
-}
-
-.slideRight {
-    transition: transform .5s;
-    transform: translateX(3rem);
 }

@@ -5,15 +5,28 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
     const portfolioItemsParent = document.querySelector('.portfolio__items');
     const next = document.querySelector('.portfolio__slide-next');
     const prev = document.querySelector('.portfolio__slide-prev');
-    let currentIndex = 0;
+    const mediaQuery = window.innerWidth <= 768;
 
     const slider = () => {
-        const showItems = () => {
-            const visibleRange = 10;
-            const startIndex = Math.max(0, Math.min(currentIndex, portfolioItems.length - visibleRange));
+        const totalItems = portfolioItems.length;
+        const itemsToShow = 10;
+        const startIndex = Math.floor((totalItems - itemsToShow) / 2);
     
-            for (let i = 0; i < portfolioItems.length; i++) {
-                if (i >= startIndex && i < startIndex + visibleRange) {
+        let currentIndex = startIndex;
+        let gapSizeRem = 0.4;
+        let swipePositionRem;
+    
+        if (mediaQuery) { // Если ширина экрана 768 пикселей или меньше
+            swipePositionRem = portfolioItems[0].offsetHeight / parseFloat(getComputedStyle(document.documentElement).fontSize) + gapSizeRem; // Прокрутка по оси Y
+        } else {
+            swipePositionRem = portfolioItems[0].offsetWidth / parseFloat(getComputedStyle(document.documentElement).fontSize) + gapSizeRem; // Прокрутка по оси X
+        }
+    
+        let currentPositionRem = 0;
+    
+        const showItems = () => {
+            for (let i = 0; i < totalItems; i++) {
+                if (i >= currentIndex && i < currentIndex + itemsToShow) {
                     portfolioItems[i].style.opacity = '1';
                     portfolioItems[i].style.visibility = 'visible';
                 } else {
@@ -22,35 +35,38 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                 }
             }
         };
-
-        currentIndex = Math.floor((portfolioItems.length - 10) / 2);
-    
         showItems();
     
         function nextSlide() {
-            if (currentIndex < portfolioItems.length - 10) {
+            if (currentIndex < totalItems - itemsToShow) {
                 currentIndex++;
-                let currentTranslate = parseFloat(portfolioItemsParent.style.transform.replace('translate(', '').replace('rem)', '')) || 0;
-                currentTranslate -= 0.7;
-                portfolioItemsParent.style.transform = `translate(${currentTranslate.toFixed(1)}rem)`;
+                currentPositionRem -= swipePositionRem;
+                if (mediaQuery) {
+                    portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`; // Прокрутка по оси Y
+                } else {
+                    portfolioItemsParent.style.transform = `translateX(${currentPositionRem}rem)`; // Прокрутка по оси X
+                }
                 showItems();
             }
         }
-        
+    
         function prevSlide() {
-            if (currentIndex > 0) {
+            if (currentIndex > startIndex - itemsToShow && currentIndex > 0) {
                 currentIndex--;
-                let currentTranslate = parseFloat(portfolioItemsParent.style.transform.replace('translate(', '').replace('rem)', '')) || 0;
-                currentTranslate += 0.7;
-                portfolioItemsParent.style.transform = `translate(${currentTranslate.toFixed(1)}rem)`;
+                currentPositionRem += swipePositionRem;
+                if (mediaQuery) {
+                    portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`; // Прокрутка по оси Y
+                } else {
+                    portfolioItemsParent.style.transform = `translateX(${currentPositionRem}rem)`; // Прокрутка по оси X
+                }
                 showItems();
             }
         }
-
+    
         next.addEventListener('click', nextSlide);
         prev.addEventListener('click', prevSlide);
     };
-
+    
     const removeActiveClass = () => {
         elements.forEach((item) => {
             item.classList.remove(activeClass);
@@ -64,8 +80,6 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
     const addActiveClass = () => {
         elements.forEach((elem, index) => {
             elem.addEventListener('click', (event) => {
-                const mediaQuery = window.innerWidth <= 768;
-
                 removeActiveClass();
                 event.target.parentNode.classList.add(activeClass);
                 parent.classList.add(activeClass);

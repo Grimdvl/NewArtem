@@ -53,14 +53,6 @@
                         }
                     }
                 }
-                &.active {
-                    .descr {
-                        background: linear-gradient(rgba(0, 0, 0, .1), $main-color);
-                        transform: translateY(0);
-                        opacity: 1;
-                        visibility: visible;
-                    }
-                }
             }
         }
     }
@@ -166,6 +158,15 @@
                     transform: translateZ(calc($index * .6)) rotateX(14deg) rotateY(0);
                 }
             }
+        }
+        &__slide {
+            position: absolute;
+            top: 55%;
+            right: 10%;
+            // flex-direction: column;
+            // width: 5rem;
+            // height: 20rem;
+            transform: rotate(90deg);
         }
     }
 }
