@@ -261,13 +261,13 @@
         }
     }
     &.active {
-        &-bar {
-            transform: rotate(-130deg);
-            color: $main-color;
-            background: white;
-            box-shadow: none;
-        }
         .menu {
+            &-bar {
+                transform: rotate(-130deg);
+                color: $main-color;
+                background: white;
+                box-shadow: none;
+            }
             &-list {
                 transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
                 .mode {

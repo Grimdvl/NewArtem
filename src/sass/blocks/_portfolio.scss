@@ -29,6 +29,7 @@
         justify-content: center;
     }
     &__items {
+        transition: transform .5s ease;
         display: flex;
         gap: .4rem;
         perspective: calc($index * 35);
@@ -87,11 +88,10 @@
             background-size: cover;
             background-position: center;
             cursor: pointer;
-            transition: transform 1.25s $transition, filter 3s $transition, width 1.25s $transition;
+            transition: transform 1.25s $transition, filter 3s $transition, width 1.25s $transition, opacity .5s ease .5s, visibility .5s ease .5s;
             will-change: transform, filter;
             filter: grayscale(100%) brightness(.7);
             overflow: hidden;
-            transition: opacity .5s visibility .5s;
             .img {
                 position: absolute;
                 width: 100%;
@@ -265,6 +265,6 @@
 }
 
 .slideRight {
-    transition: transform .5s ease;
+    transition: transform .5s;
     transform: translateX(3rem);
 }

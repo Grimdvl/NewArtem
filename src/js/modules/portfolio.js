@@ -9,34 +9,40 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
 
     const slider = () => {
         const showItems = () => {
+            const visibleRange = 10;
+            const startIndex = Math.max(0, Math.min(currentIndex, portfolioItems.length - visibleRange));
+    
             for (let i = 0; i < portfolioItems.length; i++) {
-                if (i >= currentIndex && i < currentIndex + 10) {
+                if (i >= startIndex && i < startIndex + visibleRange) {
                     portfolioItems[i].style.opacity = '1';
                     portfolioItems[i].style.visibility = 'visible';
-                    portfolioItems[i].style.display = 'block';
                 } else {
                     portfolioItems[i].style.opacity = '0';
                     portfolioItems[i].style.visibility = 'hidden';
-                    portfolioItems[i].style.display = 'none';
                 }
             }
         };
-        showItems();
 
+        currentIndex = Math.floor((portfolioItems.length - 10) / 2);
+    
+        showItems();
+    
         function nextSlide() {
             if (currentIndex < portfolioItems.length - 10) {
                 currentIndex++;
-                portfolioItemsParent.classList.remove('slideRight');
-                portfolioItemsParent.classList.add('slideLeft');
+                let currentTranslate = parseFloat(portfolioItemsParent.style.transform.replace('translate(', '').replace('rem)', '')) || 0;
+                currentTranslate -= 0.7;
+                portfolioItemsParent.style.transform = `translate(${currentTranslate.toFixed(1)}rem)`;
                 showItems();
             }
         }
-
+        
         function prevSlide() {
             if (currentIndex > 0) {
                 currentIndex--;
-                portfolioItemsParent.classList.remove('slideLeft');
-                portfolioItemsParent.classList.add('slideRight');
+                let currentTranslate = parseFloat(portfolioItemsParent.style.transform.replace('translate(', '').replace('rem)', '')) || 0;
+                currentTranslate += 0.7;
+                portfolioItemsParent.style.transform = `translate(${currentTranslate.toFixed(1)}rem)`;
                 showItems();
             }
         }
