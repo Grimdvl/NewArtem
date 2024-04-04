@@ -36,6 +36,7 @@ section {
     height: .3rem;
     background-color: $main-color;
     margin: 2.5rem auto 0 auto;
+    transition: 1s background-color;
 }
 
 .hide {

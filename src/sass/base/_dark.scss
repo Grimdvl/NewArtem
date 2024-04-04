@@ -10,7 +10,7 @@ html {
             &-bar {
                 border: .2rem solid $second-color;
                 color: $bg-color;
-                background: $second-color;
+                background-color: $second-color;
                 box-shadow: 0 0 1rem $second-color;
                 &:hover {
                     box-shadow: none;
@@ -37,10 +37,12 @@ html {
                 }
             }
             &.active {
-                &-bar {
-                    color: $second-color;
-                }
                 .menu {
+                    &-bar {
+                        color: $second-color;
+                        background-color: $bg-color;
+                        transition: 1s transform, .5s box-shadow, .5s 0s color, .5s 0s background-color, .5s 0s border;
+                    }
                     &-list {
                         .mode {
                             box-shadow: 0 0 1rem $second-color;
@@ -114,10 +116,12 @@ html {
         .promo {
             &__photo {
                 &-img {
-                    background: $bg-color;
+                    background-color: $bg-color;
+                    transition: .5s 0s background-color;
                 }
                 &-circle {
-                    background: $second-color;
+                    transition: .5s 0s background-color;
+                    background-color: $second-color;
                 }
             }
             &__content {
@@ -140,7 +144,7 @@ html {
                 &--button {
                     color: $bg-color;
                     border: .2rem solid $second-color;
-                    background: $second-color;
+                    background-color: $second-color;
                     box-shadow: 0 0 1rem $second-color;
                     &:hover {
                         box-shadow: none;

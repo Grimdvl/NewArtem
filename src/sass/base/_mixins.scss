@@ -8,6 +8,7 @@
         width: 3.6rem;
         height: 3.6rem;
         border-radius: 100%;
-        background: $main-color;
+        background-color: $main-color;
+        transition: 1s background-color;
     }
 }

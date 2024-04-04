@@ -147,3 +147,15 @@
         opacity: 0;
     }
 }
+
+@keyframes changeColor {
+    0% {
+        background-image: linear-gradient($main-color, $main-color);
+    }
+    50% {
+        background-image: linear-gradient($main-color, $second-color);
+    }
+    100% {
+        background-image: linear-gradient($second-color, $second-color);
+    }
+}
