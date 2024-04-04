@@ -16,7 +16,7 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
         let gapSizeRem = 0.4;
         let swipePositionRem;
     
-        if (mediaQuery) { // Если ширина экрана 768 пикселей или меньше
+        if (mediaQuery) {
             swipePositionRem = portfolioItems[0].offsetHeight / parseFloat(getComputedStyle(document.documentElement).fontSize) + gapSizeRem; // Прокрутка по оси Y
         } else {
             swipePositionRem = portfolioItems[0].offsetWidth / parseFloat(getComputedStyle(document.documentElement).fontSize) + gapSizeRem; // Прокрутка по оси X
@@ -25,6 +25,7 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
         let currentPositionRem = 0;
     
         const showItems = () => {
+            portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`;
             for (let i = 0; i < totalItems; i++) {
                 if (i >= currentIndex && i < currentIndex + itemsToShow) {
                     portfolioItems[i].style.opacity = '1';
@@ -42,9 +43,9 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                 currentIndex++;
                 currentPositionRem -= swipePositionRem;
                 if (mediaQuery) {
-                    portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`; // Прокрутка по оси Y
+                    portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`;
                 } else {
-                    portfolioItemsParent.style.transform = `translateX(${currentPositionRem}rem)`; // Прокрутка по оси X
+                    portfolioItemsParent.style.transform = `translateX(${currentPositionRem}rem)`;
                 }
                 showItems();
             }
@@ -55,9 +56,9 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                 currentIndex--;
                 currentPositionRem += swipePositionRem;
                 if (mediaQuery) {
-                    portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`; // Прокрутка по оси Y
+                    portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`;
                 } else {
-                    portfolioItemsParent.style.transform = `translateX(${currentPositionRem}rem)`; // Прокрутка по оси X
+                    portfolioItemsParent.style.transform = `translateX(${currentPositionRem}rem)`;
                 }
                 showItems();
             }
@@ -72,8 +73,8 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
             item.classList.remove(activeClass);
             parent.classList.remove(activeClass);
             parent.parentNode.classList.remove(activeClass);
-            parent.parentNode.style.marginTop = '0';
-            parent.parentNode.style.marginBottom = '0';
+            parent.style.marginTop = '0';
+            parent.style.marginBottom = '0';
         });
     }
 
@@ -86,20 +87,14 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                 
                 if (mediaQuery) {
                     if (index === 0 ) {
-                        parent.parentNode.style.marginTop = '20vh';
-                        parent.parentNode.style.marginBottom = '0';
-                    } else if (index >= 0 && index <= Math.floor(elements.length / 2)) {
-                        parent.parentNode.style.marginTop = '10vh';
-                        parent.parentNode.style.marginBottom = '0';
-                    } else if (index <= elements.length - 1 && index >= Math.floor(elements.length / 2)) {
-                        parent.parentNode.style.marginTop = '5vh';
-                        parent.parentNode.style.marginBottom = '10vh';
-                    } else if (index === elements.length - 1) {
-                        parent.parentNode.style.marginTop = '5vh';
-                        parent.parentNode.style.marginBottom = '15vh';
+                        parent.style.marginTop = '10vh';
+                        parent.style.marginBottom = '0';
+                    } else if (index === 1 || index === 2) {
+                        parent.style.marginTop = '5vh';
+                        parent.style.marginBottom = '0';
                     } else {
-                        parent.parentNode.style.marginTop = '0';
-                        parent.parentNode.style.marginBottom = '0';
+                        parent.style.marginTop = '0';
+                        parent.style.marginBottom = '5vh';
                     }
                 }
             });
