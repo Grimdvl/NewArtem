@@ -17,15 +17,17 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
         let swipePositionRem;
     
         if (mediaQuery) {
-            swipePositionRem = portfolioItems[0].offsetHeight / parseFloat(getComputedStyle(document.documentElement).fontSize) + gapSizeRem; // Прокрутка по оси Y
+            swipePositionRem = portfolioItems[0].offsetHeight / parseFloat(getComputedStyle(document.documentElement).fontSize) + gapSizeRem;
         } else {
-            swipePositionRem = portfolioItems[0].offsetWidth / parseFloat(getComputedStyle(document.documentElement).fontSize) + gapSizeRem; // Прокрутка по оси X
+            swipePositionRem = portfolioItems[0].offsetWidth / parseFloat(getComputedStyle(document.documentElement).fontSize) + gapSizeRem;
         }
     
         let currentPositionRem = 0;
     
         const showItems = () => {
-            portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`;
+            if (mediaQuery) {
+                portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`;
+            }
             for (let i = 0; i < totalItems; i++) {
                 if (i >= currentIndex && i < currentIndex + itemsToShow) {
                     portfolioItems[i].style.opacity = '1';
