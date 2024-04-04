@@ -27,6 +27,8 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
         const showItems = () => {
             if (mediaQuery) {
                 portfolioItemsParent.style.transform = `translateY(${currentPositionRem}rem)`;
+            } else {
+                portfolioItemsParent.style.transform = `translateX(${currentPositionRem}rem)`;
             }
             for (let i = 0; i < totalItems; i++) {
                 if (i >= currentIndex && i < currentIndex + itemsToShow) {
