@@ -20,12 +20,14 @@ html {
                 button {
                     color: $second-color;
                     border: .2rem solid $second-color;
+                    transition: .5s color, .5s border, .5s background-color;
                     &.language {
                         &:hover {
                             color: $bg-color;
                         }
                         &::before {
                             background-color: $second-color;
+                            transition: .5s width, .5s 0s background-color;
                         }
                         &.active {
                             color: $bg-color;
@@ -46,6 +48,7 @@ html {
                     &-list {
                         .mode {
                             box-shadow: 0 0 1rem $second-color;
+                            transition: .5s box-shadow, .5s 0s border;
                             &:hover {
                                 box-shadow: none;
                             }

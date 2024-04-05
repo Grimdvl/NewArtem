@@ -172,7 +172,7 @@
         left: 0;
         list-style: none;
         transition: 0.5s;
-        transition-delay: calc(0.2s * var(--i));
+        transition-delay: calc(.2s * var(--i));
         transform-origin: 14rem;
         transform: rotate(0deg) translateX(11rem);
         .mode {
@@ -211,7 +211,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: transparent;
+            background-color: transparent;
             cursor: pointer;
             width: 5rem;
             height: 5rem;
@@ -224,7 +224,7 @@
             display: inline-flex;
             z-index: 1;
             overflow: hidden;
-            transition: .5s color;
+            transition: 1s color, .5s .5s border, .5s .5s background-color;
             &.language {
                 font-size: 2rem;
                 &:hover {
@@ -243,7 +243,7 @@
                     height: 100%;
                     background-color: $main-color;
                     z-index: -1;
-                    transition: .5s width;
+                    transition: .5s width, .5s .5s background-color;
                 }
                 &.active {
                     color: white;
@@ -273,7 +273,7 @@
                 transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
                 .mode {
                     box-shadow: 0 0 1rem $main-color;
-                    transition: 0.5s box-shadow;
+                    transition: .5s box-shadow, .5s .5s border;
                     &:hover {
                         box-shadow: none;
                     }
