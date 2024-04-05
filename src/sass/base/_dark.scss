@@ -59,23 +59,23 @@ html {
         }
 
         .navigation {
-            background: $second-color;
+            background-color: $second-color;
             &__link {
                 a {
                     .icon {
-                        background: $second-color;
+                        background-color: $second-color;
                         color: $bg-color;
                         &:before {
-                            background: $bg-color;
+                            background-color: $bg-color;
                         }
                     }
                 }
             }
             &__list {
                 .indicator {
-                    background: $second-color;
+                    background-color: $second-color;
                     &:before {
-                        box-shadow: 2.6rem 1.8rem $second-color;
+                        box-shadow: 1.5rem 1.8rem $second-color;
                     }
                     &:after {
                         box-shadow: -1.5rem 1.8rem $second-color;
@@ -87,13 +87,13 @@ html {
             a {
                 .icon {
                     color: white;
-                    background: $bg-color;
+                    background-color: $bg-color;
                 }
             }
             &:nth-child(1) ~ .indicator {
                 transform: translateX(calc(7rem * 0));
                 &:before {
-                    box-shadow: 2.6rem 1.8rem $second-color;
+                    box-shadow: 2.7rem 1.8rem $second-color;
                 }
             }
             &:nth-child(2) ~ .indicator {
@@ -111,7 +111,7 @@ html {
             &:nth-child(4) ~ .indicator {
                 transform: translateX(calc(7rem * 3));
                 &:after {
-                    box-shadow: -2.6rem 1.8rem $second-color;
+                    box-shadow: -2.7rem 1.8rem $second-color;
                 }
             }
         }
@@ -130,7 +130,7 @@ html {
             &__content {
                 &-title {
                     &:before {
-                        background: $second-color;
+                        background-color: $second-color;
                     }
                 }
                 &-subtitle {
@@ -159,27 +159,27 @@ html {
         .resume {
             &__photo {
                 &::before {
-                    background: $second-color;
+                    background-color: $second-color;
                 }
             }
             &-title {
                 &:before {
-                    background: $second-color;
+                    background-color: $second-color;
                 }
             }
             &__column {
                 &-title {
                     &::before {
-                        background: $second-color;
+                        background-color: $second-color;
                     }
                 }
                 ul {
                     li {
                         &:before {
-                            background: white;
+                            background-color: white;
                         }
                         &:after {
-                            background: white;
+                            background-color: white;
                         }
                     }
                 }
@@ -187,7 +187,7 @@ html {
             .resume__item {
                 &-icon {
                     &:before {
-                        background: $second-color;
+                        background-color: $second-color;
                     }
                     img {
                         filter: invert(100%);
@@ -199,13 +199,13 @@ html {
         .skills {
             &-title {
                 &::before {
-                    background: $second-color;
+                    background-color: $second-color;
                 }
             }
             &__card {
                 &-front, &-back {
                     box-shadow: 2rem 2rem 2rem rgba(255, 255, 255, 0.3);
-                    background: rgba(0, 0, 0, 0.1);
+                    background-color: rgba(0, 0, 0, 0.1);
                     border-top: .1rem solid rgba(255, 255, 255, 0.3);
                     border-left: .1rem solid rgba(255, 255, 255, 0.3);
                     &-button {
@@ -213,8 +213,8 @@ html {
                         color: white;
                         &:hover {
                             border: .2rem solid $second-color;
-                            color: #FFF;
-                            background: $second-color;
+                            color: $bg-color;
+                            background-color: $second-color;
                             box-shadow: 0 0 1rem $second-color;
                         }
                     }
@@ -222,13 +222,13 @@ html {
                         background: radial-gradient($second-color, transparent, transparent);
                     }
                     &::after {
-                        background: rgba(24, 34, 44, 0.75);
+                        background-color: rgba(24, 34, 44, 0.75);
                     }
                 }
                 &-front {
                     &-icon {
                         .block {
-                            background: white;
+                            background-color: white;
                         }
                         .block.active {
                             background-color: $second-color;
@@ -245,7 +245,7 @@ html {
             &__ratings {
                 &-title {
                     &::before {
-                        background: $second-color;
+                        background-color: $second-color;
                     }
                 }
                 &-line {
@@ -259,13 +259,13 @@ html {
         .portfolio {
             &-title {
                 &::before {
-                    background: $second-color;
+                    background-color: $second-color;
                 }
             }
             &__items {
                 &-item {
                     .descr {
-                        background: linear-gradient(rgba(46, 166, 255, 0.1), $second-color);
+                        background-color: linear-gradient(rgba(46, 166, 255, 0.1), $second-color);
                     }
                 }
             }
@@ -274,7 +274,7 @@ html {
             &__descr {
                 &-title {
                     &::before {
-                        background: $second-color;
+                        background-color: $second-color;
                     }
                 }
             }
@@ -290,7 +290,7 @@ html {
                         color: $second-color;
                     }
                     &:hover {
-                        background: $second-color;
+                        background-color: $second-color;
                         box-shadow: 0 0 1rem $second-color;
                         i {
                             color: $bg-color;
@@ -304,7 +304,7 @@ html {
                     background-color: $bg-color;
                 }
                 input {
-                    background: $bg-color;
+                    background-color: $bg-color;
                     color: white;
                     &:focus {
                         border: solid .2rem $second-color;
@@ -320,7 +320,7 @@ html {
                     background-color: $bg-color;
                 }
                 textarea {
-                    background: $bg-color;
+                    background-color: $bg-color;
                     color: white;
                     &:focus {
                         border: solid .2rem $second-color;
@@ -333,7 +333,7 @@ html {
             }
             &__btn {
                 color: $bg-color;
-                background: $second-color;
+                background-color: $second-color;
                 box-shadow: 0 0 1rem $second-color;
                 &:hover {
                     box-shadow: none;
@@ -368,7 +368,7 @@ html {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: $bg-color;
+    background-color: $bg-color;
     clip-path: circle(0% at 89.7% 8.7%);
     transition: 1s ease-out;
     &.active {

@@ -66,12 +66,13 @@
             transition: 2s;
             border-radius: 2rem;
             box-shadow: 2rem 2rem 2rem rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             border-top: .1rem solid rgba(0, 0, 0, 0.3);
             border-left: .1rem solid rgba(0, 0, 0, 0.3);
             // backdrop-filter: blur(.5rem);
             padding: 2rem 3rem;
             overflow: hidden;
+            transition: 1s box-shadow, 1s border, 1s background-color;
             &-button {
                 position: relative;
                 z-index: 1;
@@ -140,18 +141,20 @@
                     position: absolute;
                     width: .1rem;
                     height: 1.5rem;
-                    background: black;
+                    background-color: black;
                     top: 0;
                     left: 50%;
                     transform-origin: 50% 7rem;
                     opacity: 0;
                     animation: loadingCircle 0.1s linear forwards;
                     will-change: opacity;
+                    transition: 1s background-color;
                 }
                 .block.active {
                     background-color: $main-color;
                     box-shadow: 0 0 1rem $main-color,0 0 2rem $main-color;
                     will-change: background-color, box-shadow;
+                    transition: 1s background-color;
                 }
                 h3 {
                     position: absolute;
@@ -173,6 +176,7 @@
                     ion-icon {
                         color: $main-color;
                         font-size: 7rem;
+                        transition: 1s color;
                     }
                 }
             }
@@ -249,6 +253,7 @@
                 border-radius: .4rem;
                 filter: blur(.2rem);
                 width: 0;
+                transition: 1s background-color;
             }
         }
     }

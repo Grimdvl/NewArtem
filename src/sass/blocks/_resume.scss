@@ -44,8 +44,9 @@
             position: absolute;
             width: 23.5rem;
             height: 150%;
-            background: $main-color;
+            background-color: $main-color;
             animation: spinner 4s linear infinite;
+            transition: 1s background-color;
             will-change: transform;
             filter: blur(.5rem);
         }
@@ -76,11 +77,12 @@
                 position: absolute;
                 width: 1.5rem;
                 height: 1.5rem;
-                background: $main-color;
+                background-color: $main-color;
                 border-radius: 100%;
                 left: -.7rem;
                 top: 50%;
                 transform: translateY(-50%);
+                transition: 1s background-color;
             }
         }
         ul {
@@ -94,6 +96,7 @@
                     top: -.7rem;
                     left: 0;
                     background-color: black;
+                    transition: 1s background-color;
                 }
                 &:before {
                     content: '';
@@ -101,6 +104,7 @@
                     position: absolute;
                     background-color: black;
                     top: 6.8rem;
+                    transition: 1s background-color;
                 }
                 .resume__item {
                     position: relative;
@@ -130,6 +134,8 @@
                             position: absolute;
                             left: 1.7rem;
                             top: 1.4rem;
+                            filter: invert(0%);
+                            transition: 1s filter;
                         }
                     }
                     &-location {
