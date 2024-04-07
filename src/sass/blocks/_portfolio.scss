@@ -248,13 +248,14 @@
             cursor: pointer;
             border-radius: 50%;
             box-shadow: 0 0 1rem $main-color;
-            transition: box-shadow .5s;
+            transition: box-shadow .5s, 1s background-color;
             &:hover {
                 box-shadow: none;
             }
             i {
                 font-size: 5rem;
                 color: white;
+                transition: 1s color;
             }
         }
     }

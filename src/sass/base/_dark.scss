@@ -269,6 +269,20 @@ html {
                     }
                 }
             }
+            &__slide {
+                button {
+                    &:hover {
+                        box-shadow: none;
+                    }
+                    background-color: $second-color;
+                    box-shadow: 0 0 1rem $second-color;
+                    i {
+                        color: $bg-color;
+                    }
+                }
+
+                
+            }
         }
         .contacts {
             &__descr {
@@ -304,7 +318,7 @@ html {
                     background-color: $bg-color;
                 }
                 input {
-                    background-color: $bg-color;
+                    // background-color: $bg-color;
                     color: white;
                     &:focus {
                         border: solid .2rem $second-color;
@@ -320,7 +334,7 @@ html {
                     background-color: $bg-color;
                 }
                 textarea {
-                    background-color: $bg-color;
+                    // background-color: $bg-color;
                     color: white;
                     &:focus {
                         border: solid .2rem $second-color;
@@ -350,7 +364,7 @@ html {
                     cursor: pointer;
                     height: 2rem;
                     width: 2rem;
-                    background-color: #221F1F;
+                    // background-color: $bg-color;
                     border: .1rem solid #FFF;
                     &::before {
                         background-color: $second-color;

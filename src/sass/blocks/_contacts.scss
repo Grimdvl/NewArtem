@@ -33,6 +33,7 @@
         margin-top: 2rem;
         span {
             color: $main-color;
+            transition: 1s color;
         }
     }
     &__text {
@@ -84,9 +85,11 @@
             padding: 0 .8rem;
             background-color: #fff;
             font-size: 1.2rem;
+            border-radius: 3rem;
             margin-bottom: 0;
             top: -.9rem;
             left: 1.2rem;
+            transition: 1s background-color;
         }
     }
     &__triggers {
@@ -104,6 +107,7 @@
             padding-left: 1rem;
             a {
                 color: $main-color;
+                transition: 1s color;
             }
         }
         input[type="checkbox"] {
@@ -111,11 +115,12 @@
             cursor: pointer;
             height: 2rem;
             width: 2rem;
-            background-color: #FFF;
+            background-color: transparent;
             border: .1rem solid #221F1F;
             border-radius: .6rem;
             margin-left: 1rem;
             position: relative;
+            transition: 1s border, 1s background-color;
             &::before {
                 top: .1rem;
                 left: 0;
@@ -165,7 +170,8 @@
             font-size: 1.2rem;
             border-radius: 3rem;
             border: solid .1rem;
-            transition: .5s all;
+            background-color: transparent;
+            transition: .5s border, .5s box-shadow, 1s background-color, 1s color;
             &:focus {
                 border: solid .2rem $main-color;
                 box-shadow: 0 0 1rem $main-color;
@@ -190,7 +196,8 @@
             font-size: 1.2rem;
             border-radius: 3rem;
             border: solid .1rem;
-            transition: .5s all;
+            background-color: transparent;
+            transition: .5s border, .5s box-shadow, 1s background-color, 1s color;
             &:focus {
                 border: solid .2rem $main-color;
                 box-shadow: 0 0 1rem $main-color;
@@ -203,13 +210,13 @@
     }
     &__btn {
         border-radius: 3rem;
-        background: $main-color;
+        background-color: $main-color;
         box-shadow: 0 0 1rem $main-color;
         font-weight: bold;
         font-size: 1.4rem;
         line-height: 2.1rem;
         color: #FFF;
-        transition: .5s box-shadow;
+        transition: .5s box-shadow, 1s background-color, 1s color;
         cursor: pointer;
         &:hover {
             box-shadow: none;
@@ -227,7 +234,7 @@
             width: 4rem;
             height: 4rem;
             border-radius: 50%;
-            background: transparent;
+            background-color: transparent;
             text-decoration: none;
             border: solid .2rem $main-color;
             transition: .5s all ease;
