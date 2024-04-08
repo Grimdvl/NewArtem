@@ -10,7 +10,7 @@
             border-radius: 50%;
             animation: floatPhoto 4s ease-in-out infinite;
             will-change: transform;
-            transition: 1s .5s background-color;
+            transition: .5s .2s background-color;
         }
         &-circle {
             top: -2.5%;
@@ -19,7 +19,7 @@
             width: 105%;
             height: 105%;
             background-color: $main-color;
-            transition: 1s .5s background-color;
+            transition: .5s .2s background-color;
             border-radius: 50%;
             animation: floatPhoto 4s ease-in-out infinite;
             will-change: transform;
@@ -60,6 +60,7 @@
             animation: promoSubtitle 6s linear infinite;
             animation-delay: 2s;
             will-change: background-position;
+            transition: 1s opacity;
             &::before {
                 content: '';
                 position: absolute;
@@ -105,9 +106,9 @@
             &-title {
                 animation: slideBottom 1s ease forwards;
             }
-            // &-subtitle {
-            //     animation: slideBottom 1s ease forwards;
-            // }
+            &-subtitle {
+                opacity: 1;
+            }
         }
     }
 }

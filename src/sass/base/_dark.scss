@@ -20,14 +20,12 @@ html {
                 button {
                     color: $second-color;
                     border: .2rem solid $second-color;
-                    transition: .5s color, .5s border, .5s background-color;
                     &.language {
                         &:hover {
                             color: $bg-color;
                         }
                         &::before {
                             background-color: $second-color;
-                            transition: .5s width, .5s 0s background-color;
                         }
                         &.active {
                             color: $bg-color;
@@ -43,12 +41,10 @@ html {
                     &-bar {
                         color: $second-color;
                         background-color: $bg-color;
-                        transition: 1s transform, .5s box-shadow, .5s 0s color, .5s 0s background-color, .5s 0s border;
                     }
                     &-list {
                         .mode {
                             box-shadow: 0 0 1rem $second-color;
-                            transition: .5s box-shadow, .5s 0s border;
                             &:hover {
                                 box-shadow: none;
                             }
@@ -120,10 +116,10 @@ html {
             &__photo {
                 &-img {
                     background-color: $bg-color;
-                    transition: .5s 0s background-color;
+                    transition: .5s background-color;
                 }
                 &-circle {
-                    transition: .5s 0s background-color;
+                    transition: .5s background-color;
                     background-color: $second-color;
                 }
             }

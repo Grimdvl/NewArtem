@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s background-color;
+    transition: .5s background-color;
     z-index: 4;
     border-radius: 3rem;
     animation: slideTop 1s ease forwards, transformX 1s ease forwards;
@@ -26,7 +26,7 @@
             background-color: $main-color;
             border-radius: 50%;
             z-index: 1;
-            transition: .5s, 1s background-color;
+            transition: .5s transform, .5s background-color;
             &:before {
                 content: '';
                 position: absolute;
@@ -37,7 +37,7 @@
                 background-color: transparent;
                 border-radius: 50%;
                 box-shadow: 1.5rem 1.8rem $main-color;
-                transition: 1s box-shadow;
+                transition: .5s box-shadow;
             }
             &:after {
                 content: '';
@@ -49,7 +49,7 @@
                 background-color: transparent;
                 border-radius: 50%;
                 box-shadow: -1.5rem 1.8rem $main-color;
-                transition: 1s box-shadow;
+                transition: .5s box-shadow;
             }
         }
     }
@@ -80,7 +80,7 @@
                 background-color: $main-color;
                 color: white;
                 font-size: 2.5rem;
-                transition: .5s, 1s background-color;
+                transition: .5s transform, .5s background-color, .5s color;
                 &:before {
                     content: '';
                     position: absolute;
@@ -88,7 +88,7 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background: white;
+                    background-color: white;
                     border-radius: 50%;
                     filter: blur(.5rem);
                     opacity: 0;
@@ -160,7 +160,7 @@
         z-index: 4;
         font-size: 3em;
         box-shadow: 0 0 1rem $main-color;
-        transition: 1s transform, .5s box-shadow, 1s .5s color, 1s .5s background-color, 1s .5s border;
+        transition: 1s transform, .5s box-shadow, .5s color, .5s background-color, .5s border;
         &:hover {
             box-shadow: none;
         }
@@ -169,7 +169,7 @@
         position: absolute;
         left: 0;
         list-style: none;
-        transition: 0.5s;
+        transition: .5s;
         transition-delay: calc(.2s * var(--i));
         transform-origin: 14rem;
         transform: rotate(0deg) translateX(11rem);
@@ -181,15 +181,15 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: 1s ease;
-                transition-delay: .8s;
+                transition: .5s ease;
+                transition-delay: .3s;
             }
             &--dark {
                 position: absolute;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: 1s ease;
+                transition: .5s ease;
                 transform: scale(0);
             }
             &.active {
@@ -199,7 +199,7 @@
                         transform: scale(0) rotate(360deg);
                     }
                     &--dark {
-                        transition-delay: .8s;
+                        transition-delay: .3s;
                         transform: scale(1) rotate(360deg);
                     }
                 }
@@ -222,7 +222,7 @@
             display: inline-flex;
             z-index: 1;
             overflow: hidden;
-            transition: .5s color, 1s border, 1s background-color;
+            transition: .5s color, .5s border, .5s background-color;
             &.language {
                 font-size: 2rem;
                 &:hover {
@@ -241,7 +241,7 @@
                     height: 100%;
                     background-color: $main-color;
                     z-index: -1;
-                    transition: .5s width, 1s .5s background-color;
+                    transition: .5s width, .5s background-color;
                 }
                 &.active {
                     color: white;
@@ -261,17 +261,17 @@
     &.active {
         .menu {
             &-bar {
-                transform: rotate(-130deg);
-                color: $main-color;
-                background-color: white;
+                // transform: rotate(-130deg);
+                // color: $main-color;
+                // background-color: transparent;
+                animation: menuBar 1s ease forwards;
                 box-shadow: none;
-                transition: 1s transform, .5s box-shadow, 1s .5s color, 1s .5s background-color, 1s .5s border;
             }
             &-list {
                 transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
                 .mode {
                     box-shadow: 0 0 1rem $main-color;
-                    transition: .5s box-shadow, .5s .5s border;
+                    transition: .5s box-shadow, .5s border;
                     &:hover {
                         box-shadow: none;
                     }
