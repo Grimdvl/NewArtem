@@ -9,9 +9,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .5s transform, 1s background-color;
+    transition: 1s background-color;
     z-index: 4;
     border-radius: 3rem;
+    animation: slideTop 1s ease forwards, transformX 1s ease forwards;
     &__list {
         display: flex;
         // justify-content: center;
@@ -143,6 +144,7 @@
     justify-content: center;
     align-items: center;
     z-index: 3;
+    animation: slideBottom 1s ease forwards;
     &-bar {
         position: absolute;
         width: 5.5rem;
@@ -220,7 +222,7 @@
             display: inline-flex;
             z-index: 1;
             overflow: hidden;
-            transition: 1s color, 1s border, 1s background-color;
+            transition: .5s color, 1s border, 1s background-color;
             &.language {
                 font-size: 2rem;
                 &:hover {
@@ -239,7 +241,7 @@
                     height: 100%;
                     background-color: $main-color;
                     z-index: -1;
-                    transition: 1s width, 1s background-color;
+                    transition: .5s width, 1s .5s background-color;
                 }
                 &.active {
                     color: white;

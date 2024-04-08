@@ -32,6 +32,7 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
 
     function scrollNavigation() {
         sections.forEach(section => {
+            const promoSection = document.querySelector('.promo');
             const link = document.querySelector(`a[href="#${section.id}"]`),
                   top = window.scrollY,
                   offset = section.offsetTop - 300,
@@ -79,6 +80,9 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                 removeAnimatedClass();
                 indicator.classList.remove('show');
                 indicator.classList.add('hide');
+                promoSection.classList.add('animated');
+            } else if (top >= 400) {
+                promoSection.classList.remove('animated');
             }
         });
     }

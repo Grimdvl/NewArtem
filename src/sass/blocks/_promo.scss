@@ -36,6 +36,7 @@
             font-size: 5.6rem;
             font-weight: 700;
             line-height: 1.3;
+            opacity: 0;
             // margin-bottom: 2rem;
             @include before_circle;
             &::before {
@@ -55,6 +56,7 @@
             background-repeat: no-repeat;
             background-clip: text;
             background-position: -33rem 0;
+            opacity: 0;
             animation: promoSubtitle 6s linear infinite;
             animation-delay: 2s;
             will-change: background-position;
@@ -96,6 +98,16 @@
             &:hover {
                 box-shadow: none;
             }
+        }
+    }
+    .animated & {
+        &__content {
+            &-title {
+                animation: slideBottom 1s ease forwards;
+            }
+            // &-subtitle {
+            //     animation: slideBottom 1s ease forwards;
+            // }
         }
     }
 }

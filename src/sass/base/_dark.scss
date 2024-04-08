@@ -265,7 +265,24 @@ html {
             &__items {
                 &-item {
                     .descr {
-                        background-color: linear-gradient(rgba(46, 166, 255, 0.1), $second-color);
+                        background: linear-gradient(rgba(46, 166, 255, 0.1), $second-color);
+                        &__links {
+                            a {
+                                background-color: white;
+                                border: .2rem solid white;
+                                &::before {
+                                    background-color: black;
+                                }
+                                &:hover {
+                                    box-icon {
+                                        filter: invert(0%);
+                                    }
+                                }
+                                box-icon {
+                                    filter: invert(100%);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -328,6 +345,13 @@ html {
                         }
                     }
                 }
+                input:-webkit-autofill {
+                    background-color: $bg-color;
+                    -webkit-box-shadow: 0 0 0 3rem $bg-color inset !important;
+                    -webkit-text-fill-color: white !important;
+                    border-color: white !important;
+                    
+                }
             }
             &__textarea {
                 label {
@@ -384,7 +408,7 @@ html {
     height: 100%;
     background-color: $bg-color;
     clip-path: circle(0% at 89.7% 8.7%);
-    transition: 1s ease-out;
+    transition: .5s ease-out;
     &.active {
         clip-path: circle(150% at 89.7% 8.7%);
     }
