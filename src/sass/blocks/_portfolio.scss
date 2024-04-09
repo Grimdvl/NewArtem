@@ -5,6 +5,7 @@
     flex-direction: column;
     position: relative;
     &-title {
+        opacity: 0;
         position: relative;
         text-align: center;
         font-weight: 700;
@@ -20,6 +21,7 @@
         }
     }
     &-subtitle {
+        opacity: 0;
         font-size: 1.6rem;
         line-height: 2.4rem;
         text-align: center;
@@ -257,6 +259,14 @@
                 color: white;
                 transition: 1s color;
             }
+        }
+    }
+    .animated & {
+        &-title {
+            animation: slideBottom 1s ease forwards;
+        }
+        &-subtitle {
+            animation: slideRight 1s .5s ease forwards;
         }
     }
 }

@@ -39,8 +39,6 @@
         overflow: hidden;
         z-index: 1;
         opacity: 0;
-        visibility: hidden;
-        left: -35rem;
         &::before {
             content: '';
             position: absolute;
@@ -49,7 +47,7 @@
             background-color: $main-color;
             animation: spinner 4s linear infinite;
             transition: 1s background-color;
-            will-change: transform;
+            will-change: transform, background-color;
             filter: blur(.5rem);
         }
         img {
@@ -84,7 +82,8 @@
                 left: -.7rem;
                 top: 50%;
                 transform: translateY(-50%);
-                transition: 1s background-color;
+                transition: .5s background-color;
+                will-change: background-color;
             }
         }
         ul {
@@ -98,7 +97,8 @@
                     top: -.7rem;
                     left: 0;
                     background-color: black;
-                    transition: 1s background-color;
+                    transition: .5s background-color;
+                    will-change: background-color;
                 }
                 &:before {
                     content: '';
@@ -106,7 +106,8 @@
                     position: absolute;
                     background-color: black;
                     top: 6.8rem;
-                    transition: 1s background-color;
+                    transition: .5s background-color;
+                    will-change: background-color;
                 }
                 .resume__item {
                     position: relative;
@@ -137,7 +138,8 @@
                             left: 1.7rem;
                             top: 1.4rem;
                             filter: invert(0%);
-                            transition: 1s filter;
+                            transition: .5s filter;
+                            will-change: filter;
                         }
                     }
                     &-location {
@@ -151,16 +153,13 @@
     }
     .animated & {
         &-title {
-            animation: slideBottom .5s ease forwards;
+            animation: slideBottom 1s ease forwards;
         }
         &-subtitle {
-            animation: slideLeft .5s .25s ease forwards;
+            animation: slideRight 1s .5s ease forwards;
         }
         &__photo {
-            opacity: 1;
-            visibility: visible;
-            left: 0;
-            transition: 2s;
+            animation: slideRight 1s ease forwards;
         }
         &__column {
             &-title { 
