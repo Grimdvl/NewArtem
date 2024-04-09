@@ -36,6 +36,7 @@ const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelec
     mode.addEventListener('click', () => {
         mode.classList.toggle(activeClass);
         document.documentElement.classList.toggle(activeClass);
+        document.body.classList.toggle(activeClass);
         color.classList.toggle(activeClass);
 
         if (document.querySelector('.skills').classList.contains('animated') && !hasSkillsLoaded) {
