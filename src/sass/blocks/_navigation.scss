@@ -158,9 +158,9 @@
         align-items: center;
         cursor: pointer;
         z-index: 4;
-        font-size: 3em;
+        font-size: 3rem;
         box-shadow: 0 0 1rem $main-color;
-        transition: 1s transform, .5s box-shadow, .5s color, .5s background-color, .5s border;
+        transition: 1s transform, .5s box-shadow, .5s color, 1s background-color, .5s border;
         &:hover {
             box-shadow: none;
         }
@@ -216,7 +216,7 @@
             color: $main-color;
             border: .2rem solid $main-color;
             border-radius: 50%;
-            font-size: 3em;
+            font-size: 3rem;
             transform: rotate(calc(-110deg / -4 * var(--i)));
             position: relative;
             display: inline-flex;
