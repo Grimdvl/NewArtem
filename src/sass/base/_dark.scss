@@ -404,7 +404,7 @@ html {
     height: 100%;
     background-color: $bg-color;
     clip-path: circle(0% at 89.7% 8.7%);
-    transition: .5s ease-out;
+    transition: 1s ease-out;
     &.active {
         clip-path: circle(150% at 89.7% 8.7%);
     }

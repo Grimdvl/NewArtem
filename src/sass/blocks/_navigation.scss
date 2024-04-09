@@ -261,10 +261,9 @@
     &.active {
         .menu {
             &-bar {
-                // transform: rotate(-130deg);
-                // color: $main-color;
-                // background-color: transparent;
-                animation: menuBar 1s ease forwards;
+                transform: rotate(-130deg);
+                color: $main-color;
+                background-color: transparent;
                 box-shadow: none;
             }
             &-list {

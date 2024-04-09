@@ -10,22 +10,6 @@
     }
 }
 
-@keyframes menuBar {
-    0% {
-        transform: rotate(0deg);
-        background-color: $main-color;
-        color: white;
-    }
-    99% {
-        background-color: white;
-    }
-    100% {
-        transform: rotate(-130deg);
-        background-color: transparent;
-        color: $main-color;
-    }
-}
-
 @keyframes promoSubtitle {
     0%,
     10%,
