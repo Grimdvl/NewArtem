@@ -181,15 +181,15 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: .5s ease;
-                transition-delay: .3s;
+                transition: 1s ease;
+                transition-delay: .5s;
             }
             &--dark {
                 position: absolute;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: .5s ease;
+                transition: 1s ease;
                 transform: scale(0);
             }
             &.active {
@@ -199,7 +199,7 @@
                         transform: scale(0) rotate(360deg);
                     }
                     &--dark {
-                        transition-delay: .3s;
+                        transition-delay: .5s;
                         transform: scale(1) rotate(360deg);
                     }
                 }
