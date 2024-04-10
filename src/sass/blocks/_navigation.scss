@@ -4,8 +4,8 @@
     transform: translateX(-50%);
     bottom: 5%;
     background-color: $main-color;
-    height: 6rem;
-    width: 32rem;
+    // height: 6rem;
+    // width: 32rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,6 +95,49 @@
                     transition: .5s;
                 }
             }
+        }
+    }
+    &__home {
+        top: 0;
+        right: -20%;
+        position: fixed;
+        // font-size: 5.5rem;
+        display: flex;
+        opacity: 0;
+
+        font-size: 5.6rem;
+        text-align: end;
+        width: 11rem;
+        &--up {
+            z-index: 2;
+            cursor: pointer;
+            border: .2rem solid $main-color;
+            // border-radius: 50%;
+            color: white;
+            background-color: $main-color;
+            // box-shadow: 0 0 1rem $main-color;
+            transition: .5s box-shadow, .5s color, .5s background-color, .5s border;
+
+            position: relative;
+            border-radius: 3rem;
+            width: 100%;
+            &::after {
+                top: -.2rem;
+                left: -1rem;
+                content: '';
+                display: block;
+                position: absolute;
+                border-radius: 50%;
+                background-color: $main-color;
+                width: 6rem;
+                height: 6rem;
+            }
+            &:hover {
+                box-shadow: none;
+            }
+        }
+        &.active {
+            animation: slideRight 1s ease forwards;
         }
     }
 }
@@ -277,33 +320,5 @@
                 }
             }
         }
-    }
-}
-
-.home {
-    position: fixed;
-    bottom: 5rem;
-    right: 5rem;
-    font-size: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    z-index: 4;
-    opacity: 0;
-    &--up {
-        border: .2rem solid $main-color;
-        border-radius: 50%;
-        color: white;
-        background-color: $main-color;
-        box-shadow: 0 0 1rem $main-color;
-        transition: .5s box-shadow, .5s color, .5s background-color, .5s border;
-        &:hover {
-            box-shadow: none;
-        }
-    }
-    &.active {
-        animation: slideTop 1s ease forwards;
     }
 }

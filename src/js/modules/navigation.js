@@ -82,9 +82,9 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                 indicator.classList.remove('show');
                 indicator.classList.add('hide');
                 promoSection.classList.add('animated');
-                document.querySelector('.home').classList.remove('active');
+                document.querySelector('.navigation__home').classList.remove('active');
             } else if (top >= 400) {
-                document.querySelector('.home').classList.add('active');
+                document.querySelector('.navigation__home').classList.add('active');
                 promoSection.classList.remove('animated');
             }
         });

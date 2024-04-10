@@ -175,10 +175,35 @@
         top: -7rem;
         right: -7rem;
     }
-    .home {
-        bottom: 3rem;
-        right: 3rem;
-    }
+    // .navigation {
+    //     &__home {
+    //         font-size: 5.7rem;
+    //         display: flex;
+    //         text-align: end;
+    //         width: 11rem;
+    //         bottom: 5%;
+    //         left: 14.8%;
+    //         &--up {
+    //             position: relative;
+    //             border-radius: 3rem;
+    //             width: 100%;
+    //             &::after {
+    //                 top: -.2rem;
+    //                 left: -1rem;
+    //                 content: '';
+    //                 display: block;
+    //                 position: absolute;
+    //                 border-radius: 50%;
+    //                 background-color: white;
+    //                 width: 6rem;
+    //                 height: 6rem;
+    //             }
+    //         }
+    //         &.active {
+    //             animation: slideRight 1s ease forwards;
+    //         }
+    //     }
+    // }
     .skills {
         &__wrapper {
             grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
