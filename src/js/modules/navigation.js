@@ -8,6 +8,7 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
           sections = document.querySelectorAll(sectionsSelector);
 
     const sectionsMap = {
+        'promo': document.querySelector('.promo'),
         'resume': document.querySelector('.resume'),
         'skills': document.querySelector('.skills'),
         'portfolio': document.querySelector('.portfolio'),
@@ -75,13 +76,15 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                     }
                 }
                 link.parentNode.classList.add(activeClass);
-            } else if (top <= 400 && link) {
+            } else if (top <= 400) {
                 removeActiveClass();
                 removeAnimatedClass();
                 indicator.classList.remove('show');
                 indicator.classList.add('hide');
                 promoSection.classList.add('animated');
+                document.querySelector('.home').classList.remove('active');
             } else if (top >= 400) {
+                document.querySelector('.home').classList.add('active');
                 promoSection.classList.remove('animated');
             }
         });

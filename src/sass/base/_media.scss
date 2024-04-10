@@ -175,6 +175,10 @@
         top: -7rem;
         right: -7rem;
     }
+    .home {
+        bottom: 3rem;
+        right: 3rem;
+    }
     .skills {
         &__wrapper {
             grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));

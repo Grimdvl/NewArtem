@@ -10,7 +10,7 @@
             background-color: white;
             border-radius: 50%;
             animation: floatPhoto 4s ease-in-out infinite;
-            transition: .5s .2s background-color;
+            transition: .5s background-color;
             will-change: transform, background-color;
         }
         &-circle {
@@ -20,7 +20,7 @@
             width: 105%;
             height: 105%;
             background-color: $main-color;
-            transition: .5s .2s background-color;
+            transition: .5s background-color;
             border-radius: 50%;
             animation: floatPhoto 4s ease-in-out infinite;
             filter: blur(1rem);
@@ -115,7 +115,7 @@
                 animation: slideBottom 1s ease forwards;
             }
             &-description {
-                animation: slideLeft 2s .5s ease forwards;
+                animation: slideLeft 1s .5s ease forwards;
             }
             .wrapper-subtitle {
                 animation: slideRight 1s .5s ease forwards;
