@@ -87,19 +87,20 @@
             }
         }
         ul {
+            position: relative;
             list-style-type: none;
+            &:before {
+                content: '';
+                width: .1rem;
+                position: absolute;
+                top: -.7rem;
+                left: 0;
+                background-color: black;
+                transition: .5s background-color;
+                will-change: background-color;
+            }
             li {
                 position: relative;
-                &:after {
-                    content: '';
-                    width: 0.1rem;
-                    position: absolute;
-                    top: -.7rem;
-                    left: 0;
-                    background-color: black;
-                    transition: .5s background-color;
-                    will-change: background-color;
-                }
                 &:before {
                     content: '';
                     height: .1rem;
@@ -163,42 +164,58 @@
         }
         &__column {
             &-title { 
-                animation: resumeTitle .5s linear forwards;
+                animation: resumeTitle 1s .5s linear forwards;
             }
             ul {
-                li {
-                    &:after {
-                        animation: resumeAfter 1s linear forwards;
-                    }
+                &:before {
+                    animation: resumeAfter 1.5s .5s linear forwards;
+                }
+                li:nth-child(1) {
                     &:before {
-                        animation: resumeBefore .5s .5s linear forwards;
+                        animation: resumeBefore .5s .7s linear forwards;
                     }
                     .resume__item {
                         animation: resumeOpacity .5s 1s linear forwards;
                     }
                 }
-                li:nth-child(1) {
-                    &:after {
-                        animation-delay: .5s;
-                    }
-                    &::before {
-                        animation-delay: .4s;
-                    }
-                    .resume__item {
-                        animation-delay: .9s;
-                    }
-                }
                 li:nth-child(2) {
-                    &:after {
-                        animation-delay: .9s;
-                    }
-                    &::before {
-                        animation-delay: 1.4s;
+                    &:before {
+                        animation: resumeBefore .5s 1.2s linear forwards;
                     }
                     .resume__item {
-                        animation-delay: 1.9s;
+                        animation: resumeOpacity .5s 1.5s linear forwards;
                     }
                 }
+                li:nth-child(3) {
+                    &:before {
+                        animation: resumeBefore .5s 1.7s linear forwards;
+                    }
+                    .resume__item {
+                        animation: resumeOpacity .5s 2s linear forwards;
+                    }
+                }
+                // li:nth-child(1) {
+                //     &:after {
+                //         animation-delay: .5s;
+                //     }
+                //     &::before {
+                //         animation-delay: .4s;
+                //     }
+                //     .resume__item {
+                //         animation-delay: .9s;
+                //     }
+                // }
+                // li:nth-child(2) {
+                //     &:after {
+                //         animation-delay: .9s;
+                //     }
+                //     &::before {
+                //         animation-delay: 1.4s;
+                //     }
+                //     .resume__item {
+                //         animation-delay: 1.9s;
+                //     }
+                // }
             }
         }
     }
