@@ -1,4 +1,4 @@
-html, body {
+html {
     &.active {
         color: white;
 
@@ -52,7 +52,17 @@ html, body {
                 }
             }
         }
-
+        .home {
+            &--up {
+                border: .2rem solid $second-color;
+                color: $bg-color;
+                background-color: $second-color;
+                box-shadow: 0 0 1rem $second-color;
+                &::after {
+                    background-color: $bg-color;
+                }
+            }
+        }
         .navigation {
             background-color: $second-color;
             &__link {

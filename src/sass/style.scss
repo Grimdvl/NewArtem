@@ -18,12 +18,16 @@
     outline: none;
 }
 
-html, body {
+html {
     font-size: 62.5%;
     overflow-x: hidden;
     color: black;
     transition: .5s color;
     will-change: color;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 section {
