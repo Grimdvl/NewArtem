@@ -57,9 +57,18 @@ html {
                 border: .2rem solid $second-color;
                 color: $bg-color;
                 background-color: $second-color;
-                box-shadow: 0 0 1rem $second-color;
                 &::after {
                     background-color: $bg-color;
+                }
+            }
+            &.active {
+                .home {
+                    &--up {
+                        box-shadow: 0 0 1rem $second-color;
+                        &:hover {
+                            box-shadow: none;
+                        }
+                    }
                 }
             }
         }
@@ -179,11 +188,11 @@ html {
                     }
                 }
                 ul {
+                    &:before {
+                        background-color: white;
+                    }
                     li {
                         &:before {
-                            background-color: white;
-                        }
-                        &:after {
                             background-color: white;
                         }
                     }
