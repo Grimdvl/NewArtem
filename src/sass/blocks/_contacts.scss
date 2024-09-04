@@ -28,6 +28,7 @@
         }
     }
     &__contact {
+        opacity: 0;
         font-size: 3rem;
         font-weight: bold;
         margin-top: 2rem;
@@ -258,6 +259,16 @@
                     color: #FFF;
                 }
             }
+        }
+    }
+    .animated & {
+        &__descr {
+            &-title {
+                animation: slideBottom 1s ease forwards;
+            }
+        }
+        &__contact {
+            animation: slideRight 1s .5s ease forwards;
         }
     }
 }
