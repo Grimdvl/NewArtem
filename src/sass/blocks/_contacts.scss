@@ -261,28 +261,28 @@
             }
         }
     }
-<<<<<<< HEAD
-    &-subtitle {
-        opacity: 0;
-    }
-    &-title {
-        opacity: 0;
-    }
-    .animated & {
-        &-title {
-            animation: slideBottom 1s ease forwards;
-        }
-        &-subtitle {
-=======
-    .animated & {
-        &__descr {
-            &-title {
-                animation: slideBottom 1s ease forwards;
-            }
-        }
-        &__contact {
->>>>>>> 5ca831a76c9bdaa06a6122439d6b35e0bfdaadfe
-            animation: slideRight 1s .5s ease forwards;
-        }
-    }
+// <<<<<<< HEAD
+//     &-subtitle {
+//         opacity: 0;
+//     }
+//     &-title {
+//         opacity: 0;
+//     }
+//     .animated & {
+//         &-title {
+//             animation: slideBottom 1s ease forwards;
+//         }
+//         &-subtitle {
+// =======
+//     .animated & {
+//         &__descr {
+//             &-title {
+//                 animation: slideBottom 1s ease forwards;
+//             }
+//         }
+//         &__contact {
+// >>>>>>> 5ca831a76c9bdaa06a6122439d6b35e0bfdaadfe
+//             animation: slideRight 1s .5s ease forwards;
+//         }
+//     }
 }
