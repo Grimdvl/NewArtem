@@ -12,10 +12,8 @@ const shell = require('gulp-shell');
 gulp.task('webpack', shell.task([
     'webpack'
 ]));
-  
 
 gulp.task('server', function() {
-    
     browserSync.init({
         server: {
             baseDir: "dist"
@@ -27,12 +25,15 @@ gulp.task('server', function() {
 
 gulp.task('styles', function() {
     return gulp.src("src/sass/**/*.+(scss|sass)")
-            .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-            .pipe(rename({prefix: "", suffix: ".min"}))
-            .pipe(autoprefixer({overrideBrowserslist: ['last 2 version'], cascade: false}))
-            .pipe(cleanCSS({compatibility: 'ie8'}))
-            .pipe(gulp.dest("dist/css"))
-            .pipe(browserSync.stream());
+        .pipe(sass({
+            outputStyle: 'compressed',
+            silenceDeprecation: 'importSass' // Отключаем предупреждения об устаревании @import
+        }).on('error', sass.logError))
+        .pipe(rename({prefix: "", suffix: ".min"}))
+        .pipe(autoprefixer({overrideBrowserslist: ['last 2 version'], cascade: false}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest("dist/css"))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('watch', function() {
@@ -62,7 +63,6 @@ gulp.task('json', function () {
         .pipe(gulp.dest("dist/"))
         .pipe(browserSync.stream());
 });
-
 
 gulp.task('icons', function () {
     return gulp.src("src/img/icons/**/*")

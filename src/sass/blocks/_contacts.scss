@@ -260,4 +260,18 @@
             }
         }
     }
+    &-subtitle {
+        opacity: 0;
+    }
+    &-title {
+        opacity: 0;
+    }
+    .animated & {
+        &-title {
+            animation: slideBottom 1s ease forwards;
+        }
+        &-subtitle {
+            animation: slideRight 1s .5s ease forwards;
+        }
+    }
 }
