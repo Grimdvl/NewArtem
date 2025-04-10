@@ -223,14 +223,14 @@
     }
 }
 
-@keyframes changeColor {
-    0% {
-        background-image: linear-gradient($main-color, $main-color);
-    }
-    50% {
-        background-image: linear-gradient($main-color, $second-color);
-    }
-    100% {
-        background-image: linear-gradient($second-color, $second-color);
-    }
-}
+// @keyframes changeColor {
+//     0% {
+//         background-image: linear-gradient(var(--main-color), var(--main-color));
+//     }
+//     50% {
+//         background-image: linear-gradient(var(--main-color), $second-color);
+//     }
+//     100% {
+//         background-image: linear-gradient($second-color, $second-color);
+//     }
+// }

@@ -16,7 +16,7 @@
     .menu {
         &-bar {
             &:hover {
-                box-shadow: 0 0 1rem $main-color;
+                box-shadow: 0 0 1rem var(--main-color);
             }
         }
         &.active {
@@ -24,7 +24,7 @@
                 &-list {
                     .mode {
                         &:hover {
-                            box-shadow: 0 0 1rem $main-color;
+                            box-shadow: 0 0 1rem var(--main-color);
                         }
                     }
                 }

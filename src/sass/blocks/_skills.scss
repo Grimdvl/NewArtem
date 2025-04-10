@@ -90,10 +90,10 @@
                 font-weight: 600;
                 transition: .5s ease;
                 &:hover {
-                    border: .2rem solid $main-color;
+                    border: .2rem solid var(--main-color);
                     color: #FFF;
-                    background: $main-color;
-                    box-shadow: 0 0 1rem $main-color;
+                    background: var(--main-color);
+                    box-shadow: 0 0 1rem var(--main-color);
                 }
                 &:focus {
                     outline: none;
@@ -102,7 +102,7 @@
             &::before {
                 content: '';
                 position: absolute;
-                background: radial-gradient($main-color, transparent, transparent);
+                background: radial-gradient(var(--main-color), transparent, transparent);
                 height: 50rem;
                 width: 50rem;
                 top: var(--y);
@@ -150,8 +150,8 @@
                     animation: loadingCircle 0.1s linear forwards;
                 }
                 .block.active {
-                    background-color: $main-color;
-                    box-shadow: 0 0 1rem $main-color, 0 0 2rem $main-color;
+                    background-color: var(--main-color);
+                    box-shadow: 0 0 1rem var(--main-color), 0 0 2rem var(--main-color);
                 }
                 h3 {
                     position: absolute;
@@ -171,7 +171,7 @@
                         margin-left: 1.5rem;
                     }
                     ion-icon {
-                        color: $main-color;
+                        color: var(--main-color);
                         font-size: 7rem;
                         transition: 1s color;
                     }
@@ -238,7 +238,8 @@
         &-line {
             width: 35rem;
             height: 1.4rem;
-            background-color: #E8E4DE;
+            background-color: #000;
+            // background-color: #E8E4DE;
             border-radius: .4rem;
             grid-column: 1/2;
             // width: 100%;
@@ -246,7 +247,7 @@
             span {
                 display: block;
                 height: 100%;
-                background-color: $main-color;
+                background-color: var(--main-color);
                 border-radius: .4rem;
                 filter: blur(.2rem);
                 width: 0;

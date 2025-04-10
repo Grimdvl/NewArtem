@@ -19,7 +19,7 @@
             position: absolute;
             width: 105%;
             height: 105%;
-            background-color: $main-color;
+            background-color: var(--main-color);
             transition: .5s background-color;
             border-radius: 50%;
             animation: floatPhoto 4s ease-in-out infinite;
@@ -54,8 +54,8 @@
             font-size: 3.2rem;
             font-weight: 700;
             color: transparent;
-            -webkit-text-stroke: .1rem $main-color;
-            background-image: linear-gradient($main-color, $main-color);
+            -webkit-text-stroke: .1rem var(--main-color);
+            background-image: linear-gradient(var(--main-color), var(--main-color));
             background-repeat: no-repeat;
             background-clip: text;
             background-position: -33rem 0;
@@ -68,7 +68,7 @@
                 position: absolute;
                 inset: 0;
                 height: 100%;
-                border-right: .2rem solid $main-color;
+                border-right: .2rem solid var(--main-color);
                 z-index: -1;
                 animation: promoSubtitleCursor 6s linear infinite;
                 animation-delay: 2s;
@@ -89,8 +89,8 @@
             justify-content: center;
             align-items: center;
             color: white;
-            border: .2rem solid $main-color;
-            background-color: $main-color;
+            border: .2rem solid var(--main-color);
+            background-color: var(--main-color);
             border-radius: 3rem;
             font-size: 1.8rem;
             font-weight: 600;
@@ -98,7 +98,7 @@
             z-index: 1;
             overflow: hidden;
             transition: .5s color;
-            box-shadow: 0 0 1rem $main-color;
+            box-shadow: 0 0 1rem var(--main-color);
             transition: .5s box-shadow, .5s color, .5s background-color, .5s border;
             will-change: color, background-color, box-shadow, border;
             &:hover {
