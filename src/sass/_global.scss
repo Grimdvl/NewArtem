@@ -1,5 +1,5 @@
-// @use 'base/variables' as *;
-// @use 'base/mixins' as *;
-// @use 'base/animations' as *;
-// @use 'base/media' as *;
-// @use 'base/dark' as *;
+@forward 'base/variables';
+@forward 'base/mixins';
+@forward 'base/animations';
+// @forward 'base/media';
+// @forward 'base/dark';

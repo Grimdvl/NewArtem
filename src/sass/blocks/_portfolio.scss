@@ -1,3 +1,5 @@
+@use '../global' as *;
+
 .portfolio {
     display: flex;
     justify-content: space-around;

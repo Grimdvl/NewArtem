@@ -1,3 +1,5 @@
+@use '../global' as *;
+
 .navigation {
     position: absolute;
     background-color: var(--main-color);
