@@ -14,12 +14,14 @@ const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelec
         root.style.setProperty('--main-color', '#2ea6ff');
         root.style.setProperty('--color-black', '#fff');
         root.style.setProperty('--color-white', '#000');
+        root.style.setProperty('--bg-color', '#18222c');
     }
 
     const applyLightTheme = () => {
         root.style.setProperty('--main-color', '#FFA501');
         root.style.setProperty('--color-black', '#000');
         root.style.setProperty('--color-white', '#fff');
+        root.style.setProperty('--bg-color', '#fff');
     }
 
     const savedTheme = localStorage.getItem('theme');

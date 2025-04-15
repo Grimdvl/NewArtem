@@ -1,15 +1,6 @@
 $main-color: #FFA501;
-// $main-color: #0ef;
-// $bg-color: #323946;
-// $bg2-color: #1f242d;
-
 $bg-color: #18222c;
 $second-color: #2ea6ff;
-
-// $main-color: #00abf0;
-// $dark-color: #00abf0;
-// $bg-color: #112e42;
-// $bg2-color: #081b29;
 
 $index: calc(1vw + 1vh);
 $transition: cubic-bezier(.1, .7, 0, 1);
@@ -18,9 +9,8 @@ $transition: cubic-bezier(.1, .7, 0, 1);
     --main-color: #FFA501;
     --color-black: #000;
     --color-white: #fff;
-
-    --bg-color: #18222c;
-    --second-color: #2ea6ff;
+    --bg-color: #fff;
+    // --second-color: #2ea6ff;
     --index: calc(1vw + 1vh);
     --transition: cubic-bezier(.1, .7, 0, 1);
 }

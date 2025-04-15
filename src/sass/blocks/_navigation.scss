@@ -53,7 +53,7 @@
                 text-align: center;
                 border-radius: 50%;
                 background-color: var(--main-color);
-                color: white;
+                color: var(--color-white);
                 font-size: 2.5rem;
                 transition: .5s transform, .5s background-color, .5s color;
                 &:before {
@@ -63,7 +63,7 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background-color: white;
+                    background-color: var(--color-white);
                     border-radius: 50%;
                     filter: blur(.5rem);
                     opacity: 0;
@@ -79,8 +79,8 @@
     a {
         .icon {
             transition: .5s all;
-            color: black;
-            background: white;
+            color: var(--color-black);
+            background: var(--color-white);
             &:before {
                 opacity: .5;
             }
@@ -106,152 +106,6 @@
     }
 }
 
-.menu {
-    position: fixed;
-    top: -5rem;
-    right: -5rem;
-    width: 27rem;
-    height: 27rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 4;
-    animation: slideBottom 1s ease forwards;
-    &-bar {
-        position: absolute;
-        width: 5.5rem;
-        height: 5.5rem;
-        border: .2rem solid var(--main-color);
-        border-radius: 50%;
-        color: white;
-        background-color: var(--main-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 4;
-        font-size: 3rem;
-        box-shadow: 0 0 1rem var(--main-color);
-        transition: 1s transform, .5s box-shadow, .5s color, 1s background-color, .5s border;
-        &:hover {
-            box-shadow: none;
-        }
-    }
-    &-list {
-        position: absolute;
-        left: 0;
-        list-style: none;
-        transition: .5s;
-        transition-delay: calc(.2s * var(--i));
-        transform-origin: 14rem;
-        transform: rotate(0deg) translateX(11rem);
-        .mode {
-            position: relative;
-            box-shadow: none;
-            &--light {
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: 1s ease;
-                transition-delay: .5s;
-            }
-            &--dark {
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: 1s ease;
-                transform: scale(0);
-            }
-            &.active {
-                .mode {
-                    &--light {
-                        transition-delay: 0s;
-                        transform: scale(0) rotate(360deg);
-                    }
-                    &--dark {
-                        transition-delay: .5s;
-                        transform: scale(1) rotate(360deg);
-                    }
-                }
-            }
-        }
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: transparent;
-            cursor: pointer;
-            width: 5rem;
-            height: 5rem;
-            color: var(--main-color);
-            border: .2rem solid var(--main-color);
-            border-radius: 50%;
-            font-size: 3rem;
-            transform: rotate(calc(-110deg / -4 * var(--i)));
-            position: relative;
-            display: inline-flex;
-            z-index: 1;
-            overflow: hidden;
-            transition: .5s color, .5s border, .5s background-color;
-            &.language {
-                font-size: 2rem;
-                &:hover {
-                    text-decoration: none;
-                    color: #FFF;
-                    &::before {
-                        width: 100%;
-                    }
-                }
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 0;
-                    height: 100%;
-                    background-color: var(--main-color);
-                    z-index: -1;
-                    transition: .5s width, .5s background-color;
-                }
-                &.active {
-                    color: white;
-                    &::before {
-                        width: 100%;
-                    }
-                    &:hover {
-                        color: var(--main-color);
-                        &::before {
-                            width: 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &.active {
-        .menu {
-            &-bar {
-                transform: rotate(-130deg);
-                color: var(--main-color);
-                background-color: transparent;
-                box-shadow: none;
-            }
-            &-list {
-                transform: rotate(calc(-110deg / 4 * var(--i))) translateX(0);
-                .mode {
-                    box-shadow: 0 0 1rem var(--main-color);
-                    transition: .5s box-shadow, .5s border;
-                    &:hover {
-                        box-shadow: none;
-                    }
-                }
-            }
-        }
-    }
-}
-
 .home {
     position: absolute;
     top: 0;
@@ -268,7 +122,7 @@
         align-items: center;
         cursor: pointer;
         border: .2rem solid var(--main-color);
-        color: white;
+        color: var(--color-white);
         background-color: var(--main-color);
         transition: .5s box-shadow, .5s color, .5s background-color, .5s border;
         position: relative;
@@ -282,7 +136,7 @@
             display: block;
             position: absolute;
             border-radius: 50%;
-            background-color: white;
+            background-color: var(--color-white);
             transition: .5s background-color;
             will-change: background-color;
             width: 6rem;

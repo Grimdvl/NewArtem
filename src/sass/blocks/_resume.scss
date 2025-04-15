@@ -97,7 +97,7 @@
                 position: absolute;
                 top: -.7rem;
                 left: 0;
-                background-color: black;
+                background-color: var(--color-black);
                 transition: .5s background-color;
                 will-change: background-color;
             }
@@ -107,7 +107,7 @@
                     content: '';
                     height: .1rem;
                     position: absolute;
-                    background-color: black;
+                    background-color: var(--color-black);
                     top: 6.8rem;
                     transition: .5s background-color;
                     will-change: background-color;
