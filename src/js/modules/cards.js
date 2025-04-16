@@ -114,7 +114,7 @@ function cards() {
                 this.classes.forEach(className => element.classList.add(className));
             }
             element.innerHTML = `
-                <div class="skills__card-front active">
+                <div class="skills__card-front active " data-aos="fade-up" data-aos-duration="1000">
                     <div class="skills__card-front-icon">
                         <h3>
                             <ion-icon name="${this.src}" alt="${this.alt}"></ion-icon>

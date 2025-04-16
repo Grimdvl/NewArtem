@@ -36,7 +36,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/icons/favicon//ms-icon-144x144.png"> 
     <meta name="theme-color" content="#ffffff">
-
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -90,34 +90,34 @@
         </div>
         
         <a href="#promo" class="home">
-            <i class='home--up bx bx-chevron-up'></i>
+            <i class='home--up bx bx-chevron-up'></i>а
         </a>
     </div>
 
     <section class="promo animated" id="promo">
         <div class="promo__content">
-            <h1 class="promo__content-title">Hi, I'm Artem Sokur</h1>
-            <div class="wrapper-subtitle">
+            <h1 class="promo__content-title" data-aos="fade-down" data-aos-duration="1000">Hi, I'm Artem Sokur</h1>
+            <div class="wrapper-subtitle" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
                 <span class="promo__content-subtitle">Frontend Developer</span>
             </div>
-            <div class="divider"></div>
+            <div class="divider" data-aos="fade-up" data-aos-duration="1000"></div>
 
-            <p class="promo__content-description">I'm a novice in web development with experience in creating websites and landing pages. Ready to transform your vision into functional and appealing web solutions. My goal is to turn your ideas into reality and craft high-quality online projects that meet your requirements.</p>
-            <a href="#" class="promo__content--button">Download CV</a>
+            <p class="promo__content-description" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">I'm a novice in web development with experience in creating websites and landing pages. Ready to transform your vision into functional and appealing web solutions. My goal is to turn your ideas into reality and craft high-quality online projects that meet your requirements.</p>
+            <button href="#" class="promo__content--button" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Download CV</button>
         </div>
-        <div class="promo__photo">
+        <div class="promo__photo" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
             <span class="promo__photo-circle"></span>
             <img class="promo__photo-img" src="img/promo-photo.png" alt="Artem Sokur">
         </div>
     </section>
 
     <section class="resume" id="resume">
-        <h2 class="resume-title">Resume</h2>
-        <div class="resume-subtitle">Here's how I'll be helpful for you</div>
-        <div class="divider"></div>
+        <h2 class="resume-title" data-aos="fade-down" data-aos-duration="1000">Resume</h2>
+        <div class="resume-subtitle" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">Here's how I'll be helpful for you</div>
+        <div class="divider" data-aos="fade-up" data-aos-duration="1000"></div>
 
         <div class="resume__wrapper">
-            <div class="resume__photo">
+            <div class="resume__photo" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">
                 <img src="img/main_photo.jpg" alt="photo">
             </div>
 
@@ -173,9 +173,9 @@
 
     <section class="skills" id="skills">
         <div class="wrapper">
-            <h2 class="skills-title">Skills</h2>
-            <div class="skills-subtitle">The tools that I use</div>
-            <div class="divider"></div>
+            <h2 class="skills-title" data-aos="fade-down" data-aos-duration="1000">Skills</h2>
+            <div class="skills-subtitle" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">The tools that I use</div>
+            <div class="divider" data-aos="fade-up" data-aos-duration="1000"></div>
         </div>
         <div class="skills__wrapper">
             <!-- <div class="skills__card">
@@ -446,5 +446,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="js/bundle.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html>
