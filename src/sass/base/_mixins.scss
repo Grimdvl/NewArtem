@@ -12,3 +12,13 @@
         transition: .5s background-color;
     }
 }
+
+@mixin disappear {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin appear {
+    opacity: 1;
+    visibility: visible;
+}

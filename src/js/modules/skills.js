@@ -1,25 +1,55 @@
 function skills(counterSelector, lineSelector) {
-    const counters = document.querySelectorAll(counterSelector),
-          lines = document.querySelectorAll(lineSelector);
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach(() => {
+            document.querySelectorAll('.skills__ratings-item').forEach((item) => {
+                if (item.classList.contains('aos-animate') && !item.classList.contains('loaded')) {
+                    const counter = item.querySelector(counterSelector);
+                    const line = item.querySelector(`${lineSelector} span`);
+                    if (!counter || !line) return; // <-- тут перевірка
 
-    function numberCounter(counter, target, index) {
+                    const target = +counter.getAttribute('value');
+
+                    item.classList.add('loaded'); // щоб не запускалось знову
+                    counter.innerHTML = `0<sup>%</sup>`;
+                    line.style.width = '0%';
+
+                    setTimeout(() => {
+                        startCounter(counter, line, target);
+                    }, 500);
+                } else if (!item.classList.contains('aos-animate') && item.classList.contains('loaded')) {
+                    const counter = item.querySelector(counterSelector);
+                    const line = item.querySelector(`${lineSelector} span`);
+                    if (!counter || !line) return;
+
+                    counter.innerHTML = `0<sup>%</sup>`;
+                    line.style.width = '0%';
+                    item.classList.remove('loaded');
+                }
+            });
+        });
+    });
+
+    observer.observe(document.body, {
+        attributes: true,
+        subtree: true,
+        attributeFilter: ['class']
+    });
+
+    function startCounter(counter, line, target) {
+        if (!counter || !line) return;
+
         const value = +counter.innerText.replace(/\D/g, '');
 
         if (value < target) {
-            counter.innerHTML = `${Math.ceil(value + 1)}<sup>%</sup>`;
-            const progress = (value + 1) / 100 * 100;
-            lines[index].style.width = `${progress}%`;
+            const newValue = value + 1;
+            counter.innerHTML = `${newValue}<sup>%</sup>`;
+            line.style.width = `${newValue}%`;
+
             setTimeout(() => {
-                numberCounter(counter, target, index);
+                startCounter(counter, line, target);
             }, 15);
         }
     }
-
-    counters.forEach((counter, i) => {
-        counter.innerHTML = `0<sup>%</sup>`;
-        const target = +counter.getAttribute('value');
-        numberCounter(counter, target, i);
-    });
 }
 
 export default skills;

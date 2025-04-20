@@ -95,9 +95,10 @@
             grid-template-columns: repeat(1, 1fr);
         }
         &__column {
-            &-title {
-                margin-top: 4rem;
-            }
+            margin-top: 4rem;
+            // &-title {
+            //     margin-top: 4rem;
+            // }
         }
     }
     .skills {
@@ -109,8 +110,8 @@
         &__items {
             flex-direction: column;
             &-item {
-                width: calc($index * 16);
-                height: calc($index * 4);
+                width: calc(var(--index) * 16);
+                height: calc(var(--index) * 4);
                 .descr {
                     padding: 0 .5rem ;
                     transform: translateY(0);
@@ -120,43 +121,43 @@
                     position: absolute;
                     width: 100%;
                     height: 2rem;
-                    top: calc($index * -1);
+                    top: calc(var(--index) * -1);
                     left: 0;
                     right: 0;
                 }
                 &::after {
-                    bottom: calc($index * -1);
+                    bottom: calc(var(--index) * -1);
                 }
                 &.active {
                     height: 28vw;
                     width: 100%;
                     transition: .5s all;
-                    transform: translateZ(calc($index * 10));
+                    transform: translateZ(calc(var(--index) * 10));
                     margin: .45vh 0;
                     & + * {
-                        transform: translateZ(calc($index * 8.5)) rotateX(-35deg) rotateY(0);
+                        transform: translateZ(calc(var(--index) * 8.5)) rotateX(-35deg) rotateY(0);
                         & + * {
-                            transform: translateZ(calc($index * 5.6)) rotateX(-40deg) rotateY(0);
+                            transform: translateZ(calc(var(--index) * 5.6)) rotateX(-40deg) rotateY(0);
                             & + * {
-                                transform: translateZ(calc($index * 2.4)) rotateX(-30deg) rotateY(0);
+                                transform: translateZ(calc(var(--index) * 2.4)) rotateX(-30deg) rotateY(0);
                                 & + * {
-                                    transform: translateZ(calc($index * .6)) rotateX(-14deg) rotateY(0);
+                                    transform: translateZ(calc(var(--index) * .6)) rotateX(-14deg) rotateY(0);
                                 }
                             }
                         }
                     }
                 }
                 &:has(+ .active) {
-                    transform: translateZ(calc($index * 8.5)) rotateX(35deg) rotateY(0);
+                    transform: translateZ(calc(var(--index) * 8.5)) rotateX(35deg) rotateY(0);
                 }
                 &:has(+ * + .active) {
-                    transform: translateZ(calc($index * 5.6)) rotateX(40deg) rotateY(0);
+                    transform: translateZ(calc(var(--index) * 5.6)) rotateX(40deg) rotateY(0);
                 }
                 &:has(+ * + * + .active) {
-                    transform: translateZ(calc($index * 2.4)) rotateX(30deg) rotateY(0);
+                    transform: translateZ(calc(var(--index) * 2.4)) rotateX(30deg) rotateY(0);
                 }
                 &:has(+ * + * + * + .active) {
-                    transform: translateZ(calc($index * .6)) rotateX(14deg) rotateY(0);
+                    transform: translateZ(calc(var(--index) * .6)) rotateX(14deg) rotateY(0);
                 }
             }
         }

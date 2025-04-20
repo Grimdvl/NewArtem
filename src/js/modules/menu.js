@@ -1,20 +1,24 @@
-import skills from './skills';
-import { loadingSkillsCards } from './cards';
-
-const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelector, colorSelector) => {
+const menu = (activeClass, menuSelector, navigationSelector, modeSelector, colorSelector) => {
     const menu = document.querySelector(menuSelector),
           nav = document.querySelector(navigationSelector),
           mode = document.querySelector(modeSelector),
           color = document.querySelector(colorSelector),
-          root = document.documentElement;
-
-    let hasSkillsLoaded = false;
+          root = document.documentElement,
+          resumneIcon = document.querySelectorAll('.resume__item-icon img'),
+          portfolioIcon = document.querySelectorAll('.descr__links a box-icon');
 
     const applyDarkTheme = () => {
         root.style.setProperty('--main-color', '#2ea6ff');
         root.style.setProperty('--color-black', '#fff');
         root.style.setProperty('--color-white', '#000');
         root.style.setProperty('--bg-color', '#18222c');
+        root.style.setProperty('--cards-bg', 'rgba(24, 34, 44, .75)');
+        resumneIcon.forEach((item) => {
+            item.style.filter = 'invert(1)';
+        });
+        portfolioIcon.forEach((item) => {
+            item.setAttribute("color", "#000000");
+        });
     }
 
     const applyLightTheme = () => {
@@ -22,6 +26,13 @@ const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelec
         root.style.setProperty('--color-black', '#000');
         root.style.setProperty('--color-white', '#fff');
         root.style.setProperty('--bg-color', '#fff');
+        root.style.setProperty('--cards-bg', 'rgba(255, 255, 255, .75)');
+        resumneIcon.forEach((item) => {
+            item.style.filter = 'invert(0)';
+        });
+        portfolioIcon.forEach((item) => {
+            item.setAttribute("color", "#ffffff");
+        });
     }
 
     const savedTheme = localStorage.getItem('theme');
@@ -38,26 +49,6 @@ const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelec
         nav.classList.toggle(activeClass);
     });
 
-    const clearing = () => {
-        const blocks = document.querySelectorAll('.skills__card-front-icon .block');
-        const counters = document.querySelectorAll('.counter');
-        const width = document.querySelectorAll('.skills__ratings-line span');
-        const countersSecond = document.querySelectorAll('.skills__ratings-counter');
-
-        countersSecond.forEach((counterSecond) => {
-            counterSecond.textContent = '';
-        });
-        width.forEach((item) => {
-            item.style.width = 0;
-        });
-        blocks.forEach((block) => {
-            block.remove();
-        });
-        counters.forEach((counter) => {
-            counter.textContent = '';
-        });
-    }
-
     mode.addEventListener('click', () => {
         mode.classList.toggle(activeClass);
         root.classList.toggle(activeClass);
@@ -72,16 +63,7 @@ const navigationMenu = (activeClass, menuSelector, navigationSelector, modeSelec
             localStorage.setItem('theme', 'light');
         }
 
-        if (document.querySelector('.skills').classList.contains('animated') && !hasSkillsLoaded) {
-            hasSkillsLoaded = true;
-            clearing();
-            setTimeout(() => {
-                loadingSkillsCards('.skills__card-front-icon', '.counter');
-                skills('.skills__ratings-counter', '.skills__ratings-line span');
-                hasSkillsLoaded = false;
-            }, 500);
-        }
     });
 }
 
-export default navigationMenu;
+export default menu;

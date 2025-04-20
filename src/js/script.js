@@ -7,7 +7,9 @@ import navigation from './modules/navigation';
 import {cards} from './modules/cards';
 import modal from './modules/modal';
 import portfolioTrigger from './modules/portfolio';
-import navigationMenu from './modules/menu';
+import menu from './modules/menu';
+import resume from './modules/resume';
+import skills from './modules/skills';
 // import works from './modules/works';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -16,9 +18,11 @@ window.addEventListener('DOMContentLoaded', () => {
     // works();
     multipleText();
     // hamburger('.navigation', '.hamburger', 'active', '.navigation__overlay');
-    navigationMenu('active', '.menu-bar', '.menu', '.mode', '.color');
+    menu('active', '.menu-bar', '.menu', '.mode', '.color');
     navigation('.navigation__link', 'active', 'section', '.indicator');
+    skills('.skills__ratings-counter', '.skills__ratings-line');
     cards();
     modal('[data-modal]', '.modal', 'form');
     portfolioTrigger('.portfolio__items-item', 'active', '.portfolio__items');
+    resume();
 });
