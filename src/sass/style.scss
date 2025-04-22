@@ -11,7 +11,6 @@
 @use 'blocks/portfolio';
 @use 'blocks/contacts';
 
-@use 'base/media';
 @use 'base/dark';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
@@ -80,3 +79,5 @@ section {
     opacity: 1;
     visibility: visible;
 }
+
+@use 'base/media';
