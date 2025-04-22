@@ -1,3 +1,7 @@
+html {
+    font-size: 62.5%;
+}
+
 @media (hover: none) {
     .menu {
         &-bar {
@@ -175,8 +179,8 @@
         }
         .slide__wrapper {
             position: absolute;
-            top: 60rem;
-            left: 0;
+            top: 50rem;
+            left: -5rem;
         }
         &__slide {
             transform: rotate(90deg);
@@ -267,4 +271,11 @@
             }
         }
     }
+    .contacts {
+        &__triggers {
+            &--checkbox {
+                font-size: 1rem;
+            }
+        }
+        }
 }

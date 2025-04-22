@@ -91,10 +91,13 @@ const portfolioTrigger = (selectorElem, activeClass, selectorParent) => {
                 
                 if (mediaQuery) {
                     if (index === 0 ) {
+                        parent.style.marginTop = '13vh';
+                        parent.style.marginBottom = '0';
+                    } else if (index === 1) {
                         parent.style.marginTop = '10vh';
                         parent.style.marginBottom = '0';
-                    } else if (index === 1 || index === 2) {
-                        parent.style.marginTop = '5vh';
+                    } else if (index === 2) {
+                        parent.style.marginTop = '7vh';
                         parent.style.marginBottom = '0';
                     } else {
                         parent.style.marginTop = '0';
