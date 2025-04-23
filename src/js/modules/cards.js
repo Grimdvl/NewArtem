@@ -1,6 +1,8 @@
 import {getResources} from "../services/services";
 import VanillaTilt from './vanilla-tilt';
 
+let isDesktop = false;
+
 function loadingSkillsCard(block) {
     const circle = block.querySelector(".progress-ring__circle");
     const text = block.querySelector(".progress-text");
@@ -35,6 +37,8 @@ function resetSkillsCard(block) {
     text.innerHTML = `0<sup>%</sup>`;
 }
 
+window.innerWidth <= 991 ? isDesktop = true : isDesktop = false;
+
 function watchAOSAnimation() {
     const cards = document.querySelectorAll(".skills__wrapper-card");
 
@@ -46,8 +50,7 @@ function watchAOSAnimation() {
 
             if (!entry.isIntersecting || hasAnimated.has(card)) return;
 
-            // Чекаємо появу класу 'aos-animate' протягом 300мс
-            const waitForClass = (el, className, timeout = 300) => {
+            const waitForClass = (el, className, timeout = 500) => {
                 return new Promise(resolve => {
                     if (el.classList.contains(className)) return resolve(true);
 
@@ -67,12 +70,12 @@ function watchAOSAnimation() {
                 });
             };
 
-            waitForClass(card, 'aos-animate', 300).then(found => {
+            waitForClass(card, 'aos-animate', 500).then(found => {
                 if (found) {
                     setTimeout(() => {
                         loadingSkillsCard(card);
                         hasAnimated.add(card);
-                    }, 500); // затримка перед анімацією
+                    }, 500);
                 }
             });
         });
@@ -82,7 +85,6 @@ function watchAOSAnimation() {
 
     cards.forEach(card => observer.observe(card));
 
-    // Скидання при втраті класу 'aos-animate'
     const mutationObserver = new MutationObserver(() => {
         document.querySelectorAll(".skills__wrapper-card").forEach(card => {
             if (!card.classList.contains('aos-animate')) {
@@ -208,8 +210,10 @@ function cards() {
             '.skills__card-back'
         );
 
-        initializeVanillaTilt('.skills__card');
-        initializeBlureEffect('.skills__card');
+        if (!isDesktop) {
+            initializeVanillaTilt('.skills__card');
+            initializeBlureEffect('.skills__card');
+        }
         watchAOSAnimation();
     }
 

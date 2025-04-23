@@ -1,5 +1,3 @@
-import {loadingSkillsCards} from './cards';
-import skills from './skills';
 import portfolioTrigger from './portfolio';
 
 function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelector) {
@@ -46,11 +44,11 @@ function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelec
                 indicator.classList.add('show');
                 if (!sectionsMap[section.id].classList.contains('animated')) {
                     sectionsMap[section.id].classList.add('animated');
-                    if (sectionsMap.skills.classList.contains('animated') && !isSkillsCardsLoaded) {
-                        isSkillsCardsLoaded = true;
-                        // loadingSkillsCards('.skills__card-front-icon', '.counter');
-                        skills('.skills__ratings-counter', '.skills__ratings-line span');
-                    }
+                    // if (sectionsMap.skills.classList.contains('animated') && !isSkillsCardsLoaded) {
+                    //     isSkillsCardsLoaded = true;
+                    //     // loadingSkillsCards('.skills__card-front-icon', '.counter');
+                    //     skills('.skills__ratings-counter', '.skills__ratings-line span');
+                    // }
                     if (!sectionsMap.skills.classList.contains('animated') && isSkillsCardsLoaded) {
                         isSkillsCardsLoaded = false;
                         const blocks = document.querySelectorAll('.skills__card-front-icon .block');

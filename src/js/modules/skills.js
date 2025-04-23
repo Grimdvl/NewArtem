@@ -5,11 +5,11 @@ function skills(counterSelector, lineSelector) {
                 if (item.classList.contains('aos-animate') && !item.classList.contains('loaded')) {
                     const counter = item.querySelector(counterSelector);
                     const line = item.querySelector(`${lineSelector} span`);
-                    if (!counter || !line) return; // <-- тут перевірка
+                    if (!counter || !line) return;
 
                     const target = +counter.getAttribute('value');
 
-                    item.classList.add('loaded'); // щоб не запускалось знову
+                    item.classList.add('loaded');
                     counter.innerHTML = `0<sup>%</sup>`;
                     line.style.width = '0%';
 
