@@ -64,18 +64,14 @@ section {
     }
 }
 
-// .animated {
-//     .divider {
-//         animation: slideTop .5s ease forwards;
-//     }
-// }
-
 .hide {
-    opacity: 0;
-    visibility: hidden;
+    @include disappear;
 }
 
 .show {
-    opacity: 1;
-    visibility: visible;
+    @include appear;
+}
+
+.no-transition * {
+    transition: none !important;
 }

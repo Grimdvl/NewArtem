@@ -7,6 +7,8 @@ const menu = (activeClass, menuSelector, navigationSelector, modeSelector, color
           resumneIcon = document.querySelectorAll('.resume__item-icon img'),
           portfolioIcon = document.querySelectorAll('.descr__links a box-icon');
 
+    root.classList.add('no-transition');
+
     const applyDarkTheme = () => {
         root.style.setProperty('--main-color', '#2ea6ff');
         root.style.setProperty('--color-black', '#fff');
@@ -45,6 +47,10 @@ const menu = (activeClass, menuSelector, navigationSelector, modeSelector, color
         applyLightTheme();
     }
 
+    setTimeout(() => {
+        root.classList.remove('no-transition');
+    }, 0);
+
     menu.addEventListener('click', () => {
         nav.classList.toggle(activeClass);
     });
@@ -62,7 +68,6 @@ const menu = (activeClass, menuSelector, navigationSelector, modeSelector, color
             applyLightTheme();
             localStorage.setItem('theme', 'light');
         }
-
     });
 }
 

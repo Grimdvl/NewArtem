@@ -1,7 +1,7 @@
 import {getResources} from "../services/services";
 import VanillaTilt from './vanilla-tilt';
 
-let isDesktop = false;
+let isDesktop = window.innerWidth > 991;
 
 function loadingSkillsCard(block) {
     const circle = block.querySelector(".progress-ring__circle");
@@ -36,8 +36,6 @@ function resetSkillsCard(block) {
     circle.style.strokeDashoffset = `${circumference}`;
     text.innerHTML = `0<sup>%</sup>`;
 }
-
-window.innerWidth <= 991 ? isDesktop = true : isDesktop = false;
 
 function watchAOSAnimation() {
     const cards = document.querySelectorAll(".skills__wrapper-card");
@@ -103,29 +101,44 @@ function watchAOSAnimation() {
 
 
 function cards() {
-    function initializeVanillaTilt(cards) {
-        VanillaTilt.init(document.querySelectorAll(cards), {
-            max: 10,
-            speed: 400,
-            // glare: true,
-            // "max-glare": 1
-        });
-    }
-
-    function initializeBlureEffect(cards) {
-        const card = document.querySelectorAll(cards);
+    const initializeVanillaTilt = (selector) => {
+        const elements = document.querySelectorAll(selector);
     
-        card.forEach(item => {
-            item.onmousemove = function(e) {
-                const rect = item.getBoundingClientRect();
-                let x = e.clientX - rect.left;
-                let y = e.clientY - rect.top;
+        elements.forEach(el => {
+            const isTilted = el.hasAttribute("data-tilt-initialized");
     
-                item.style.setProperty('--x', x + 'px');
-                item.style.setProperty('--y', y + 'px');
+            if (isDesktop) {
+                if (!isTilted) {
+                    VanillaTilt.init(el, {
+                        max: 10,
+                        speed: 400,
+                        // glare: true,
+                        // "max-glare": 1
+                    });
+                    el.setAttribute("data-tilt-initialized", "true");
+                }
+            } else {
+                if (isTilted && el.vanillaTilt) {
+                    el.vanillaTilt.destroy();
+                    el.removeAttribute("data-tilt-initialized");
+                }
             }
         });
-    }
+    };
+    
+
+    const initializeBlureEffect = (selector) => {
+        const elements = document.querySelectorAll(selector);
+    
+        elements.forEach(item => {
+            item.onmousemove = (e) => {
+                if (!isDesktop) return;
+                const rect = item.getBoundingClientRect();
+                item.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                item.style.setProperty('--y', `${e.clientY - rect.top}px`);
+            };
+        });
+    };
 
     function flippingCard(buttonsFront, buttonsBack, cardsFront, cardsBack) {
         const frontButtons = document.querySelectorAll(buttonsFront);
@@ -210,10 +223,8 @@ function cards() {
             '.skills__card-back'
         );
 
-        if (!isDesktop) {
-            initializeVanillaTilt('.skills__card');
-            initializeBlureEffect('.skills__card');
-        }
+        initializeVanillaTilt('.skills__card');
+        initializeBlureEffect('.skills__card');
         watchAOSAnimation();
     }
 
@@ -261,6 +272,14 @@ function cards() {
             ];
     
             renderCards(defaultCards);
+        });
+        window.addEventListener('resize', () => {
+            const newIsDesktop = window.innerWidth > 991;
+            if (newIsDesktop !== isDesktop) {
+                isDesktop = newIsDesktop;
+                initializeVanillaTilt('.skills__card');
+                initializeBlureEffect('.skills__card');
+            }
         });
 }
 export {loadingSkillsCard};
