@@ -43,6 +43,13 @@ export const html = () => {
     .pipe(gulp.dest("dist/"));
 };
 
+// PHP
+export const php = () => {
+    return gulp.src("src/**/*.php")
+    .pipe(gulp.dest("dist/"))
+    .pipe(browserSync.stream());
+};
+
 // JSON
 export const json = () => {
     return gulp.src("src/**/*.json")
@@ -86,6 +93,7 @@ export const webpack = shell.task(['webpack']);
 export const watch = () => {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", styles);
     gulp.watch("src/*.html", html);
+    gulp.watch("src/**/*.php", php);
     gulp.watch("src/**/*.json", json);
     gulp.watch("src/fonts/**/*", fonts);
     gulp.watch("src/icons/**/*", icons);
@@ -110,7 +118,9 @@ export default gulp.parallel(
     icons,
     mailer,
     html,
+    php,
     images,
     fonts,
     webpack
 );
+

@@ -19,6 +19,7 @@
         position: relative;
         .indicator {
             position: absolute;
+            @include disappear;
             top: -3.2rem;
             width: 7rem;
             height: 7rem;
@@ -26,6 +27,9 @@
             border-radius: 50%;
             z-index: 1;
             transition: .5s transform, .5s background-color;
+            &.active {
+                @include appear;
+            }
         }
     }
     &__link {
@@ -110,11 +114,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    transition: .5s transform, .5s opacity;
+    transition: .5s .7s transform, .5s .7s opacity;
     font-size: 5rem;
     height: 6rem;
     width: 10rem;
-    opacity: 0;
+    @include disappear;
     // animation: slideTop 1s ease forwards;
     &--up {
         display: flex;
@@ -152,7 +156,7 @@
                 }
             }
         }
-        opacity: 1;
+        @include appear;
         transform: translateX(4.9rem);
     }
 }

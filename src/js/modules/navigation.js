@@ -1,91 +1,106 @@
 import portfolioTrigger from './portfolio';
 
-function navigation(linksSelector, activeClass, sectionsSelector, indicatorSelector) {
+function navigation(linksSelector, activeClass, indicatorSelector) {
     const links = document.querySelectorAll(linksSelector),
-          indicator = document.querySelector(indicatorSelector),
-          sections = document.querySelectorAll(sectionsSelector);
+          indicator = document.querySelector(indicatorSelector);
 
     const sectionsMap = {
-        'promo': document.querySelector('.promo'),
-        'resume': document.querySelector('.resume'),
-        'skills': document.querySelector('.skills'),
-        'portfolio': document.querySelector('.portfolio'),
-        'contacts': document.querySelector('.contacts'),
+        promo: document.querySelector('.promo'),
+        resume: document.querySelector('.resume'),
+        skills: document.querySelector('.skills'),
+        portfolio: document.querySelector('.portfolio'),
+        contacts: document.querySelector('.contacts'),
     };
 
+    let activeSection = null;
+    let activeAttribute = null;
     let isSkillsCardsLoaded = false;
 
+    const attributs = ['data-skills-wrapper-card', 'data-skills-ratings-items'];
+
     function removeActiveClass() {
-        links.forEach((item) => {
-            item.classList.remove(activeClass);
-        });
+        links.forEach(item => item.classList.remove(activeClass));
     }
 
     function removeAnimatedClass() {
         Object.values(sectionsMap).forEach(section => {
-            if (section && section.classList) {
-                section.classList.remove('animated');
-            }
+            if (section?.classList) section.classList.remove('animated');
         });
     }
 
     function scrollNavigation() {
-        sections.forEach(section => {
-            const promoSection = document.querySelector('.promo');
-            const link = document.querySelector(`a[href="#${section.id}"]`),
-                  top = window.scrollY,
-                  offset = section.offsetTop - 300,
-                  height = section.offsetHeight;
-
-            if (top >= offset && top < offset + height && link) {
-                removeActiveClass();
-                removeAnimatedClass();
-                indicator.classList.remove('hide');
-                indicator.classList.add('show');
-                if (!sectionsMap[section.id].classList.contains('animated')) {
-                    sectionsMap[section.id].classList.add('animated');
-                    // if (sectionsMap.skills.classList.contains('animated') && !isSkillsCardsLoaded) {
-                    //     isSkillsCardsLoaded = true;
-                    //     // loadingSkillsCards('.skills__card-front-icon', '.counter');
-                    //     skills('.skills__ratings-counter', '.skills__ratings-line span');
-                    // }
-                    if (!sectionsMap.skills.classList.contains('animated') && isSkillsCardsLoaded) {
-                        isSkillsCardsLoaded = false;
-                        const blocks = document.querySelectorAll('.skills__card-front-icon .block');
-                        const counters = document.querySelectorAll('.counter');
-                        const width = document.querySelectorAll('.skills__ratings-line span');
-                        const countersSecond = document.querySelectorAll('.skills__ratings-counter');
-
-                        countersSecond.forEach((counterSecond) => {
-                            counterSecond.textContent = '';
-                        });
-                        width.forEach((item) => {
-                            item.style.width = 0;
-                        });
-                        blocks.forEach((block) => {
-                            block.remove();
-                        });
-                        counters.forEach((counter) => {
-                            counter.textContent = '';
-                        });
-                    }
-                    if (!sectionsMap.portfolio.classList.contains('animated')) {
-                        portfolioTrigger('.portfolio__items-item', 'active', '.portfolio__items');
-                    }
-                }
-                link.parentNode.classList.add(activeClass);
-            } else if (top <= 400) {
-                removeActiveClass();
-                removeAnimatedClass();
-                indicator.classList.remove('show');
-                indicator.classList.add('hide');
-                promoSection.classList.add('animated');
-                document.querySelector('.home').classList.remove('active');
-            } else if (top >= 400) {
-                document.querySelector('.home').classList.add('active');
-                promoSection.classList.remove('animated');
+        const scrollY = window.scrollY;
+        let foundSection = null;
+        let foundAttribute = null;
+    
+        for (const [id, section] of Object.entries(sectionsMap)) {
+            if (!section) continue;
+    
+            const offsetTop = section.offsetTop - 300;
+            const height = section.offsetHeight;
+    
+            if (scrollY >= offsetTop && scrollY < offsetTop + height) {
+                foundSection = id;
+                break;
             }
-        });
+        }
+    
+        for (const attr of attributs) {
+            const elements = document.querySelectorAll(`[${attr}]`);
+            for (const el of elements) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    foundAttribute = attr;
+                    break;
+                }
+            }
+            if (foundAttribute) break;
+        }
+    
+        const promoSection = sectionsMap.promo;
+        const homeBtn = document.querySelector('.home');
+    
+        if (foundSection && foundSection !== activeSection) {
+            activeSection = foundSection;
+            removeActiveClass();
+            removeAnimatedClass();
+    
+            const link = document.querySelector(`a[href="#${foundSection}"]`);
+            if (link) link.parentNode.classList.add(activeClass);
+    
+            const currentSection = sectionsMap[foundSection];
+            if (currentSection && !currentSection.classList.contains('animated')) {
+                currentSection.classList.add('animated');
+    
+                if (foundSection === 'portfolio') {
+                    portfolioTrigger('.portfolio__items-item', 'active', '.portfolio__items');
+                }
+    
+                if (foundSection === 'skills' && !isSkillsCardsLoaded) {
+                    isSkillsCardsLoaded = true;
+                }
+            }
+        }
+    
+        // === Обробка indicator ===
+        if (foundSection && foundSection !== 'promo') {
+            indicator?.classList.add('active');
+        } else {
+            indicator?.classList.remove('active');
+        }
+    
+        // === Обробка homeBtn ===
+        if (foundSection === 'promo' || scrollY <= 400) {
+            homeBtn?.classList.remove('active');
+        } else {
+            homeBtn?.classList.add('active');
+        }
+    
+        if (!foundAttribute && activeAttribute) {
+            activeAttribute = null;
+        } else if (foundAttribute !== activeAttribute) {
+            activeAttribute = foundAttribute;
+        }
     }
 
     window.addEventListener('scroll', scrollNavigation);

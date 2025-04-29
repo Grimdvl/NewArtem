@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
     multipleText();
     // hamburger('.navigation', '.hamburger', 'active', '.navigation__overlay');
     menu('active', '.menu-bar', '.menu', '.mode', '.color');
-    navigation('.navigation__link', 'active', 'section', '.indicator');
+    navigation('.navigation__link', 'active', '.indicator');
     skills('.skills__ratings-counter', '.skills__ratings-line');
     cards();
     modal('[data-modal]', '.modal', 'form');
