@@ -119,7 +119,6 @@
     height: 6rem;
     width: 10rem;
     @include disappear;
-    // animation: slideTop 1s ease forwards;
     &--up {
         display: flex;
         justify-content: end;

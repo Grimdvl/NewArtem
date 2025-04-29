@@ -57,7 +57,6 @@ function navigation(linksSelector, activeClass, indicatorSelector) {
             if (foundAttribute) break;
         }
     
-        const promoSection = sectionsMap.promo;
         const homeBtn = document.querySelector('.home');
     
         if (foundSection && foundSection !== activeSection) {
@@ -82,14 +81,12 @@ function navigation(linksSelector, activeClass, indicatorSelector) {
             }
         }
     
-        // === Обробка indicator ===
         if (foundSection && foundSection !== 'promo') {
             indicator?.classList.add('active');
         } else {
             indicator?.classList.remove('active');
         }
     
-        // === Обробка homeBtn ===
         if (foundSection === 'promo' || scrollY <= 400) {
             homeBtn?.classList.remove('active');
         } else {
