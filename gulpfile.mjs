@@ -15,7 +15,7 @@ const sass = gulpSass(dartSass);
 
 // СТИЛИ
 export const styles = () => {
-    return gulp.src("src/sass/**/*.+(scss|sass)")
+    return gulp.src("src/assets/sass/**/*.+(scss|sass)")
     .pipe(sass({
         outputStyle: 'compressed',
         silenceDeprecation: 'importSass'
@@ -23,7 +23,7 @@ export const styles = () => {
     .pipe(rename({ prefix: "", suffix: ".min" }))
     .pipe(autoprefixer({ overrideBrowserslist: ['last 2 version'], cascade: false }))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(gulp.dest("dist/css"))
+    .pipe(gulp.dest("dist/assets/styles"))
     .pipe(browserSync.stream());
 };
 
@@ -39,7 +39,7 @@ export const server = () => {
 // HTML
 export const html = () => {
     return gulp.src("src/*.html")
-    // .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("dist/"));
 };
 
@@ -59,15 +59,15 @@ export const json = () => {
 
 // ИКОНКИ
 export const icons = () => {
-    return gulp.src("src/img/icons/**/*")
-    .pipe(gulp.dest("dist/img/icons"))
+    return gulp.src("src/assets/img/icons/**/*")
+    .pipe(gulp.dest("dist/assets/img/icons"))
     .pipe(browserSync.stream());
 };
 
 // ШРИФТЫ
 export const fonts = () => {
-    return gulp.src("src/fonts/**/*")
-    .pipe(gulp.dest("dist/fonts"))
+    return gulp.src("src/assets/fonts/**/*")
+    .pipe(gulp.dest("dist/assets/fonts"))
     .pipe(browserSync.stream());
 };
 
@@ -80,9 +80,9 @@ export const mailer = () => {
 
 // ИЗОБРАЖЕНИЯ
 export const images = () => {
-    return gulp.src("src/img/**/*")
+    return gulp.src("src/assets/img/**/*")
     .pipe(imagemin())
-    .pipe(gulp.dest("dist/img"))
+    .pipe(gulp.dest("dist/assets/img"))
     .pipe(browserSync.stream());
 };
 
@@ -91,13 +91,13 @@ export const webpack = shell.task(['webpack']);
 
 // НАБЛЮДЕНИЕ
 export const watch = () => {
-    gulp.watch("src/sass/**/*.+(scss|sass|css)", styles);
+    gulp.watch("src/assets/sass/**/*.+(scss|sass|css)", styles);
     gulp.watch("src/*.html", html);
     gulp.watch("src/**/*.php", php);
     gulp.watch("src/**/*.json", json);
-    gulp.watch("src/fonts/**/*", fonts);
-    gulp.watch("src/icons/**/*", icons);
-    gulp.watch("src/img/**/*", images);
+    gulp.watch("src/assetsfonts/**/*", fonts);
+    gulp.watch("src/assets/img/icons/**/*", icons);
+    gulp.watch("src/assets/img/**/*", images);
 };
 
 // ДЕПЛОЙ

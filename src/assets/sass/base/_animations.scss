@@ -1,0 +1,99 @@
+@use "mixins" as *;
+
+@keyframes floatPhoto {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes promoSubtitle {
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
+
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes promoSubtitleCursor {
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81% {
+        opacity: 0;
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes resumeUl {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes resumeLi {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 4.5rem;
+    }
+}
+
+@keyframes in {
+    0% {
+        @include disappear;
+    }
+    100% {
+        @include appear;
+    }
+}
+
+@keyframes contactsSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes fade-left {
+    0% {
+        transform: translateX(10rem);
+        @include disappear;
+    }
+    100% {
+        transform: translateX(0);
+        @include appear;
+    }
+}

@@ -6,9 +6,9 @@ const isProduction = process.env.NODE_ENV == 'production';
 const TerserPlugin = require('terser-webpack-plugin');
 
 const config = {
-    entry: './src/js/script.js',
+    entry: './src/assets/js/script.js',
     output: {
-        path: path.resolve(__dirname, 'dist/js'),
+        path: path.resolve(__dirname, 'dist/assets/js'),
         filename: 'bundle.js',
     },
     devServer: {
