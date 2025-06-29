@@ -6,7 +6,7 @@ const particles = () => {
         particlesJS("particles-js", {
         "particles": {
             "number": {
-            "value": 15,
+            "value": 5,
             "density": {
                 "enable": true,
                 "value_area": 800
@@ -19,7 +19,7 @@ const particles = () => {
             "type": "circle",
             },
             "opacity": {
-            "value": 0.6,
+            "value": 0.5,
             "random": false,
             "anim": {
                 "enable": false,
