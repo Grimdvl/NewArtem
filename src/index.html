@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Artem Sokur | Portfolio</title>
-    <meta name="title" content="Мое портфолио">
-    <meta name="description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+    <meta name="title" content="My Portfolio">
+    <meta name="description" content="Here you can explore my work and learn more about me">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://metatags.io/">
     <meta property="og:title" content="Мое портфолио">
-    <meta property="og:description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+    <meta property="og:description" content="Here you can explore my work and learn more about me">
     <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://metatags.io/">
-    <meta property="twitter:title" content="Мое портфолио">
-    <meta property="twitter:description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+    <meta property="twitter:title" content="My Portfolio">
+    <meta property="twitter:description" content="Here you can explore my work and learn more about me">
     <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
     <!-- Favicon  -->
@@ -39,8 +39,10 @@
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="assets/styles/style.min.css">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
+    <div id="particles-js" class="particles"></div>
 
     <div class="color"></div>
     <ul class="menu" data-aos="fade-down"
@@ -63,7 +65,7 @@
         </li>
     </ul>
 
-    <div class="wrapper-nav" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">
+    <div class="wrapper-nav">
         <div class="navigation">
             <ul class="navigation__list">
                 <li class="navigation__link">
@@ -190,20 +192,27 @@
             <div class="divider" data-aos="fade-up" data-aos-duration="1000"></div>
         </div>
         <div class="skills__wrapper">
-            <!-- <div class="skills__card">
-                <div class="skills__card-front">
-                    <div class="skills__card-front-icon">
-                        <img src='img/icons/skills/html5.svg' alt='html5'>
+            <div class="skills__wrapper-card aos-init aos-animate" data-aos="flip-down" data-aos-duration="1000">
+                <div class="skills__card">
+                    <div class="skills__card-front active">
+                        <div class="skills__card-front-icon">
+                            <!-- <img src="<?php the_field('cards_img'); ?>"> -->
+                            <ion-icon name="logo-html5" alt="html5"></ion-icon>
+                            <svg class="progress-ring">
+                                <circle class="progress-ring__background" cx="75" cy="75" r="60" />
+                                <circle class="progress-ring__circle" cx="75" cy="75" r="60" />
+                            </svg>
+                            <div class="progress-text" data-target="90">0<sup>%</sup></div>
+                        </div>
+                        <button type="button" class="skills__card-front-button">Read more</button>
                     </div>
-                    <button type="button" class="skills__card-front-button">Read  more</button>
+                    <div class="skills__card-back">
+                        <h3 class="skills__card-back-title">HTML5</h3>
+                        <p class="skills__card-back-description">Exactly, it creates the framework for your website or application...</p>
+                        <button type="button" class="skills__card-back-button">Back</button>
+                    </div>
                 </div>
-
-                <div class="skills__card-back">
-                    <h3 class="skills__card-back-title">HTML5</h3>
-                    <p class="skills__card-back-description">Exactly, it creates the framework for your website or application, and the fifth version will allow me to create a more SEO-optimized structure for your product.</p>
-                    <button type="button" class="skills__card-back-button">Back</button>
-                </div>
-            </div> -->
+            </div>
         </div>
 
         <div class="skills__ratings">
@@ -216,7 +225,7 @@
                     <span></span>
                 </div>
             </div>
-            <div class="skills__ratings-item" data-aos="fade-up" data-aos-duration="1000">
+            <!-- <div class="skills__ratings-item" data-aos="fade-up" data-aos-duration="1000">
                 <div class="skills__ratings-head">
                     <div class="skills__ratings-title">Developing applications</div>
                     <div class="skills__ratings-counter" value="70"></div>
@@ -242,7 +251,7 @@
                 <div class="skills__ratings-line">
                     <span></span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -253,20 +262,20 @@
             <div class="divider" data-aos="fade-up" data-aos-duration="1000"></div>
         </div>
 
-        <div class="portfoolio__wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
-            <div class="portfolio__items">
-                <div class="portfolio__items-item" tabindex="1">
+        <!-- <div class="portfolio__wrapper swiper" >
+            <ul class="portfolio__items swiper-wrapper">
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/uber.jpg" alt="uber-project">
                     <div class="descr">
                         <h3 class="descr-title">Uber</h3>
                         <p class="descr-text">One of the largest transportation and delivery companies in the world. On this project, I honed my skills working with the Bootstrap grid and also learned about various preprocessors like Less and Sass.</p>
                         <div class="descr__links">
-                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/uber"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-git" target="_blank"  href="https://github.com/Grimdvl/uber"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/uber/src/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/pulse.jpg" alt="pulse-project">
                     <div class="descr">
                         <h3 class="descr-title">Pulse</h3>
@@ -276,8 +285,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/pulse/dist/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/food.jpg" alt="food-project">
                     <div class="descr">
                         <h3 class="descr-title">Food</h3>
@@ -287,8 +296,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/food/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/Katherine.jpg" alt="Katherine-project">
                     <div class="descr">
                         <h3 class="descr-title">Katherine Chafer</h3>
@@ -298,8 +307,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/Katherine/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/wordpress.jpg" alt="WordPress-project">
                     <div class="descr">
                         <h3 class="descr-title">WordPress</h3>
@@ -309,8 +318,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/wordpress/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/balcony.jpg" alt="balcony-project">
                     <div class="descr">
                         <h3 class="descr-title">Balcony</h3>
@@ -320,8 +329,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/balcony/dist/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/art.jpg" alt="art-project">
                     <div class="descr">
                         <h3 class="descr-title">Art</h3>
@@ -331,8 +340,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/art/dist/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/loan.jpg" alt="loan-project">
                     <div class="descr">
                         <h3 class="descr-title">Loan</h3>
@@ -342,8 +351,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/loan/dist/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/coffee.jpg" alt="coffee-project">
                     <div class="descr">
                         <h3 class="descr-title">Coffee</h3>
@@ -353,8 +362,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/coffee/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/pokemons.png" alt="pokemon-project">
                     <div class="descr">
                         <h3 class="descr-title">Pokemons</h3>
@@ -364,8 +373,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/MA/homeworks/artem.sokur_Grimdvl/PokemonProject/index.html"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/marvel.png" alt="marvel-project">
                     <div class="descr">
                         <h3 class="descr-title">Marvel</h3>
@@ -375,8 +384,8 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/marvel-hooks/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio__items-item" tabindex="1">
+                </li>
+                <li class="portfolio__items-item swiper-slide">
                     <img class="img" src="assets/img/works/ma.png" alt="ma-project">
                     <div class="descr">
                         <h3 class="descr-title">MA</h3>
@@ -386,16 +395,160 @@
                             <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/fe-react-2024/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
                         </div>
                     </div>
-                </div>
+                </li>
+            </ul>
+        </div> -->
+
+        <div class="swiper" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/uber.jpg" alt="uber-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Uber</h3>
+                        <p class="descr-text">One of the largest transportation and delivery companies in the world. On this project, I honed my skills working with the Bootstrap grid and also learned about various preprocessors like Less and Sass.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank"  href="https://github.com/Grimdvl/uber"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/uber/src/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/pulse.jpg" alt="pulse-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Pulse</h3>
+                        <p class="descr-text">This project involves selling smart sports bracelets with heart rate tracking. It was my first project using JavaScript, where I also integrated third-party libraries like jQuery and Animate.css.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/pulse"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/pulse/dist/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/food.jpg" alt="food-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Food</h3>
+                        <p class="descr-text">This project is related to healthy eating. This was my first advanced JavaScript project, which gave me a good start in further exploring this programming language.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/food"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/food/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/Katherine.jpg" alt="Katherine-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Katherine Chafer</h3>
+                        <p class="descr-text">The girl dreams of becoming a cosmetologist, and I gave her the opportunity to present herself in all her glory to her future employer through a resume website.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/Katherine"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/Katherine/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/wordpress.jpg" alt="WordPress-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">WordPress</h3>
+                        <p class="descr-text">The largest CMS in the world, used on more than 80% of websites. This is my first project related to learning web development, specifically HTML markup language and CSS styling language.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/wordpress"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/wordpress/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/balcony.jpg" alt="balcony-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Balcony</h3>
+                        <p class="descr-text">This is a project for measuring and selling balconies and windows. It's already my first serious project where working on it involved applying all the knowledge I had gained up to that point.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/balcony"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/balcony/dist/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/art.jpg" alt="art-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Art</h3>
+                        <p class="descr-text">A website for drawing and selling paintings. I reinforced my JavaScript skills and utilized technologies such as Webpack, Gulp task runner, worked with the SCSS preprocessor, as well as a local JSON database.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/art"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/art/dist/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/loan.jpg" alt="loan-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Loan</h3>
+                        <p class="descr-text">A website for legal consultations. I learned to use third-party APIs such as YouTube and also mastered the construction of a modular code structure.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/loan"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/loan/dist/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/coffee.jpg" alt="coffee-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Coffee</h3>
+                        <p class="descr-text">Coffee...</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/coffee"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/coffee/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/pokemons.png" alt="pokemon-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Pokemons</h3>
+                        <p class="descr-text">A foundational frontend course from Master's Academy, a major Canadian IT company. In this course, I gained insights from product company developers who had 3-5 years of experience in development.</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/MA"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/MA/homeworks/artem.sokur_Grimdvl/PokemonProject/index.html"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/marvel.png" alt="marvel-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">Marvel</h3>
+                        <p class="descr-text">Marvel...</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/marvel-hooks"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/marvel-hooks/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-img" src="assets/img/works/ma.png" alt="ma-project">
+                    <div class="swiper-slide-descr">
+                        <h3 class="descr-title">MA</h3>
+                        <p class="descr-text">Masters Academy...</p>
+                        <div class="descr__links">
+                            <a class="descr__links-git" target="_blank" href="https://github.com/Grimdvl/fe-react-2024"><box-icon name='github' type='logo' color='#ffffff' ></box-icon></a>
+                            <a class="descr__links-site" target="_blank" href="https://grimdvl.github.io/fe-react-2024/"><box-icon name='link-external' color='#ffffff' ></box-icon></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="slide__wrapper" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+            <div class="swiper-pagination"></div>
+            <div class="portfolio__slide">
+                <button class="swiper-button-prev"><i class='bx bx-left-arrow-alt'></i></button>
+                <button class="swiper-button-next"><i class='bx bx-right-arrow-alt'></i></button>
             </div>
         </div>
 
-        <div class="slide__wrapper" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+        <!-- <div class="slide__wrapper" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
             <div class="portfolio__slide">
                 <button class="portfolio__slide-prev"><i class='bx bx-left-arrow-alt'></i></button>
                 <button class="portfolio__slide-next"><i class='bx bx-right-arrow-alt'></i></button>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section class="contacts" id="contacts">
@@ -405,17 +558,17 @@
             <div class="divider" data-aos="fade-up" data-aos-duration="1000"></div>
             
             <div class="contacts__social">
-                <div class="contacts__social-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                <div class="contacts__social-item" data-aos="fade-left" data-aos-duration="1000">
                     <a href="https://www.facebook.com/profile.php?id=100079481086820" target="_blank" class="contacts__link">
                         <i class='bx bxl-facebook'></i>
                     </a>
                 </div>
-                <div class="contacts__social-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700">
+                <div class="contacts__social-item" data-aos="fade-left" data-aos-duration="1000">
                     <a href="https://t.me/Grimdvl" target="_blank" class="contacts__link">
                         <i class='bx bxl-telegram'></i>
                     </a>
                 </div>
-                <div class="contacts__social-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">
+                <div class="contacts__social-item" data-aos="fade-left" data-aos-duration="1000">
                     <a href="https://www.instagram.com/artemsokur69" target="_blank" class="contacts__link">
                         <i class='bx bxl-instagram-alt'></i>
                     </a>
@@ -463,6 +616,8 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

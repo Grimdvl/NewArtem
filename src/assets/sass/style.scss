@@ -9,6 +9,7 @@
 @use 'blocks/resume';
 @use 'blocks/skills';
 @use 'blocks/portfolio';
+@use 'blocks/works';
 @use 'blocks/contacts';
 
 @use 'base/media';
@@ -28,6 +29,10 @@
     outline: none;
 }
 
+li {
+    list-style: none;
+}
+
 html {
     overflow-x: hidden;
     color: var(--color-black);
@@ -37,6 +42,7 @@ html {
 
 body {
     overflow-x: hidden;
+    min-width: 320px;
 }
 
 section {
@@ -74,4 +80,12 @@ section {
 
 .no-transition * {
     transition: none !important;
+}
+
+.particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }

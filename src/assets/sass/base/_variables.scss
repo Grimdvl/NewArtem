@@ -10,7 +10,13 @@
     --color-white: #fff;
     --bg-color: #fff;
     --cards-bg: rgba(255, 255, 255, .75);
-
-    --index: calc(1vw + 1vh);
-    --transition: cubic-bezier(.1, .7, 0, 1);
 }
+
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         --bg-color: #18222c;
+//         --color-white: #fff;
+//         --color-black: #000;
+//         --cards-bg: rgba(255, 255, 255, .1);
+//     }
+// }

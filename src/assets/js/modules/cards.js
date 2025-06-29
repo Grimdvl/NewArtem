@@ -1,4 +1,4 @@
-import {getResources} from "../services/services";
+// import {getResources} from "../services/services";
 import VanillaTilt from './vanilla-tilt';
 
 let isDesktop = window.innerWidth > 991;
@@ -169,110 +169,120 @@ function cards() {
         });
     }
 
-    function createSkillsCard({ src, alt, title, descr, target, parentSelector, classes = [] }) {
-        const parent = document.querySelector(parentSelector);
-        const element = document.createElement('div');
-    
-        if (classes.length === 0) {
-            classes = ["skills__wrapper-card"];
-        }
-    
-        element.classList.add(...classes);
-    
-        element.setAttribute("data-aos", "fade-up");
-        element.setAttribute("data-aos-duration", "1000");
-    
-        element.innerHTML = `
-            <div class="skills__card">
-                <div class="skills__card-front active">
-                    <div class="skills__card-front-icon">
-                        <ion-icon name="${src}" alt="${alt}"></ion-icon>
-                        <svg class="progress-ring">
-                            <circle class="progress-ring__background" cx="75" cy="75" r="60" />
-                            <circle class="progress-ring__circle" cx="75" cy="75" r="60" />
-                        </svg>
-                        <div class="progress-text" data-target="${target}">0<sup>%</sup></div>
-                    </div>
-                    <button type="button" class="skills__card-front-button">Read more</button>
-                </div>
-                <div class="skills__card-back">
-                    <h3 class="skills__card-back-title">${title}</h3>
-                    <p class="skills__card-back-description">${descr}</p>
-                    <button type="button" class="skills__card-back-button">Back</button>
-                </div>
-            </div>
-        `;
-    
-        parent.appendChild(element);
-    }
-    
-    
-    function renderCards(data) {
-        data.forEach(item => {
-            createSkillsCard({ 
-                ...item, 
-                parentSelector: '.skills .skills__wrapper', 
-                classes: ["skills__wrapper-card"] 
-            });
-        });
+    initializeVanillaTilt('.skills__card');
+    initializeBlureEffect('.skills__card');
+    watchAOSAnimation();
+    flippingCard(
+    '.skills__card-front-button',
+    '.skills__card-back-button',
+    '.skills__card-front',
+    '.skills__card-back'
+);
 
-        flippingCard(
-            '.skills__card-front-button', 
-            '.skills__card-back-button', 
-            '.skills__card-front', 
-            '.skills__card-back'
-        );
-
-        initializeVanillaTilt('.skills__card');
-        initializeBlureEffect('.skills__card');
-        watchAOSAnimation();
-    }
-
-    getResources('http://localhost:3000/skills')
-        .then(renderCards)
-        .catch(error => {
-            console.error('Помилка при отриманні даних:', error);
+    // function createSkillsCard({ src, alt, title, descr, target, parentSelector, classes = [] }) {
+    //     const parent = document.querySelector(parentSelector);
+    //     const element = document.createElement('div');
     
-            const defaultCards = [
-                {
-                    src: "logo-html5",
-                    alt: "html5",
-                    title: "HTML5",
-                    descr: "Exactly, it creates the framework for your website or application...",
-                    target: "90"
-                },
-                {
-                    src: "logo-css3",
-                    alt: "css3",
-                    title: "CSS3",
-                    descr: "This styling language allows me to create any appearance...",
-                    target: "90"
-                },
-                {
-                    src: "logo-javascript",
-                    alt: "javascript",
-                    title: "Java Script",
-                    descr: "This programming language allows me to animate anything...",
-                    target: "80"
-                },
-                {
-                    src: "logo-react",
-                    alt: "react",
-                    title: "React",
-                    descr: "This library enables the creation of web applications...",
-                    target: "70"
-                },
-                {
-                    src: "logo-wordpress",
-                    alt: "wordpress",
-                    title: "WordPress",
-                    descr: "It's a powerful platform for building interactive web applications...",
-                    target: "80"
-                }
-            ];
+    //     if (classes.length === 0) {
+    //         classes = ["skills__wrapper-card"];
+    //     }
     
-            renderCards(defaultCards);
-        });
+    //     element.classList.add(...classes);
+    
+    //     element.setAttribute("data-aos", "fade-up");
+    //     element.setAttribute("data-aos-duration", "1000");
+    
+    //     element.innerHTML = `
+    //         <div class="skills__card">
+    //             <div class="skills__card-front active">
+    //                 <div class="skills__card-front-icon">
+    //                     <ion-icon name="${src}" alt="${alt}"></ion-icon>
+    //                     <svg class="progress-ring">
+    //                         <circle class="progress-ring__background" cx="75" cy="75" r="60" />
+    //                         <circle class="progress-ring__circle" cx="75" cy="75" r="60" />
+    //                     </svg>
+    //                     <div class="progress-text" data-target="${target}">0<sup>%</sup></div>
+    //                 </div>
+    //                 <button type="button" class="skills__card-front-button">Read more</button>
+    //             </div>
+    //             <div class="skills__card-back">
+    //                 <h3 class="skills__card-back-title">${title}</h3>
+    //                 <p class="skills__card-back-description">${descr}</p>
+    //                 <button type="button" class="skills__card-back-button">Back</button>
+    //             </div>
+    //         </div>
+    //     `;
+    
+    //     parent.appendChild(element);
+    // }
+    
+    
+    // function renderCards(data) {
+    //     data.forEach(item => {
+    //         createSkillsCard({ 
+    //             ...item, 
+    //             parentSelector: '.skills .skills__wrapper', 
+    //             classes: ["skills__wrapper-card"] 
+    //         });
+    //     });
+
+    //     flippingCard(
+    //         '.skills__card-front-button', 
+    //         '.skills__card-back-button', 
+    //         '.skills__card-front', 
+    //         '.skills__card-back'
+    //     );
+
+    //     initializeVanillaTilt('.skills__card');
+    //     initializeBlureEffect('.skills__card');
+    //     watchAOSAnimation();
+    // }
+
+    // getResources('http://localhost:3000/skills')
+    //     .then(renderCards)
+    //     .catch(error => {
+    //         console.error('Помилка при отриманні даних:', error);
+    
+    //         const defaultCards = [
+    //             {
+    //                 src: "logo-html5",
+    //                 alt: "html5",
+    //                 title: "HTML5",
+    //                 descr: "Exactly, it creates the framework for your website or application...",
+    //                 target: "90"
+    //             },
+    //             {
+    //                 src: "logo-css3",
+    //                 alt: "css3",
+    //                 title: "CSS3",
+    //                 descr: "This styling language allows me to create any appearance...",
+    //                 target: "90"
+    //             },
+    //             {
+    //                 src: "logo-javascript",
+    //                 alt: "javascript",
+    //                 title: "Java Script",
+    //                 descr: "This programming language allows me to animate anything...",
+    //                 target: "80"
+    //             },
+    //             {
+    //                 src: "logo-react",
+    //                 alt: "react",
+    //                 title: "React",
+    //                 descr: "This library enables the creation of web applications...",
+    //                 target: "70"
+    //             },
+    //             {
+    //                 src: "logo-wordpress",
+    //                 alt: "wordpress",
+    //                 title: "WordPress",
+    //                 descr: "It's a powerful platform for building interactive web applications...",
+    //                 target: "80"
+    //             }
+    //         ];
+    
+    //         renderCards(defaultCards);
+    //     });
         window.addEventListener('resize', () => {
             const newIsDesktop = window.innerWidth > 991;
             if (newIsDesktop !== isDesktop) {

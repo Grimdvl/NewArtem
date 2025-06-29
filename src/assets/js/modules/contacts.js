@@ -8,4 +8,14 @@ const multipleText = () => {
     });
 }
 
-export default multipleText;
+function toggleSocial() {
+    const social = document.querySelectorAll('.contacts__social-item');
+
+    social.forEach((item, index) => {
+        item.setAttribute('data-aos-delay', `${500 + index * 200}`);
+    });
+}
+
+
+export {multipleText};
+export {toggleSocial};

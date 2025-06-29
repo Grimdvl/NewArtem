@@ -1,3 +1,5 @@
+import particles from './particles';
+
 const menu = (activeClass, menuSelector, navigationSelector, modeSelector, colorSelector) => {
     const menu = document.querySelector(menuSelector),
           nav = document.querySelector(navigationSelector),
@@ -48,6 +50,14 @@ const menu = (activeClass, menuSelector, navigationSelector, modeSelector, color
     }
 
     setTimeout(() => {
+        if (window.pJSDom?.[0]) {
+            window.pJSDom[0].pJS.fn.vendors.destroypJS();
+            window.pJSDom = [];
+        }
+        particles();
+    }, 50);
+
+    setTimeout(() => {
         root.classList.remove('no-transition');
     }, 0);
 
@@ -68,6 +78,14 @@ const menu = (activeClass, menuSelector, navigationSelector, modeSelector, color
             applyLightTheme();
             localStorage.setItem('theme', 'light');
         }
+
+        setTimeout(() => {
+            if (window.pJSDom?.[0]) {
+                window.pJSDom[0].pJS.fn.vendors.destroypJS();
+                window.pJSDom = [];
+            }
+            particles();
+        }, 50);
     });
 }
 

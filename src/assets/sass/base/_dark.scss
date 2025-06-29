@@ -8,6 +8,7 @@
     clip-path: circle(0% at 89.7% 8.7%);
     transition: .5s ease-out;
     will-change: clip-path;
+    z-index: -2;
     &.active {
         clip-path: circle(150% at 89.7% 8.7%);
     }

@@ -9,7 +9,7 @@
     &__wrapper {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 10rem));
         grid-auto-rows: minmax(30rem, auto);
         justify-content: space-around;
         gap: 3rem;
@@ -156,7 +156,7 @@
                 //     box-shadow: 0 0 1rem var(--main-color), 0 0 2rem var(--main-color);
                 //     will-change: background-color, box-shadow;
                 // }
-                ion-icon {
+                ion-icon, img {
                     position: absolute;
                     top: 40%;
                     left: 50%;

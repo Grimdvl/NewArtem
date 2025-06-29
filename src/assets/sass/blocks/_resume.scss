@@ -135,6 +135,7 @@
                             filter: invert(0%);
                             transition: .5s filter;
                             will-change: filter;
+                            height: 3rem;
                         }
                     }
                     &-location {
