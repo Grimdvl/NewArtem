@@ -100,14 +100,7 @@ const portfolioTrigger = (
     selectorPrev,
     wrapperSelector
 ) => {
-    var swiper = new Swiper(wrapperSelector, {
-        // loop: true,
-        // initialSlide: 0,
-        // slidesPerView: 1,
-        // navigation: {
-        //     nextEl: selectorNext,
-        //     prevEl: selectorPrev,
-        // }
+    const swiper = new Swiper(wrapperSelector, {
         effect: "coverflow",
         grabCursor: true,
         centeredSlides: true,
