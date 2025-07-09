@@ -1,22 +1,24 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
-
 const path = require('path');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-const isProduction = process.env.NODE_ENV == 'production';
 const TerserPlugin = require('terser-webpack-plugin');
+const isProduction = process.env.NODE_ENV == 'production';
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 const config = {
     entry: './src/assets/js/script.js',
     output: {
         path: path.resolve(__dirname, 'dist/assets/js'),
         filename: 'bundle.js',
+        library: {
+            type: 'window',
+            name: 'MyBundle',
+        },
     },
     devServer: {
         open: true,
         host: 'localhost',
     },
-        watch: true,
-        watchOptions: {
+    watch: true,
+    watchOptions: {
         ignored: /node_modules/,
     },
     module: {
@@ -49,12 +51,13 @@ const config = {
         minimize: true,
         minimizer: [new TerserPlugin()]
     },
+    plugins: [] // ✅ ДОДАНО сюди
 };
 
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
-        config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
+        config.plugins.push(new WorkboxWebpackPlugin.GenerateSW()); // тепер працює
     } else {
         config.mode = 'development';
     }

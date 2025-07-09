@@ -8,7 +8,7 @@
 //     parent.addEventListener('mousedown', (e) => {
 //         startX = e.clientX;
 //         isDragging = true;
-//         document.body.style.userSelect = 'none'; // 🔒 блокує виділення
+//         document.body.style.userSelect = 'none';
 //     });
 
 //     let isBlocked = false;

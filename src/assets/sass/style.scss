@@ -89,3 +89,28 @@ section {
     height: 100%;
     z-index: -1;
 }
+
+.loader {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 1rem;
+    &-dot {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: var(--main-color);
+        animation: bounce 1.5s infinite ease-in-out;
+        &:nth-child(1) {
+            animation-delay: 0s;
+        }
+        &:nth-child(2) {
+            animation-delay: .3s;
+        }
+        &:nth-child(3) {
+            animation-delay: .6s;
+        }
+    }
+}

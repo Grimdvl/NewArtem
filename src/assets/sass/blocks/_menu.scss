@@ -25,8 +25,10 @@
         font-size: 3rem;
         box-shadow: 0 0 1rem var(--main-color);
         transition: 1s transform, .5s box-shadow, .5s color, .5s background-color, .5s border;
-        &:hover {
-            box-shadow: none;
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: none;
+            }
         }
     }
     &-list {
@@ -89,11 +91,13 @@
             transition: .5s color, .5s border, .5s background-color;
             &.language {
                 font-size: 2rem;
-                &:hover {
-                    text-decoration: none;
-                    color: var(--color-white);
-                    &::before {
-                        width: 100%;
+                @media (any-hover: hover) {
+                    &:hover {
+                        text-decoration: none;
+                        color: var(--color-white);
+                        &::before {
+                            width: 100%;
+                        }
                     }
                 }
                 &::before {
@@ -112,10 +116,12 @@
                     &::before {
                         width: 100%;
                     }
-                    &:hover {
-                        color: var(--main-color);
-                        &::before {
-                            width: 0;
+                    @media (any-hover: hover) {
+                        &:hover {
+                            color: var(--main-color);
+                            &::before {
+                                width: 0;
+                            }
                         }
                     }
                 }
@@ -135,8 +141,10 @@
                 .mode {
                     box-shadow: 0 0 1rem var(--main-color);
                     transition: .5s box-shadow, .5s border, .5s background-color, .5s color;
-                    &:hover {
-                        box-shadow: none;
+                    @media (any-hover: hover) {
+                        &:hover {
+                            box-shadow: none;
+                        }
                     }
                 }
             }
