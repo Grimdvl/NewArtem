@@ -71,7 +71,6 @@ const menu = (activeClass, menuSelector, navigationSelector, modeSelector, color
 
     menuBtn .addEventListener('click', () => {
         nav.classList.toggle(activeClass);
-        console.log('Menu toggled');
     });
 
     mode.addEventListener('click', () => {
