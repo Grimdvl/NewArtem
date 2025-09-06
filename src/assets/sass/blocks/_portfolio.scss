@@ -477,12 +477,16 @@
     // flex-direction: row !important;
     width: 100%;
     padding: 5rem 0;
+
+    // overflow: visible;
     .swiper-slide {
         position: relative;
         max-width: 32rem;
         aspect-ratio: 3/4;
         border-radius: 3rem;
         overflow: hidden;
+
+        // width: clamp(240px, 80vw, 360px);
         &-img {
             display: block;
             width: 100%;

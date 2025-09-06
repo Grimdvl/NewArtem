@@ -5,18 +5,25 @@ import particles from './particles';
 
 
 const setThemeProperties = (isDark, root) => {
+    const resumneIcon = document.querySelectorAll('.resume__item-icon img');
+    const portfolioIcon = document.querySelectorAll('.descr__links a box-icon');
+
     if (isDark) {
         root.style.setProperty('--main-color', '#2ea6ff');
         root.style.setProperty('--color-black', '#fff');
         root.style.setProperty('--color-white', '#000');
         root.style.setProperty('--bg-color', '#18222c');
         root.style.setProperty('--cards-bg', 'rgba(24, 34, 44, .75)');
+        resumneIcon.forEach(item => item.style.filter = 'invert(1)');
+        portfolioIcon.forEach(item => item.setAttribute("color", "#000000"));
     } else {
         root.style.setProperty('--main-color', '#FFA501');
         root.style.setProperty('--color-black', '#000');
         root.style.setProperty('--color-white', '#fff');
         root.style.setProperty('--bg-color', '#fff');
         root.style.setProperty('--cards-bg', 'rgba(255, 255, 255, .75)');
+        resumneIcon.forEach(item => item.style.filter = 'invert(0)');
+        portfolioIcon.forEach(item => item.setAttribute("color", "#ffffff"));
     }
 };
 
@@ -41,20 +48,14 @@ const menu = (activeClass, menuSelector, navigationSelector, modeSelector, color
           nav = document.querySelector(navigationSelector),
           mode = document.querySelector(modeSelector),
           color = document.querySelector(colorSelector),
-          root = document.documentElement,
-          resumneIcon = document.querySelectorAll('.resume__item-icon img'),
-          portfolioIcon = document.querySelectorAll('.descr__links a box-icon');
+          root = document.documentElement;
 
     const applyDarkTheme = () => {
         setThemeProperties(true, root);
-        resumneIcon.forEach(item => item.style.filter = 'invert(1)');
-        portfolioIcon.forEach(item => item.setAttribute("color", "#000000"));
     };
 
     const applyLightTheme = () => {
         setThemeProperties(false, root);
-        resumneIcon.forEach(item => item.style.filter = 'invert(0)');
-        portfolioIcon.forEach(item => item.setAttribute("color", "#ffffff"));
     };
 
     setTimeout(() => {

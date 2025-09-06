@@ -93,14 +93,12 @@
 // import 'swiper/css/bundle';
 
 const portfolioTrigger = (
-    selectorElem,
-    activeClass,
-    selectorParent,
+    selectorPagination,
     selectorNext,
     selectorPrev,
-    wrapperSelector
+    swiperSelector
 ) => {
-    const swiper = new Swiper(wrapperSelector, {
+    const swiper = new Swiper(swiperSelector, {
         effect: "coverflow",
         grabCursor: true,
         centeredSlides: true,
@@ -121,15 +119,29 @@ const portfolioTrigger = (
             }
         },
         pagination: {
-            el: '.swiper-pagination',
+            el: selectorPagination,
             clickable: true,
             
         },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: selectorNext,
+            prevEl: selectorPrev,
         },
     });
+
+    // const swiper = new Swiper(swiperSelector, {
+    //     effect: 'coverflow',
+    //     grabCursor: true,
+    //     centeredSlides: true,
+    //     initialSlide: 4,
+    //     speed: 500,
+    //     preventClicks: true,
+    //     slidesPerView: 'auto',
+    //     coverflowEffect: { rotate: 0, stretch: 80, depth: 350, modifier: 1, slideShadows: true },
+    //     pagination: { el: selectorPagination, clickable: true },
+    //     navigation: { nextEl: selectorNext, prevEl: selectorPrev },
+    // });
+
 };
 
 export default portfolioTrigger;
